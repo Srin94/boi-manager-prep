@@ -1,0 +1,436 @@
+{
+  "flashcards": [
+    { "id": "fc-001", "topic": "backend", "front": "typeof null in JavaScript?", "back": "\"object\" — a legacy JS representation bug." },
+    { "id": "fc-002", "topic": "backend", "front": "JS output of parseInt(\"10.5\") + parseInt(\"5.7\") + \"2\"", "back": "\"152\" — 10 + 5 = 15, then 15 + \"2\" coerces to the string \"152\"." },
+    { "id": "fc-003", "topic": "backend", "front": "JS event loop: microtasks vs macrotasks order", "back": "The microtask queue (Promise.then, queueMicrotask) drains completely BEFORE the macrotask queue (setTimeout, I/O). Promise.resolve().then(...) always runs before setTimeout(..., 0)." },
+    { "id": "fc-004", "topic": "backend", "front": "var vs let/const scoping", "back": "var is function-scoped and hoisted as undefined; let/const are block-scoped with a Temporal Dead Zone (TDZ). const prevents re-assignment, NOT object/array mutation." },
+    { "id": "fc-005", "topic": "backend", "front": "TypeScript: unknown vs any", "back": "unknown is type-safe — it requires type narrowing before accessing properties or calling methods; any disables type checking completely." },
+    { "id": "fc-006", "topic": "backend", "front": "React: useRef vs useState re-render behavior", "back": "useState triggers a re-render on update; useRef persists a mutable value across renders WITHOUT triggering a re-render." },
+    { "id": "fc-007", "topic": "backend", "front": "React: useEffect(fn, []) vs no dependency array", "back": "useEffect(fn, []) runs once on mount; omitting the dependency array runs the effect after EVERY render." },
+    { "id": "fc-008", "topic": "backend", "front": "Why avoid array indices as React list keys when items reorder/delete?", "back": "It breaks reconciliation and can associate component state with the wrong item. Keys should identify items, not their array positions." },
+    { "id": "fc-009", "topic": "backend", "front": "Java 8 HashMap: what happens when a bucket exceeds 8 colliding entries?", "back": "With table capacity >= 64, the bucket converts from a linked list to a balanced Red-Black Tree, improving worst-case lookup from O(n) to O(log n)." },
+    { "id": "fc-010", "topic": "backend", "front": "Java equals()/hashCode() contract", "back": "If a.equals(b) is true, then a.hashCode() == b.hashCode() MUST hold (the reverse need not be true)." },
+    { "id": "fc-011", "topic": "backend", "front": "Java: final vs finally vs finalize()", "back": "final = constant/non-overridable; finally = cleanup block; finalize() = deprecated garbage-collection hook." },
+    { "id": "fc-012", "topic": "backend", "front": "Java checked vs unchecked exceptions", "back": "Checked (compile-time verified): IOException, SQLException, ClassNotFoundException. Unchecked (RuntimeException subclasses): NullPointerException, IllegalArgumentException, ArrayIndexOutOfBoundsException." },
+    { "id": "fc-013", "topic": "backend", "front": "Java exception thrown by Class.forName() when no definition is found?", "back": "ClassNotFoundException — a checked exception thrown during dynamic class loading." },
+    { "id": "fc-014", "topic": "backend", "front": "JVM memory areas", "back": "Heap (objects & instance variables, GC-managed); Stack (thread-local method frames & local primitives); Metaspace (Java 8+ replacement for PermGen; stores class metadata in native memory)." },
+    { "id": "fc-015", "topic": "backend", "front": "What does @SpringBootApplication combine?", "back": "@Configuration, @EnableAutoConfiguration, and @ComponentScan." },
+    { "id": "fc-016", "topic": "backend", "front": "@RestController equivalence", "back": "@RestController = @Controller + @ResponseBody." },
+    { "id": "fc-017", "topic": "backend", "front": "Spring @Transactional default rollback behavior", "back": "By default rolls back only on unchecked (RuntimeException/Error) exceptions, NOT checked exceptions unless rollbackFor = Exception.class is set. Self-invocation within the same class bypasses the AOP proxy." },
+    { "id": "fc-018", "topic": "backend", "front": "Default Spring bean scope", "back": "Singleton (others: prototype, request, session). Singleton scope does not make a bean inherently thread-safe." },
+    { "id": "fc-019", "topic": "backend", "front": "Spring: preferred DI style", "back": "Constructor injection — makes required dependencies explicit, immutable and testable." },
+    { "id": "fc-020", "topic": "backend", "front": "Python Global Interpreter Lock (GIL)", "back": "In CPython, only one thread executes Python bytecode at a time. Use threading/asyncio for I/O-bound tasks and multiprocessing for CPU-bound tasks." },
+    { "id": "fc-021", "topic": "backend", "front": "Python mutable default argument trap", "back": "def f(a=[]): a.append(1) shares the SAME list across calls because the default is created once at definition. Always default to None and initialize inside the function." },
+    { "id": "fc-022", "topic": "backend", "front": "Python generators vs list comprehensions", "back": "Generators (yield) produce values lazily with O(1) memory; list comprehensions materialize the full list in RAM." },
+    { "id": "fc-023", "topic": "backend", "front": "HTTP methods that are BOTH safe and idempotent", "back": "GET and HEAD." },
+    { "id": "fc-024", "topic": "backend", "front": "Is PUT idempotent? Is POST?", "back": "PUT is idempotent (full replacement); POST is neither safe nor inherently idempotent (create/trigger action)." },
+    { "id": "fc-025", "topic": "backend", "front": "401 vs 403", "back": "401 Unauthorized = missing/invalid authentication; 403 Forbidden = authenticated identity but lacks permission." },
+    { "id": "fc-026", "topic": "backend", "front": "HTTP 502 vs 503 vs 504", "back": "502 Bad Gateway = gateway/proxy got an invalid response from upstream; 503 Service Unavailable; 504 Gateway Timeout." },
+    { "id": "fc-027", "topic": "backend", "front": "HTTP 429 meaning", "back": "429 Too Many Requests — rate limit exceeded." },
+    { "id": "fc-028", "topic": "backend", "front": "Pattern to prevent double-debiting on retried POST /transfers", "back": "Client-generated Idempotency-Key persisted with the transaction, so a repeated request has the same effect as one execution." },
+    { "id": "fc-029", "topic": "se-arch", "front": "Saga pattern purpose", "back": "Manage distributed transactions via local transactions and compensating actions, instead of two-phase commit (2PC)." },
+    { "id": "fc-030", "topic": "backend", "front": "Circuit Breaker states", "back": "Closed -> Open -> Half-Open — trips open to stop cascading microservice failures." },
+    { "id": "fc-031", "topic": "backend", "front": "OAuth 2.0 vs OIDC vs JWT", "back": "OAuth 2.0 = authorization framework; OIDC = authentication/identity layer on OAuth 2.0; JWT = stateless signed token format (Header.Payload.Signature), signed not encrypted." },
+    { "id": "fc-032", "topic": "backend", "front": "REST vs SOAP vs GraphQL vs gRPC", "back": "SOAP = XML + WSDL + WS-Security (legacy CBS); REST = JSON/HTTP resources; GraphQL = single endpoint avoiding over/under-fetching; gRPC = HTTP/2 + Protocol Buffers for low-latency inter-service calls." },
+    { "id": "fc-033", "topic": "backend", "front": "CORS vs CSRF", "back": "CORS is a browser-enforced cross-origin access policy (not authentication). CSRF (Cross-Site Request Forgery) exploits ambient credentials; defend with SameSite cookies, anti-CSRF tokens and origin checks." },
+    { "id": "fc-034", "topic": "dbms", "front": "ACID stands for", "back": "Atomicity (all-or-nothing), Consistency (preserves invariants/constraints), Isolation (concurrent txns don't interfere), Durability (committed data survives crash via Write-Ahead Logging)." },
+    { "id": "fc-035", "topic": "dbms", "front": "Which ACID property is violated if a debit isn't rolled back after a failed credit?", "back": "Atomicity — it guarantees all-or-nothing execution of a transaction." },
+    { "id": "fc-036", "topic": "dbms", "front": "1NF condition", "back": "No multi-valued or composite attributes — every cell holds a single indivisible (atomic) value." },
+    { "id": "fc-037", "topic": "dbms", "front": "2NF condition", "back": "In 1NF + no partial dependency (no non-prime attribute depending on part of a composite key). Automatically satisfied if the primary key is a single column." },
+    { "id": "fc-038", "topic": "dbms", "front": "3NF condition", "back": "In 2NF + no transitive dependency (non-prime -> non-prime). For X -> Y: X is a superkey OR Y is a prime attribute." },
+    { "id": "fc-039", "topic": "dbms", "front": "BCNF condition", "back": "Stricter 3NF: for EVERY non-trivial functional dependency X -> Y, X must be a superkey / candidate key. Every determinant must be a candidate key." },
+    { "id": "fc-040", "topic": "dbms", "front": "Dirty Read", "back": "Reading a row modified by another transaction that has NOT yet committed (and may later roll back)." },
+    { "id": "fc-041", "topic": "dbms", "front": "Non-Repeatable Read vs Phantom Read", "back": "Non-Repeatable Read = same row read twice yields different committed values. Phantom Read = re-running a predicate query returns a changed SET of rows." },
+    { "id": "fc-042", "topic": "dbms", "front": "Isolation level preventing Dirty + Non-Repeatable Reads but allowing Phantoms (SQL-92)", "back": "REPEATABLE READ (MySQL InnoDB default; InnoDB gap locks also prevent phantoms)." },
+    { "id": "fc-043", "topic": "dbms", "front": "READ COMMITTED isolation", "back": "Prevents Dirty Reads; allows Non-Repeatable & Phantom Reads. Default in PostgreSQL/Oracle." },
+    { "id": "fc-044", "topic": "dbms", "front": "SERIALIZABLE isolation", "back": "Prevents dirty, non-repeatable and phantom reads — highest isolation, lowest concurrency." },
+    { "id": "fc-045", "topic": "dbms", "front": "DDL commands", "back": "CREATE, ALTER, DROP, TRUNCATE, RENAME — schema definition, auto-committed." },
+    { "id": "fc-046", "topic": "dbms", "front": "DML commands", "back": "SELECT, INSERT, UPDATE, DELETE, MERGE — data rows, rollback-able." },
+    { "id": "fc-047", "topic": "dbms", "front": "DCL and TCL commands", "back": "DCL (permissions): GRANT, REVOKE. TCL (transactions): COMMIT, ROLLBACK, SAVEPOINT." },
+    { "id": "fc-048", "topic": "dbms", "front": "DELETE vs TRUNCATE vs DROP", "back": "DELETE: DML, supports WHERE, logs each row, fires triggers, rollback-able. TRUNCATE: DDL, removes all rows fast, resets auto-increment, no WHERE. DROP: removes data AND table structure." },
+    { "id": "fc-049", "topic": "dbms", "front": "How many clustered indexes per table?", "back": "At most one — it determines the physical row order on disk (usually the primary key). A table can have multiple non-clustered indexes." },
+    { "id": "fc-050", "topic": "dbms", "front": "B+ Tree vs Hash index", "back": "B+ Trees (default in PostgreSQL/MySQL/Oracle) support range queries (BETWEEN, <, >, ORDER BY). Hash indexes support only exact equality (=) in O(1)." },
+    { "id": "fc-051", "topic": "dbms", "front": "Composite index leftmost prefix rule", "back": "An index on (a, b, c) helps queries on a, or a,b — NOT on b,c alone. Wrapping an indexed column in a function (e.g. WHERE YEAR(dt)=2026) breaks index usage." },
+    { "id": "fc-052", "topic": "dbms", "front": "OLTP vs OLAP", "back": "OLTP = high-concurrency short transactional writes (normalized 3NF, core banking). OLAP = complex historical aggregations / multi-dimensional analytical queries (denormalized)." },
+    { "id": "fc-053", "topic": "dbms", "front": "Star vs Snowflake schema", "back": "Star schema keeps dimension tables denormalized for faster query joins. Snowflake schema normalizes dimension tables to save storage." },
+    { "id": "fc-054", "topic": "dbms", "front": "Slowly Changing Dimensions Type 1/2/3", "back": "Type 1 overwrites (no history); Type 2 adds a new row/version to preserve history (effective dates/current flag); Type 3 stores a limited previous value in extra field(s)." },
+    { "id": "fc-055", "topic": "dbms", "front": "WHERE vs HAVING", "back": "WHERE filters rows before grouping; HAVING filters groups after aggregation." },
+    { "id": "fc-056", "topic": "dbms", "front": "COUNT(*) vs COUNT(column)", "back": "COUNT(*) counts all rows; COUNT(column) excludes NULLs. NULL is not equal to any value including NULL — use IS NULL." },
+    { "id": "fc-057", "topic": "cs-core", "front": "Quick Sort complexity", "back": "Best/Avg O(n log n), Worst O(n^2), Space O(log n) for tail-recursive; unstable." },
+    { "id": "fc-058", "topic": "cs-core", "front": "Merge Sort complexity and properties", "back": "O(n log n) in all cases, space O(n); stable, divide-and-conquer, ideal for linked lists / external sort." },
+    { "id": "fc-059", "topic": "cs-core", "front": "Heap Sort complexity", "back": "O(n log n) time, O(1) space; in-place, unstable; uses a binary heap." },
+    { "id": "fc-060", "topic": "cs-core", "front": "Which sorts bypass the O(n log n) comparison lower bound?", "back": "Counting, Radix and Bucket sort — non-comparison sorts, O(n + k)." },
+    { "id": "fc-061", "topic": "cs-core", "front": "Binary search complexity and requirement", "back": "O(log n); requires a sorted / monotonic search space." },
+    { "id": "fc-062", "topic": "cs-core", "front": "BFS vs DFS", "back": "BFS uses a Queue (shortest path in unweighted graphs); DFS uses a Stack/recursion (cycle detection, topological sort). Both are O(V+E) with an adjacency list." },
+    { "id": "fc-063", "topic": "cs-core", "front": "Dijkstra vs Bellman-Ford vs Floyd-Warshall", "back": "Dijkstra: non-negative weighted shortest path. Bellman-Ford: handles negative edges, detects negative cycles. Floyd-Warshall: all-pairs shortest path O(V^3)." },
+    { "id": "fc-064", "topic": "cs-core", "front": "Inorder traversal of a BST produces?", "back": "Elements in sorted ascending order." },
+    { "id": "fc-065", "topic": "cs-core", "front": "CPU scheduling: TAT and WT formulas", "back": "Turnaround Time (TAT) = Completion Time - Arrival Time; Waiting Time (WT) = TAT - Burst Time." },
+    { "id": "fc-066", "topic": "cs-core", "front": "Which scheduling minimizes average waiting time?", "back": "SJF (Shortest Job First) — optimal, but can cause starvation. Round Robin uses a time quantum for fairness/response time." },
+    { "id": "fc-067", "topic": "cs-core", "front": "Four Coffman deadlock conditions (all must hold)", "back": "(1) Mutual Exclusion, (2) Hold and Wait, (3) No Preemption, (4) Circular Wait. Banker's Algorithm is used for deadlock avoidance." },
+    { "id": "fc-068", "topic": "cs-core", "front": "External fragmentation — which scheme, and the fix?", "back": "Associated with contiguous memory allocation; fixed by compaction or paging. Paging eliminates external fragmentation but has minor internal fragmentation on the last page." },
+    { "id": "fc-069", "topic": "cs-core", "front": "Thrashing", "back": "When the CPU spends more time swapping pages (page faults) than executing instructions, under memory pressure." },
+    { "id": "fc-070", "topic": "cs-core", "front": "Process vs Thread", "back": "Processes have isolated virtual address spaces (heavy context switch); threads within a process share code, heap and open files, keeping only separate stack, registers and Program Counter." },
+    { "id": "fc-071", "topic": "cs-core", "front": "OSI 7 layers (bottom to top)", "back": "Physical, Data Link, Network, Transport, Session, Presentation, Application." },
+    { "id": "fc-072", "topic": "cs-core", "front": "OSI layer of Router vs Switch", "back": "Router operates at Layer 3 (Network); Switch/Bridge at Layer 2 (Data Link)." },
+    { "id": "fc-073", "topic": "cs-core", "front": "TCP vs UDP", "back": "TCP: reliable, ordered, connection-oriented byte stream (3-way handshake SYN/SYN-ACK/ACK), flow/congestion control. UDP: connectionless datagrams, no delivery/order guarantee, low latency (DNS, DHCP, VoIP)." },
+    { "id": "fc-074", "topic": "cs-core", "front": "IPv4 usable-hosts formula", "back": "For a /n mask, host bits h = 32 - n, usable hosts = 2^h - 2 (subtract Network ID and Broadcast ID). Example: /26 -> 2^6 - 2 = 62 hosts." },
+    { "id": "fc-075", "topic": "cs-core", "front": "Usable hosts in a /27 subnet", "back": "2^(32-27) - 2 = 2^5 - 2 = 30 usable hosts." },
+    { "id": "fc-076", "topic": "cs-core", "front": "Private IPv4 ranges (RFC 1918)", "back": "10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16. IPv4 = 32-bit, IPv6 = 128-bit." },
+    { "id": "fc-077", "topic": "cs-core", "front": "ARP vs ICMP", "back": "ARP resolves an IPv4 address to a MAC (link-layer) address; ICMP supports diagnostics/control messages (ping). TTL prevents routing loops." },
+    { "id": "fc-078", "topic": "cs-core", "front": "SMTP vs POP3 vs IMAP", "back": "SMTP (25/587) sends mail; POP3 (110) downloads and typically deletes from the server; IMAP (143) syncs mail across multiple devices." },
+    { "id": "fc-079", "topic": "cs-core", "front": "IPv4 header field that stops routing loops", "back": "TTL (Time To Live) — each router decrements it by 1 and drops the packet at 0." },
+    { "id": "fc-080", "topic": "se-arch", "front": "SDLC model with explicit risk analysis every cycle", "back": "Spiral Model (Barry Boehm) — combines iterative development with systematic risk analysis in each loop." },
+    { "id": "fc-081", "topic": "se-arch", "front": "High cohesion, low coupling golden rule", "back": "Aim for high cohesion (elements inside a module belong together) and low coupling (minimal interdependence between modules)." },
+    { "id": "fc-082", "topic": "se-arch", "front": "Black-box vs White-box testing", "back": "Black-box = functional (Equivalence Partitioning, Boundary Value Analysis), ignores internal code. White-box = structural (statement/branch/path coverage)." },
+    { "id": "fc-083", "topic": "se-arch", "front": "Smoke vs Sanity vs Regression testing", "back": "Smoke = broad shallow build verification; Sanity = narrow deep check after a minor bug fix; Regression = verify old features didn't break." },
+    { "id": "fc-084", "topic": "se-arch", "front": "Adapter design pattern use", "back": "Converts the incompatible interface of a legacy (e.g. CBS XML) API into the interface expected by modern clients." },
+    { "id": "fc-085", "topic": "se-arch", "front": "Strategy vs Observer pattern", "back": "Strategy swaps interchangeable algorithms at runtime (e.g. fee-calculation strategies). Observer = one-to-many event notification (Pub/Sub, Kafka listeners)." },
+    { "id": "fc-086", "topic": "se-arch", "front": "Singleton vs Factory Method", "back": "Singleton = single shared instance across the JVM (config manager, connection pool). Factory Method = subclasses decide which concrete class to instantiate." },
+    { "id": "fc-087", "topic": "se-arch", "front": "SOLID principles", "back": "SRP (Single Responsibility), OCP (Open/Closed), LSP (Liskov Substitution), ISP (Interface Segregation), DIP (Dependency Inversion — depend on abstractions, not concretions)." },
+    { "id": "fc-088", "topic": "se-arch", "front": "ITIL: Incident vs Problem Management", "back": "Incident Management restores normal service as quickly as possible (workaround OK). Problem Management finds and eliminates the root cause (RCA); maintains the Known Error Database (KEDB)." },
+    { "id": "fc-089", "topic": "se-arch", "front": "ITIL Change types", "back": "Standard (pre-approved low-risk), Normal (requires CAB approval), Emergency (expedited ECAB for critical outages/security patches)." },
+    { "id": "fc-090", "topic": "se-arch", "front": "SLA vs OLA vs UC", "back": "SLA = agreement with external customer/business; OLA = agreement between internal IT teams; UC = Underpinning Contract with external vendors." },
+    { "id": "fc-091", "topic": "se-arch", "front": "SLI vs SLO vs SLA (SRE)", "back": "SLI = a measured service behaviour; SLO = target for an SLI; SLA = agreement with consequences. Error budget = allowable unreliability under an SLO." },
+    { "id": "fc-092", "topic": "se-arch", "front": "Four golden signals of monitoring", "back": "Latency, Traffic, Errors and Saturation." },
+    { "id": "fc-093", "topic": "emerging", "front": "IaaS vs PaaS vs SaaS", "back": "IaaS: provider manages hardware/virtualization/storage/networking (user manages OS & apps). PaaS: adds OS/runtime/middleware (user deploys code). SaaS: provider manages everything including application & data." },
+    { "id": "fc-094", "topic": "emerging", "front": "Type 1 vs Type 2 hypervisor", "back": "Type 1 (bare-metal) runs directly on hardware (VMware ESXi, KVM, Hyper-V). Type 2 (hosted) runs on top of a host OS (VirtualBox, VMware Workstation)." },
+    { "id": "fc-095", "topic": "emerging", "front": "VMs vs Containers", "back": "VMs virtualize hardware with a full guest OS (GBs, slow boot). Containers share the host OS kernel via Linux namespaces (isolation) and cgroups (resource limits) — MBs, millisecond startup." },
+    { "id": "fc-096", "topic": "emerging", "front": "Docker image vs container", "back": "Image = immutable read-only layered template built from a Dockerfile. Container = running writable instance." },
+    { "id": "fc-097", "topic": "emerging", "front": "Dockerfile: COPY vs ADD, ENTRYPOINT vs CMD", "back": "COPY copies local files; ADD also extracts tarballs/URLs. ENTRYPOINT sets a fixed executable; CMD provides overridable default arguments." },
+    { "id": "fc-098", "topic": "emerging", "front": "Kubernetes: where is cluster state stored?", "back": "etcd — the distributed, consistent key-value store holding all cluster state." },
+    { "id": "fc-099", "topic": "emerging", "front": "Smallest deployable unit in Kubernetes", "back": "Pod — one or more containers sharing an IP." },
+    { "id": "fc-100", "topic": "emerging", "front": "Kubernetes Control Plane components", "back": "kube-apiserver (REST entry point), etcd (cluster state store), kube-scheduler (assigns Pods to nodes), kube-controller-manager (maintains desired state)." },
+    { "id": "fc-101", "topic": "emerging", "front": "Kubernetes ConfigMap vs Secret", "back": "ConfigMap stores non-sensitive config; Secret stores sensitive values (base64/encrypted credentials) and needs cluster encryption/access controls." },
+    { "id": "fc-102", "topic": "emerging", "front": "Kubernetes readiness vs liveness probe", "back": "Readiness probe decides whether a pod receives traffic; liveness probe detects a stuck/unhealthy container for restart. Misconfigured liveness can cause restart loops." },
+    { "id": "fc-103", "topic": "emerging", "front": "SAST vs DAST vs SCA", "back": "SAST = static analysis of source/bytecode without running (SonarQube/Checkmarx). DAST = tests the running app externally (OWASP ZAP). SCA = scans third-party dependencies for CVEs (Snyk/Trivy)." },
+    { "id": "fc-104", "topic": "emerging", "front": "Precision formula", "back": "Precision = TP / (TP + FP) — of predicted positives, how many are truly positive." },
+    { "id": "fc-105", "topic": "emerging", "front": "Recall formula", "back": "Recall = TP / (TP + FN) — of actual positives, how many were caught (critical in fraud detection)." },
+    { "id": "fc-106", "topic": "emerging", "front": "F1-Score formula", "back": "F1 = 2 x (Precision x Recall) / (Precision + Recall) — the harmonic mean of precision and recall." },
+    { "id": "fc-107", "topic": "emerging", "front": "Overfitting vs Underfitting", "back": "Overfitting = high variance (low training error, high test error; fix with L1/L2 regularization, dropout, more data). Underfitting = high bias (high error on both)." },
+    { "id": "fc-108", "topic": "emerging", "front": "ML paradigms", "back": "Supervised (labelled data: regression & classification), Unsupervised (unlabelled: clustering K-Means, PCA), Reinforcement Learning (agent maximizes cumulative reward)." },
+    { "id": "fc-109", "topic": "emerging", "front": "LLM temperature parameter", "back": "Controls output randomness/sampling, not factuality: 0 = deterministic/factual, higher = more creative." },
+    { "id": "fc-110", "topic": "emerging", "front": "Prompting techniques", "back": "Zero-shot (no examples), Few-shot (2-5 examples in prompt), Chain-of-Thought (step-by-step reasoning)." },
+    { "id": "fc-111", "topic": "emerging", "front": "What is RAG and what does it solve?", "back": "Retrieval-Augmented Generation grounds LLM answers in external documents/vector DBs WITHOUT retraining weights, reducing hallucinations and stale knowledge." },
+    { "id": "fc-112", "topic": "emerging", "front": "RAG pipeline stages", "back": "Document ingestion -> chunking -> embedding model (dense vectors) -> vector DB (FAISS, Pinecone, pgvector) -> cosine-similarity retrieval -> augmented prompt -> grounded LLM answer." },
+    { "id": "fc-113", "topic": "emerging", "front": "RAG vs fine-tuning", "back": "RAG adds changing/private knowledge at inference time; fine-tuning changes model parameters/behaviour using training data. They solve different problems and can be combined." },
+    { "id": "fc-114", "topic": "emerging", "front": "Embeddings and cosine similarity", "back": "Embeddings are dense numeric vectors encoding semantic meaning; cosine similarity compares vector orientation for retrieval." },
+    { "id": "fc-115", "topic": "security-banking", "front": "CIA triad", "back": "Confidentiality (encryption, RBAC), Integrity (hashing SHA-256, HMAC, digital signatures), Availability (redundancy, DDoS protection, DR)." },
+    { "id": "fc-116", "topic": "security-banking", "front": "Symmetric vs Asymmetric cryptography", "back": "Symmetric (same secret key, fast, bulk data): AES, 3DES, ChaCha20. Asymmetric (public+private key pair, slower, key exchange & signatures): RSA, ECC, Diffie-Hellman." },
+    { "id": "fc-117", "topic": "security-banking", "front": "Asymmetric: confidentiality vs digital signature", "back": "Confidentiality: encrypt with receiver's public key, decrypt with receiver's private key. Digital signature: sign the hash with sender's private key, verify with sender's public key (authentication + non-repudiation)." },
+    { "id": "fc-118", "topic": "security-banking", "front": "Password storage: correct hashing approach", "back": "Use salted adaptive password hashing (Argon2/bcrypt/scrypt/PBKDF2), NOT a plain SHA hash. Hashing is one-way; encryption is reversible." },
+    { "id": "fc-119", "topic": "security-banking", "front": "X.509 and TLS 1.3", "back": "X.509 is the standard format for public-key digital certificates issued by a CA. TLS 1.3 uses asymmetric crypto for the handshake/key exchange and symmetric AES-GCM for session data." },
+    { "id": "fc-120", "topic": "security-banking", "front": "OWASP fixes: SQLi, XSS, CSRF, SSRF", "back": "SQL Injection: parameterized/prepared statements. XSS: output encoding + CSP. CSRF: anti-CSRF tokens + SameSite cookies. SSRF: allow-list egress destinations." },
+    { "id": "fc-121", "topic": "security-banking", "front": "IDS vs IPS vs WAF vs SIEM", "back": "IDS detects & alerts passively; IPS is inline and actively blocks; WAF protects L7 HTTP/API; SIEM centralizes log correlation & SOC alerting." },
+    { "id": "fc-122", "topic": "security-banking", "front": "OWASP API1 and API5", "back": "API1 Broken Object Level Authorization (BOLA): access another user's object by changing an identifier. API5 Broken Function Level Authorization (BFLA): caller invokes functions/admin endpoints outside their role." },
+    { "id": "fc-123", "topic": "security-banking", "front": "MFA factor categories", "back": "Knowledge (something you know), Possession (something you have), Inherence (something you are). Two passwords are NOT two factors." },
+    { "id": "fc-124", "topic": "security-banking", "front": "RBAC vs ABAC", "back": "RBAC assigns permissions through roles; ABAC evaluates attributes (user, resource, action, environment). Deny by default and verify authorization on every sensitive action." },
+    { "id": "fc-125", "topic": "security-banking", "front": "Zero Trust", "back": "A security model that grants no implicit trust based on network location; it continuously evaluates context." },
+    { "id": "fc-126", "topic": "security-banking", "front": "RPO vs RTO", "back": "RPO (Recovery Point Objective) = maximum acceptable DATA LOSS measured in time. RTO (Recovery Time Objective) = maximum acceptable DOWNTIME to restore service." },
+    { "id": "fc-127", "topic": "security-banking", "front": "Hot vs Warm vs Cold DR site", "back": "Hot Site: near-zero RTO, live mirrored. Warm Site: hardware ready, periodic backups. Cold Site: empty facility/power only, longest RTO." },
+    { "id": "fc-128", "topic": "security-banking", "front": "ISO 22301 vs ISO 27001 vs PCI-DSS", "back": "ISO 22301 = Business Continuity Management System (BCMS); ISO/IEC 27001 = Information Security Management System (ISMS); PCI-DSS = Payment Card Data Security." },
+    { "id": "fc-129", "topic": "security-banking", "front": "Incident response phases", "back": "Prepare, detect/analyze, contain, eradicate, recover, learn/post-incident. Preserve evidence and chain of custody." },
+    { "id": "fc-130", "topic": "banking", "front": "NEFT: operator, timing, settlement", "back": "RBI-operated; 24x7x365 (since 16 Dec 2019); Deferred Net Settlement in 48 half-hourly batches; no RBI minimum or maximum limit." },
+    { "id": "fc-131", "topic": "banking", "front": "RTGS: operator, timing, limit", "back": "RBI-operated; real-time gross settlement (no netting); 24x7x365 (since 14 Dec 2020); minimum ₹2,00,000, no upper ceiling. Settlement in RBI books is final and irrevocable." },
+    { "id": "fc-132", "topic": "banking", "front": "IMPS: operator and limit", "back": "NPCI-operated; instant, real-time, 24x7x365; up to ₹5,00,000 per transaction; uses Mobile+MMID or Account+IFSC." },
+    { "id": "fc-133", "topic": "banking", "front": "UPI: operator and limits", "back": "NPCI-operated; instant, real-time, 24x7x365; general P2P ₹1 lakh, up to ₹5 lakh for select categories (tax, capital markets, insurance); uses Virtual Payment Address (VPA)." },
+    { "id": "fc-134", "topic": "banking", "front": "AePS", "back": "Aadhaar Enabled Payment System (NPCI) — real-time financial inclusion via Aadhaar + biometric/OTP authentication at Micro-ATMs; bank-defined caps." },
+    { "id": "fc-135", "topic": "banking", "front": "RBI vs NPCI roles", "back": "RBI is India's central bank; it operates NEFT and RTGS. NPCI is the umbrella org for retail payments, operating UPI, IMPS, RuPay, NACH and AePS under RBI oversight." },
+    { "id": "fc-136", "topic": "banking", "front": "NACH", "back": "NPCI-operated National Automated Clearing House for bulk/repetitive transactions — mandates and recurring credits/debits (salaries, subsidies, EMIs)." },
+    { "id": "fc-137", "topic": "banking", "front": "IFSC vs MICR", "back": "IFSC = 11-character alphanumeric code (4 bank + 0 + 6 branch). MICR = 9-digit cheque code (3 city + 3 bank + 3 branch)." },
+    { "id": "fc-138", "topic": "banking", "front": "ISO 8583 vs ISO 20022", "back": "ISO 8583 = card/ATM switch messaging. ISO 20022 = modern XML financial messaging standard (used by RTGS/SWIFT)." },
+    { "id": "fc-139", "topic": "banking", "front": "CBS (Core Banking Solution)", "back": "Centralized multi-branch banking ledger system, e.g. Finacle, BaNCS, Flexcube." },
+    { "id": "fc-140", "topic": "banking", "front": "RBI Master Direction on IT Governance effective date", "back": "Issued 7 Nov 2023, effective 1 April 2024. Mandates a Board-level IT Strategy Committee (ITSC), enterprise architecture, capacity management, segregation of duties and periodic DR drills." },
+    { "id": "fc-141", "topic": "banking", "front": "Does a 200 OK response prove a bank transfer settled?", "back": "No. A 200 OK alone does not prove interbank settlement is final; settlement, clearing and reconciliation are separate steps." },
+    { "id": "fc-142", "topic": "english", "front": "Subject-verb agreement with 'along with / as well as / together with'", "back": "The verb follows the FIRST subject (e.g. 'The manager, along with her engineers, IS reviewing the API')." },
+    { "id": "fc-143", "topic": "english", "front": "Neither...nor / Either...or agreement", "back": "The verb agrees with the NEAREST subject." },
+    { "id": "fc-144", "topic": "english", "front": "'Comprise' usage", "back": "Comprise takes NO 'of' in active voice ('comprises twelve modules', not 'comprises of')." },
+    { "id": "fc-145", "topic": "english", "front": "'Hardly/Scarcely...' and 'No sooner...' correlatives", "back": "Hardly/Scarcely...WHEN; No sooner...THAN (not 'than' after hardly)." },
+    { "id": "fc-146", "topic": "english", "front": "Conditional Type 2 vs Type 3", "back": "Type 2 = If + past simple, would + base verb. Type 3 = If + had + V3, would have + V3." },
+    { "id": "fc-147", "topic": "english", "front": "Between vs Among", "back": "Between for two; Among for more than two." },
+    { "id": "fc-148", "topic": "backend", "front": "Relation R(A,B,C,D), candidate key (A,B), FD B -> C: highest normal form?", "back": "1NF only — B -> C is a partial dependency (C depends on part of the composite key), violating 2NF." }
+  ],
+  "cheatsheets": [
+    {
+      "id": "cs-01", "topic": "backend", "title": "HTTP Status Codes",
+      "items": [
+        "200 OK — successful request",
+        "201 Created — resource created (Location header may identify it)",
+        "202 Accepted — accepted for processing, completion not yet guaranteed",
+        "204 No Content — success with no response body",
+        "400 Bad Request — malformed request",
+        "401 Unauthorized — missing/invalid authentication",
+        "403 Forbidden — authenticated but lacks permission",
+        "404 Not Found — resource does not exist",
+        "409 Conflict — request conflicts with current state",
+        "412 Precondition Failed",
+        "429 Too Many Requests — rate limit exceeded",
+        "500 Internal Server Error",
+        "502 Bad Gateway — invalid response from upstream server",
+        "503 Service Unavailable",
+        "504 Gateway Timeout"
+      ]
+    },
+    {
+      "id": "cs-02", "topic": "backend", "title": "HTTP Methods: Safe & Idempotent",
+      "items": [
+        "GET — safe, idempotent; read resource, cacheable; returns 200 or 404",
+        "HEAD — safe, idempotent; like GET but no response body (metadata checks)",
+        "POST — not safe, not idempotent; create/trigger action; returns 201 (use Idempotency-Key in payments)",
+        "PUT — not safe, idempotent; full replacement; returns 200 or 204",
+        "PATCH — not safe, not guaranteed idempotent; partial update",
+        "DELETE — not safe, idempotent; repeated calls leave the same server state"
+      ]
+    },
+    {
+      "id": "cs-03", "topic": "cs-core", "title": "Common Port Numbers",
+      "items": [
+        "FTP — 20/21",
+        "SSH — 22",
+        "Telnet — 23",
+        "SMTP — 25 (submission 587)",
+        "DNS — 53",
+        "HTTP — 80",
+        "POP3 — 110",
+        "NTP — 123",
+        "IMAP — 143",
+        "HTTPS — 443",
+        "MQTT — 1883",
+        "MySQL — 3306",
+        "RDP — 3389",
+        "PostgreSQL — 5432",
+        "Redis — 6379",
+        "HTTP alternate/application — 8080 (not a universal standard)"
+      ]
+    },
+    {
+      "id": "cs-04", "topic": "cs-core", "title": "OSI Layers & Protocols",
+      "items": [
+        "Layer 1 Physical — Bits; Hub, Repeater; cables, fiber, Wi-Fi signals",
+        "Layer 2 Data Link — Frame; Switch, Bridge; Ethernet (48-bit MAC), VLAN 802.1Q, PPP, CSMA/CD",
+        "Layer 3 Network — Packet; Router; IPv4 (32-bit), IPv6 (128-bit), ICMP, ARP, OSPF, BGP; TTL prevents loops",
+        "Layer 4 Transport — Segment; Firewall; TCP (connection-oriented 3-way handshake) vs UDP (connectionless)",
+        "Layers 5-7 Session/Presentation/Application — Data; Gateway; HTTP, HTTPS, SSH, FTP, SMTP, DNS, POP3, IMAP",
+        "Routers operate at Layer 3; switches at Layer 2"
+      ]
+    },
+    {
+      "id": "cs-05", "topic": "cs-core", "title": "Sorting & DSA Complexities",
+      "items": [
+        "Quick Sort — avg O(n log n), worst O(n^2), space O(log n); unstable",
+        "Merge Sort — O(n log n) all cases, space O(n); stable, good for linked lists/external sort",
+        "Heap Sort — O(n log n), space O(1); in-place, unstable",
+        "Counting/Radix/Bucket — O(n + k); non-comparison, beats O(n log n) lower bound",
+        "Binary Search — O(log n); requires sorted/monotonic input",
+        "Array indexed access — O(1); middle insert/delete O(n)",
+        "Hash table lookup — average O(1), worst O(n)",
+        "Balanced BST search/insert — O(log n); inorder traversal is sorted",
+        "Heap peek — O(1); insert/remove top O(log n)",
+        "BFS/DFS — O(V+E); BFS finds shortest path in unweighted graphs",
+        "Floyd-Warshall all-pairs shortest path — O(V^3)"
+      ]
+    },
+    {
+      "id": "cs-06", "topic": "dbms", "title": "SQL Command Classification (DDL/DML/DCL/TCL)",
+      "items": [
+        "DDL (schema, auto-committed) — CREATE, ALTER, DROP, TRUNCATE, RENAME",
+        "DML (data rows, rollback-able) — SELECT, INSERT, UPDATE, DELETE, MERGE",
+        "DCL (permissions) — GRANT, REVOKE",
+        "TCL (transactions) — COMMIT, ROLLBACK, SAVEPOINT",
+        "DELETE — DML, supports WHERE, logs each row, fires triggers, rollback-able",
+        "TRUNCATE — DDL, removes all rows fast, resets auto-increment, no WHERE",
+        "DROP — removes both data and table structure"
+      ]
+    },
+    {
+      "id": "cs-07", "topic": "dbms", "title": "SQL Isolation Levels & Anomalies",
+      "items": [
+        "READ UNCOMMITTED — allows Dirty, Non-Repeatable and Phantom Reads",
+        "READ COMMITTED — prevents Dirty Reads; allows Non-Repeatable & Phantom (PostgreSQL/Oracle default)",
+        "REPEATABLE READ — prevents Dirty & Non-Repeatable Reads (MySQL InnoDB default; gap locks also prevent phantoms)",
+        "SERIALIZABLE — prevents all three; highest isolation, lowest concurrency",
+        "Dirty Read — reading another transaction's uncommitted change",
+        "Non-Repeatable Read — same row read twice yields different committed values",
+        "Phantom Read — re-running a predicate query returns a changed set of rows"
+      ]
+    },
+    {
+      "id": "cs-08", "topic": "dbms", "title": "Normalization Forms (1NF to BCNF)",
+      "items": [
+        "1NF — atomic cells only; no multi-valued or composite attributes",
+        "2NF — 1NF + no partial dependency (non-prime attr on part of a composite key); auto-satisfied if PK is a single column",
+        "3NF — 2NF + no transitive dependency; for X -> Y, X is a superkey OR Y is a prime attribute",
+        "BCNF — for EVERY non-trivial FD X -> Y, X must be a superkey/candidate key",
+        "Denormalization — intentionally duplicates/precomputes data for read performance at the cost of write complexity"
+      ]
+    },
+    {
+      "id": "cs-09", "topic": "dbms", "title": "ACID Properties & Indexing",
+      "items": [
+        "Atomicity — all-or-nothing; debit from A must credit B, else full rollback",
+        "Consistency — preserves DB invariants/constraints",
+        "Isolation — concurrent transactions do not interfere",
+        "Durability — committed data survives crash via Write-Ahead Logging (WAL)",
+        "B+ Tree index — supports range queries (BETWEEN, <, >, ORDER BY); default in PostgreSQL/MySQL/Oracle",
+        "Hash index — exact equality (=) only, O(1)",
+        "Clustered index — at most ONE per table, sets physical row order (usually PK)",
+        "Composite index leftmost-prefix — index on (a,b,c) helps a or a,b, NOT b,c alone",
+        "Functions on indexed columns (WHERE YEAR(dt)=2026) break index usage"
+      ]
+    },
+    {
+      "id": "cs-10", "topic": "banking", "title": "Payment System Limits (UPI/NEFT/RTGS/IMPS)",
+      "items": [
+        "NEFT — RBI; 24x7x365; Deferred Net Settlement in 48 half-hourly batches; no min/max limit",
+        "RTGS — RBI; real-time gross settlement; 24x7x365; minimum ₹2,00,000, no upper ceiling; final & irrevocable",
+        "IMPS — NPCI; instant 24x7x365; up to ₹5,00,000 per transaction; Mobile+MMID or Account+IFSC",
+        "UPI — NPCI; instant 24x7x365; general P2P ₹1 lakh, up to ₹5 lakh for select categories (tax, capital markets, insurance)",
+        "AePS — NPCI; Aadhaar + biometric/OTP at Micro-ATMs; bank-defined caps",
+        "NACH — NPCI; bulk/repetitive mandates (salaries, subsidies, EMIs)",
+        "RuPay — NPCI domestic card network"
+      ]
+    },
+    {
+      "id": "cs-11", "topic": "emerging", "title": "Cloud Service Models",
+      "items": [
+        "IaaS — provider manages hardware, virtualization, servers, storage, networking; user manages OS & apps (AWS EC2, Azure VMs, GCP Compute Engine)",
+        "PaaS — IaaS + OS, runtime, middleware; user deploys code (AWS Elastic Beanstalk, Heroku, Google App Engine)",
+        "SaaS — provider manages everything including application & data (Gmail, Salesforce, Microsoft 365)",
+        "DBaaS/BaaS — managed database provisioning, patching, backups (Google Firebase, AWS RDS, MongoDB Atlas)",
+        "Type 1 hypervisor (bare-metal) — VMware ESXi, KVM, Hyper-V",
+        "Type 2 hypervisor (hosted) — VirtualBox, VMware Workstation"
+      ]
+    },
+    {
+      "id": "cs-12", "topic": "emerging", "title": "Kubernetes Objects & Architecture",
+      "items": [
+        "Pod — smallest deployable unit; 1+ containers sharing an IP",
+        "Deployment — declarative stateless replicas & rolling updates",
+        "StatefulSet — stable identity/storage ordering",
+        "DaemonSet — runs a pod on selected nodes; Job/CronJob run finite/scheduled tasks",
+        "Service — stable virtual IP (ClusterIP, NodePort, LoadBalancer)",
+        "Ingress — HTTP/HTTPS L7 routing",
+        "ConfigMap — non-sensitive config; Secret — sensitive values (base64/encrypted)",
+        "PersistentVolumeClaim — requests persistent storage",
+        "Control Plane — kube-apiserver, etcd (cluster state), kube-scheduler, kube-controller-manager",
+        "Worker Node — kubelet, kube-proxy, container runtime (containerd)"
+      ]
+    },
+    {
+      "id": "cs-13", "topic": "se-arch", "title": "GoF Design Patterns",
+      "items": [
+        "Singleton (creational) — single shared instance across JVM (config manager, connection pool)",
+        "Factory Method (creational) — subclasses decide which concrete class to instantiate",
+        "Builder (creational) — construct complex immutable objects step-by-step",
+        "Adapter (structural) — convert an incompatible legacy interface to the expected one",
+        "Decorator (structural) — add behaviour dynamically (Java I/O streams)",
+        "Proxy (structural) — control access (Spring AOP, caching)",
+        "Strategy (behavioral) — swap interchangeable algorithms at runtime",
+        "Observer (behavioral) — one-to-many event notification (Pub/Sub, Kafka)",
+        "Repository — abstracts persistence; Circuit Breaker — stops calls to a failing dependency"
+      ]
+    },
+    {
+      "id": "cs-14", "topic": "se-arch", "title": "ITIL / ITSM Concepts",
+      "items": [
+        "Incident Management — restore normal service as quickly as possible (workaround OK)",
+        "Problem Management — find & eliminate root cause (RCA); maintains Known Error Database (KEDB)",
+        "Change Enablement — Standard (pre-approved), Normal (CAB approval), Emergency (ECAB)",
+        "Service Request — predefined user request, standard fulfilment",
+        "SLA — agreement with external customer/business",
+        "OLA — agreement between internal IT teams",
+        "UC — Underpinning Contract with external vendors",
+        "CMDB — stores Configuration Items (CIs) and their dependencies",
+        "CAB — Change Advisory Board advises on change assessment/authorization",
+        "SLI measured behaviour / SLO target / SLA agreement with consequences; error budget = allowable unreliability"
+      ]
+    },
+    {
+      "id": "cs-15", "topic": "security-banking", "title": "OWASP API Security Top 10 (2023)",
+      "items": [
+        "API1 Broken Object Level Authorization (BOLA) — access another user's object by changing an identifier",
+        "API2 Broken Authentication — weak auth/session/token handling",
+        "API3 Broken Object Property Level Authorization — exposes/modifies properties beyond entitlement",
+        "API4 Unrestricted Resource Consumption — no limits on compute/storage/bandwidth",
+        "API5 Broken Function Level Authorization — invoking functions/admin endpoints outside role",
+        "API6 Unrestricted Access to Sensitive Business Flows — automated abuse of sensitive flows",
+        "API7 Server Side Request Forgery (SSRF)",
+        "API8 Security Misconfiguration — unsafe defaults, CORS, verbose errors",
+        "API9 Improper Inventory Management — shadow/old API versions",
+        "API10 Unsafe Consumption of APIs — trusting third-party responses without validation"
+      ]
+    },
+    {
+      "id": "cs-16", "topic": "security-banking", "title": "Cryptography & Security Controls",
+      "items": [
+        "CIA triad — Confidentiality, Integrity, Availability",
+        "Symmetric (same secret key, fast) — AES (128/192/256), 3DES, ChaCha20",
+        "Asymmetric (public+private pair, slower) — RSA, ECC, Diffie-Hellman",
+        "Confidentiality — encrypt with receiver's public key, decrypt with private key",
+        "Digital signature — sign hash with sender's private key, verify with public key (non-repudiation)",
+        "Hashing (SHA-256) is one-way; store passwords with salted Argon2/bcrypt/scrypt/PBKDF2",
+        "X.509 — public-key certificate format issued by a CA; revocation via CRL/OCSP",
+        "TLS 1.3 — asymmetric handshake + symmetric AES-GCM for session data",
+        "IDS detects/alerts; IPS inline blocks; WAF L7 protection; SIEM log correlation",
+        "OWASP fixes — SQLi: prepared statements; XSS: output encoding + CSP; CSRF: tokens + SameSite; SSRF: egress allow-list"
+      ]
+    },
+    {
+      "id": "cs-17", "topic": "security-banking", "title": "BCP/DR Metrics & Standards",
+      "items": [
+        "RPO (Recovery Point Objective) — maximum acceptable data loss measured in time",
+        "RTO (Recovery Time Objective) — maximum acceptable downtime to restore service",
+        "BIA (Business Impact Analysis) — identifies critical activities, dependencies and impact over time",
+        "Hot Site — near-zero RTO, live mirrored",
+        "Warm Site — hardware ready, periodic backups",
+        "Cold Site — empty facility/power only, longest RTO",
+        "ISO 22301 — Business Continuity Management System (BCMS)",
+        "ISO/IEC 27001 — Information Security Management System (ISMS)",
+        "PCI-DSS — Payment Card Data Security",
+        "Replication reduces RPO but cannot replace tested backups"
+      ]
+    },
+    {
+      "id": "cs-18", "topic": "emerging", "title": "ML Metrics & Formula Bank",
+      "items": [
+        "Precision = TP / (TP + FP)",
+        "Recall = TP / (TP + FN)",
+        "F1 = 2 x Precision x Recall / (Precision + Recall)",
+        "Availability = Uptime / (Uptime + Downtime) x 100%",
+        "99.9% availability ~ 43.2 minutes downtime in a 30-day month (approximation)",
+        "Subnet usable hosts = 2^(32-n) - 2",
+        "TAT = Completion Time - Arrival Time; WT = TAT - Burst Time",
+        "Overfitting = high variance (fix: regularization, dropout, more data); Underfitting = high bias",
+        "Supervised (labelled), Unsupervised (clustering/PCA), Reinforcement (reward maximization)"
+      ]
+    },
+    {
+      "id": "cs-19", "topic": "banking", "title": "Banking & IT Glossary Essentials",
+      "items": [
+        "ACID — Atomicity, Consistency, Isolation, Durability",
+        "Idempotency — multiple identical requests produce the same state as one",
+        "CBS — Core Banking Solution (centralized bank ledger)",
+        "IFSC — 11-char Indian Financial System Code (4 bank + 0 + 6 branch)",
+        "MICR — 9-digit Magnetic Ink Character Recognition cheque code",
+        "ISO 8583 — card/ATM switch messaging; ISO 20022 — modern XML financial messaging",
+        "JWT — JSON Web Token (Header.Payload.Signature), signed not encrypted",
+        "WAL — Write-Ahead Log for database recovery",
+        "VPA — Virtual Payment Address (UPI); TPAP — Third-Party Application Provider",
+        "Zero Trust — no implicit trust based on network location"
+      ]
+    },
+    {
+      "id": "cs-20", "topic": "cs-core", "title": "OS & Networking Must-Knows",
+      "items": [
+        "Deadlock (Coffman, all 4) — mutual exclusion, hold-and-wait, no preemption, circular wait",
+        "Banker's Algorithm — deadlock avoidance via safe-state checks",
+        "SJF minimizes average waiting time (can starve); Round Robin uses a time quantum",
+        "External fragmentation — contiguous allocation; fixed by compaction or paging",
+        "Thrashing — CPU spends more time swapping pages than executing",
+        "Process has isolated address space; threads share code/heap/files, separate stack & PC",
+        "TCP — reliable ordered connection-oriented; UDP — connectionless, low latency",
+        "DNS resolves names; DHCP leases IP config; ARP resolves IPv4 to MAC; ICMP diagnostics",
+        "Private IPv4 — 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16; IPv4 32-bit, IPv6 128-bit"
+      ]
+    }
+  ]
+}

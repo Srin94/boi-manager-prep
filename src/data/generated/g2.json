@@ -1,0 +1,3202 @@
+[
+  {
+    "id": "g2-topic-q1",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "Java/OOP",
+    "difficulty": "medium",
+    "question": "In Java, when equals() is overridden, which contract must also be respected?",
+    "options": [
+      "Equal objects must have equal hash codes",
+      "Unequal objects must always have different hash codes",
+      "hashCode must return a unique value",
+      "equals must be symmetric only"
+    ],
+    "answerIndex": 0,
+    "explanation": "The equals/hashCode contract requires equal objects to have equal hash codes; collisions among unequal objects are permitted."
+  },
+  {
+    "id": "g2-topic-q2",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "Java collections",
+    "difficulty": "easy",
+    "question": "Which Java collection is designed for concurrent access and disallows null keys and values?",
+    "options": [
+      "HashMap",
+      "ConcurrentHashMap",
+      "TreeMap",
+      "ArrayList"
+    ],
+    "answerIndex": 1,
+    "explanation": "ConcurrentHashMap supports concurrent access and rejects null keys and values."
+  },
+  {
+    "id": "g2-topic-q3",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "Java concurrency",
+    "difficulty": "medium",
+    "question": "What does volatile guarantee in Java?",
+    "options": [
+      "Atomicity of every compound operation",
+      "Visibility and ordering guarantees for a variable",
+      "Mutual exclusion",
+      "Deadlock prevention"
+    ],
+    "answerIndex": 1,
+    "explanation": "volatile provides visibility/ordering but does not make increment or other compound actions atomic."
+  },
+  {
+    "id": "g2-topic-q4",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "Spring DI",
+    "difficulty": "medium",
+    "question": "In Spring, constructor injection is generally preferred because it:",
+    "options": [
+      "Hides dependencies",
+      "Makes required dependencies explicit and supports immutability/testing",
+      "Creates a new bean on every call",
+      "Disables circular dependencies automatically"
+    ],
+    "answerIndex": 1,
+    "explanation": "Constructor injection exposes required collaborators and improves testability; it does not automatically eliminate all cycles."
+  },
+  {
+    "id": "g2-topic-q5",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "Spring transactions",
+    "difficulty": "hard",
+    "question": "A call to a @Transactional method from another method on the same Spring bean may fail to trigger transaction advice because:",
+    "options": [
+      "The DB rejects nested calls",
+      "Self-invocation may bypass the AOP proxy",
+      "Transactions only work for controllers",
+      "It requires static methods"
+    ],
+    "answerIndex": 1,
+    "explanation": "In proxy-based transaction management, an internal call does not pass through the proxy."
+  },
+  {
+    "id": "g2-topic-q6",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "HTTP methods",
+    "difficulty": "easy",
+    "question": "Which HTTP method is defined as safe and idempotent?",
+    "options": [
+      "POST",
+      "PATCH",
+      "GET",
+      "CONNECT"
+    ],
+    "answerIndex": 2,
+    "explanation": "GET is safe and idempotent by HTTP semantics."
+  },
+  {
+    "id": "g2-topic-q7",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "HTTP status codes",
+    "difficulty": "medium",
+    "question": "Which response code best indicates that a request was accepted for asynchronous processing, but is not complete?",
+    "options": [
+      "201",
+      "202",
+      "204",
+      "409"
+    ],
+    "answerIndex": 1,
+    "explanation": "202 Accepted indicates accepted for processing; it does not guarantee completion."
+  },
+  {
+    "id": "g2-topic-q8",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "OWASP API",
+    "difficulty": "medium",
+    "question": "A customer changes /accounts/1001 to /accounts/1002 and sees another customer's balance. This is primarily:",
+    "options": [
+      "SSRF",
+      "BOLA",
+      "CORS failure",
+      "SQL deadlock"
+    ],
+    "answerIndex": 1,
+    "explanation": "Broken Object Level Authorization occurs when access to a referenced object is not checked against the caller."
+  },
+  {
+    "id": "g2-topic-q9",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "JWT/auth",
+    "difficulty": "medium",
+    "question": "Which statement about JWT is correct?",
+    "options": [
+      "JWT is an authorization protocol",
+      "JWT is a token format that can carry claims",
+      "JWT payload is always encrypted",
+      "JWT replaces TLS"
+    ],
+    "answerIndex": 1,
+    "explanation": "JWT is a compact token format; signed JWT payloads are often readable unless encrypted separately."
+  },
+  {
+    "id": "g2-topic-q10",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "API idempotency",
+    "difficulty": "hard",
+    "question": "Which approach best prevents duplicate money transfers after a client timeout and retry?",
+    "options": [
+      "Disable all retries",
+      "Use durable idempotency keys and transaction state",
+      "Return HTTP 200 for every request",
+      "Increase connection timeout only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Idempotency keys bind retries to a previously recorded operation/result, avoiding duplicate side effects."
+  },
+  {
+    "id": "g2-topic-q11",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "TypeScript",
+    "difficulty": "easy",
+    "question": "What is a key difference between TypeScript and JavaScript?",
+    "options": [
+      "TypeScript runs only in browsers",
+      "TypeScript adds a static type system and is compiled/transpiled to JavaScript",
+      "JavaScript cannot use promises",
+      "TypeScript types validate JSON at runtime automatically"
+    ],
+    "answerIndex": 1,
+    "explanation": "Types are generally erased at runtime; validate untrusted external data at runtime."
+  },
+  {
+    "id": "g2-topic-q12",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "React hooks",
+    "difficulty": "medium",
+    "question": "In React, which hook is used to synchronize a component with an external system?",
+    "options": [
+      "useState",
+      "useEffect",
+      "useMemo",
+      "useId"
+    ],
+    "answerIndex": 1,
+    "explanation": "useEffect is intended for synchronization with external systems; avoid using it for values derivable during render."
+  },
+  {
+    "id": "g2-topic-q13",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "JavaScript",
+    "difficulty": "medium",
+    "question": "Which statement about const in JavaScript is accurate?",
+    "options": [
+      "Objects declared const cannot be mutated",
+      "const prevents rebinding the variable, not mutation of the referenced object",
+      "const is function scoped",
+      "const is hoisted like var without temporal dead zone"
+    ],
+    "answerIndex": 1,
+    "explanation": "The binding is immutable; object properties may still change."
+  },
+  {
+    "id": "g2-topic-q14",
+    "source": "guide2-topic",
+    "topic": "backend",
+    "subtopic": "Python",
+    "difficulty": "medium",
+    "question": "A Python function has def f(items=[]). Why can this be surprising?",
+    "options": [
+      "Default list is recreated on each call",
+      "The same mutable default object is reused across calls",
+      "Lists are immutable",
+      "Python forbids default values"
+    ],
+    "answerIndex": 1,
+    "explanation": "Mutable default arguments are evaluated once at function definition; use None then initialize."
+  },
+  {
+    "id": "g2-topic-q15",
+    "source": "guide2-topic",
+    "topic": "dbms",
+    "subtopic": "SQL",
+    "difficulty": "easy",
+    "question": "In SQL, which clause filters groups after aggregation?",
+    "options": [
+      "WHERE",
+      "ORDER BY",
+      "HAVING",
+      "FROM"
+    ],
+    "answerIndex": 2,
+    "explanation": "HAVING filters grouped/aggregated results; WHERE filters rows before grouping."
+  },
+  {
+    "id": "g2-topic-q16",
+    "source": "guide2-topic",
+    "topic": "dbms",
+    "subtopic": "SQL",
+    "difficulty": "easy",
+    "question": "What does COUNT(column_name) do with NULL values?",
+    "options": [
+      "Counts them",
+      "Ignores them",
+      "Raises an error",
+      "Converts them to zero then counts"
+    ],
+    "answerIndex": 1,
+    "explanation": "COUNT(expression) counts non-NULL values; COUNT(*) counts rows."
+  },
+  {
+    "id": "g2-topic-q17",
+    "source": "guide2-topic",
+    "topic": "dbms",
+    "subtopic": "ACID",
+    "difficulty": "easy",
+    "question": "Which ACID property describes all-or-nothing transaction execution?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "answerIndex": 0,
+    "explanation": "Atomicity ensures a transaction commits as a whole or is rolled back."
+  },
+  {
+    "id": "g2-topic-q18",
+    "source": "guide2-topic",
+    "topic": "dbms",
+    "subtopic": "Isolation levels",
+    "difficulty": "medium",
+    "question": "Which isolation level aims to make concurrent execution equivalent to some serial order?",
+    "options": [
+      "Read Uncommitted",
+      "Read Committed",
+      "Repeatable Read",
+      "Serializable"
+    ],
+    "answerIndex": 3,
+    "explanation": "Serializable is the strongest standard SQL isolation level in intent; implementation details vary."
+  },
+  {
+    "id": "g2-topic-q19",
+    "source": "guide2-topic",
+    "topic": "dbms",
+    "subtopic": "Indexing",
+    "difficulty": "medium",
+    "question": "Which is true about a database index?",
+    "options": [
+      "It always speeds up reads and writes",
+      "It can speed up reads but adds storage and write-maintenance cost",
+      "It is a substitute for a backup",
+      "It guarantees unique values in every case"
+    ],
+    "answerIndex": 1,
+    "explanation": "Indexes improve selected access paths but require storage and update work; uniqueness depends on index/constraint type."
+  },
+  {
+    "id": "g2-topic-q20",
+    "source": "guide2-topic",
+    "topic": "dbms",
+    "subtopic": "Replication/backup",
+    "difficulty": "medium",
+    "question": "A DB replica is not a backup because:",
+    "options": [
+      "Replicas never contain current data",
+      "Logical errors or deletes can replicate to the replica",
+      "Replicas cannot be read",
+      "Backups are always slower"
+    ],
+    "answerIndex": 1,
+    "explanation": "Replication supports availability/read scaling, but corruptions/deletes can propagate. Independent recoverable backups are required."
+  },
+  {
+    "id": "g2-topic-q21",
+    "source": "guide2-topic",
+    "topic": "dbms",
+    "subtopic": "Indexing",
+    "difficulty": "medium",
+    "question": "Which index is generally suitable for range predicates and ordering in many relational systems?",
+    "options": [
+      "B-tree",
+      "Bloom filter only",
+      "Hash index only",
+      "Full-text inverted index only"
+    ],
+    "answerIndex": 0,
+    "explanation": "B-tree indexes are widely used for equality, range and ordering; engine-specific choices still matter."
+  },
+  {
+    "id": "g2-topic-q22",
+    "source": "guide2-topic",
+    "topic": "dbms",
+    "subtopic": "Query optimization",
+    "difficulty": "medium",
+    "question": "What is the primary purpose of an execution plan?",
+    "options": [
+      "Show application UI flow",
+      "Explain how the database intends to execute a query",
+      "Encrypt database pages",
+      "Define transaction isolation"
+    ],
+    "answerIndex": 1,
+    "explanation": "The plan shows scans, joins, estimates and operation choices; compare estimated vs actual behavior where possible."
+  },
+  {
+    "id": "g2-topic-q23",
+    "source": "guide2-topic",
+    "topic": "se-arch",
+    "subtopic": "Testing",
+    "difficulty": "easy",
+    "question": "Which test verifies interaction between a service and its dependent database or broker?",
+    "options": [
+      "Unit test only",
+      "Integration test",
+      "Static analysis only",
+      "Mutation test only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Integration tests exercise components working together across a boundary."
+  },
+  {
+    "id": "g2-topic-q24",
+    "source": "guide2-topic",
+    "topic": "emerging",
+    "subtopic": "Deployment",
+    "difficulty": "medium",
+    "question": "Which deployment strategy routes a small portion of production traffic to a new version before wider rollout?",
+    "options": [
+      "Big bang",
+      "Canary",
+      "Waterfall",
+      "Blue screen"
+    ],
+    "answerIndex": 1,
+    "explanation": "Canary deployment exposes a small cohort/traffic share, monitors results and then expands."
+  },
+  {
+    "id": "g2-topic-q25",
+    "source": "guide2-topic",
+    "topic": "se-arch",
+    "subtopic": "Resilience patterns",
+    "difficulty": "medium",
+    "question": "What does a circuit breaker do in a distributed system?",
+    "options": [
+      "Encrypts all requests",
+      "Stops calls to a failing dependency temporarily",
+      "Guarantees exactly-once delivery",
+      "Replaces database transactions"
+    ],
+    "answerIndex": 1,
+    "explanation": "Circuit breakers prevent repeated calls to unhealthy dependencies and allow recovery probes."
+  },
+  {
+    "id": "g2-topic-q26",
+    "source": "guide2-topic",
+    "topic": "se-arch",
+    "subtopic": "Messaging",
+    "difficulty": "medium",
+    "question": "At-least-once message delivery requires consumers to be designed to:",
+    "options": [
+      "Assume no duplicates",
+      "Be idempotent or deduplicate messages",
+      "Disable acknowledgements",
+      "Use only UDP"
+    ],
+    "answerIndex": 1,
+    "explanation": "Duplicates are possible; consumers should detect duplicate event IDs or make effects idempotent."
+  },
+  {
+    "id": "g2-topic-q27",
+    "source": "guide2-topic",
+    "topic": "cs-core",
+    "subtopic": "Graphs",
+    "difficulty": "easy",
+    "question": "Which algorithm finds a shortest path in an unweighted graph?",
+    "options": [
+      "Depth-first search",
+      "Breadth-first search",
+      "Quick sort",
+      "Prim only"
+    ],
+    "answerIndex": 1,
+    "explanation": "BFS explores level by level and finds minimum-edge paths in unweighted graphs."
+  },
+  {
+    "id": "g2-topic-q28",
+    "source": "guide2-topic",
+    "topic": "cs-core",
+    "subtopic": "Algorithms",
+    "difficulty": "easy",
+    "question": "Binary search requires which condition?",
+    "options": [
+      "Input is sorted or a monotone predicate exists",
+      "All values are unique",
+      "Array length is a power of two",
+      "Only integer input"
+    ],
+    "answerIndex": 0,
+    "explanation": "Binary search depends on an ordered search space or monotonic feasibility condition."
+  },
+  {
+    "id": "g2-topic-q29",
+    "source": "guide2-topic",
+    "topic": "cs-core",
+    "subtopic": "Complexity",
+    "difficulty": "easy",
+    "question": "Average-case lookup in a well-distributed hash table is typically:",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n log n)",
+      "O(n^2)"
+    ],
+    "answerIndex": 0,
+    "explanation": "Average constant time under suitable hashing/load assumptions; worst case can degrade."
+  },
+  {
+    "id": "g2-topic-q30",
+    "source": "guide2-topic",
+    "topic": "cs-core",
+    "subtopic": "Operating systems",
+    "difficulty": "easy",
+    "question": "Which statement about process and thread is correct?",
+    "options": [
+      "Threads always have separate address spaces",
+      "Threads in one process share the process address space",
+      "Processes cannot contain multiple threads",
+      "A thread is a network packet"
+    ],
+    "answerIndex": 1,
+    "explanation": "Threads share process memory/resources, while each process has its own address space."
+  },
+  {
+    "id": "g2-topic-q31",
+    "source": "guide2-topic",
+    "topic": "cs-core",
+    "subtopic": "Operating systems",
+    "difficulty": "medium",
+    "question": "Which set contains all four Coffman deadlock conditions?",
+    "options": [
+      "Mutual exclusion, hold-and-wait, no preemption, circular wait",
+      "Starvation, paging, fragmentation, caching",
+      "Race, lock-free, atomicity, visibility",
+      "Read, write, commit, rollback"
+    ],
+    "answerIndex": 0,
+    "explanation": "All four conditions together are necessary for classical resource deadlock."
+  },
+  {
+    "id": "g2-topic-q32",
+    "source": "guide2-topic",
+    "topic": "cs-core",
+    "subtopic": "Networking",
+    "difficulty": "easy",
+    "question": "Which transport protocol provides reliable ordered byte-stream delivery?",
+    "options": [
+      "UDP",
+      "TCP",
+      "ICMP",
+      "ARP"
+    ],
+    "answerIndex": 1,
+    "explanation": "TCP provides connection-oriented reliable ordered delivery with flow and congestion control."
+  },
+  {
+    "id": "g2-topic-q33",
+    "source": "guide2-topic",
+    "topic": "cs-core",
+    "subtopic": "Networking",
+    "difficulty": "easy",
+    "question": "DNS primarily performs which function?",
+    "options": [
+      "Assigns dynamic IP configuration",
+      "Resolves domain names to records",
+      "Encrypts HTTP traffic",
+      "Routes packets between autonomous systems"
+    ],
+    "answerIndex": 1,
+    "explanation": "DNS is the distributed naming system; DHCP assigns configuration, while routers forward packets."
+  },
+  {
+    "id": "g2-topic-q34",
+    "source": "guide2-topic",
+    "topic": "cs-core",
+    "subtopic": "OSI model",
+    "difficulty": "easy",
+    "question": "Which layer is primarily responsible for routing between IP networks?",
+    "options": [
+      "Physical",
+      "Data Link",
+      "Network",
+      "Application"
+    ],
+    "answerIndex": 2,
+    "explanation": "OSI Layer 3 is the network layer; routers make forwarding decisions at this layer."
+  },
+  {
+    "id": "g2-topic-q35",
+    "source": "guide2-topic",
+    "topic": "emerging",
+    "subtopic": "Cloud models",
+    "difficulty": "easy",
+    "question": "Which cloud service model gives the customer the most control over the guest OS?",
+    "options": [
+      "SaaS",
+      "PaaS",
+      "IaaS",
+      "Managed application only"
+    ],
+    "answerIndex": 2,
+    "explanation": "IaaS provides virtualized infrastructure; the customer normally manages OS and above."
+  },
+  {
+    "id": "g2-topic-q36",
+    "source": "guide2-topic",
+    "topic": "emerging",
+    "subtopic": "Containers",
+    "difficulty": "easy",
+    "question": "A container differs from a typical virtual machine because it:",
+    "options": [
+      "Always runs a separate guest kernel",
+      "Shares the host kernel while isolating processes",
+      "Cannot include application dependencies",
+      "Requires a hypervisor per container"
+    ],
+    "answerIndex": 1,
+    "explanation": "Containers share the host kernel; VMs virtualize hardware and run guest operating systems."
+  },
+  {
+    "id": "g2-topic-q37",
+    "source": "guide2-topic",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "In Kubernetes, which probe controls whether a pod should receive service traffic?",
+    "options": [
+      "Liveness",
+      "Readiness",
+      "Startup only",
+      "Node pressure"
+    ],
+    "answerIndex": 1,
+    "explanation": "Readiness indicates whether the container/pod is ready to serve traffic."
+  },
+  {
+    "id": "g2-topic-q38",
+    "source": "guide2-topic",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "Which Kubernetes controller is commonly used for stateless replicated applications?",
+    "options": [
+      "Deployment",
+      "PersistentVolume",
+      "Secret",
+      "IngressClass"
+    ],
+    "answerIndex": 0,
+    "explanation": "Deployment manages desired state and rolling updates for ReplicaSets/pods."
+  },
+  {
+    "id": "g2-topic-q39",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "easy",
+    "question": "Which cryptographic primitive is designed to be one-way and produce a fixed-length digest?",
+    "options": [
+      "Symmetric encryption",
+      "Hash function",
+      "Digital certificate",
+      "Key exchange only"
+    ],
+    "answerIndex": 1,
+    "explanation": "A cryptographic hash maps input to a fixed-length digest; it is not encryption."
+  },
+  {
+    "id": "g2-topic-q40",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "Password storage",
+    "difficulty": "medium",
+    "question": "Which option is suitable for secure password storage?",
+    "options": [
+      "Plaintext",
+      "Base64",
+      "Salted adaptive password hash such as Argon2/bcrypt",
+      "Fast unsalted SHA-256 only"
+    ],
+    "answerIndex": 2,
+    "explanation": "Password hashing should be salted and deliberately expensive; generic fast hashes are unsuitable alone."
+  },
+  {
+    "id": "g2-topic-q41",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "medium",
+    "question": "A digital signature is commonly created by:",
+    "options": [
+      "Encrypting the entire file with recipient public key",
+      "Signing a message digest with signer private key",
+      "Hashing with no key and calling it a signature",
+      "Sending the private key to the verifier"
+    ],
+    "answerIndex": 1,
+    "explanation": "The private key signs the digest; verifier checks with the corresponding public key."
+  },
+  {
+    "id": "g2-topic-q42",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "AuthN/AuthZ",
+    "difficulty": "easy",
+    "question": "What is the difference between authentication and authorization?",
+    "options": [
+      "They are synonyms",
+      "Authentication verifies identity; authorization determines permitted actions",
+      "Authorization proves certificate trust only",
+      "Authentication assigns database indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "First establish who the caller is; then check what that identity may do."
+  },
+  {
+    "id": "g2-topic-q43",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "OWASP API",
+    "difficulty": "easy",
+    "question": "Which OWASP API risk concerns users changing an object identifier to access another user's resource?",
+    "options": [
+      "BOLA",
+      "SSRF",
+      "Improper inventory management",
+      "Security misconfiguration"
+    ],
+    "answerIndex": 0,
+    "explanation": "BOLA is object-level access-control failure."
+  },
+  {
+    "id": "g2-topic-q44",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "AppSec testing",
+    "difficulty": "easy",
+    "question": "Which security test analyzes source code without executing the application?",
+    "options": [
+      "DAST",
+      "SAST",
+      "Penetration test",
+      "Load test"
+    ],
+    "answerIndex": 1,
+    "explanation": "SAST is static analysis; DAST tests a running system."
+  },
+  {
+    "id": "g2-topic-q45",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "Security principles",
+    "difficulty": "easy",
+    "question": "What is the main goal of least privilege?",
+    "options": [
+      "Give all developers admin access",
+      "Grant only permissions needed for assigned tasks",
+      "Remove audit logs",
+      "Share service accounts"
+    ],
+    "answerIndex": 1,
+    "explanation": "Least privilege limits blast radius and unauthorized access."
+  },
+  {
+    "id": "g2-topic-q46",
+    "source": "guide2-topic",
+    "topic": "se-arch",
+    "subtopic": "ITSM",
+    "difficulty": "easy",
+    "question": "Which ITSM practice primarily restores normal service after an unplanned interruption?",
+    "options": [
+      "Problem management",
+      "Incident management",
+      "Capacity management",
+      "Release management"
+    ],
+    "answerIndex": 1,
+    "explanation": "Incident management focuses on restoring service quickly; problem management investigates causes."
+  },
+  {
+    "id": "g2-topic-q47",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "BCP/DR",
+    "difficulty": "medium",
+    "question": "What does RPO measure?",
+    "options": [
+      "Time to restore service",
+      "Maximum tolerable data loss measured in time",
+      "Maximum number of incidents",
+      "Network round-trip latency only"
+    ],
+    "answerIndex": 1,
+    "explanation": "RPO sets the recovery point/data-loss window; RTO is restoration-time objective."
+  },
+  {
+    "id": "g2-topic-q48",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "Payment systems",
+    "difficulty": "medium",
+    "question": "Which payment rail is RBI-operated and processes transactions in half-hourly batches?",
+    "options": [
+      "UPI",
+      "IMPS",
+      "NEFT",
+      "RuPay"
+    ],
+    "answerIndex": 2,
+    "explanation": "NEFT is RBI-operated and settles in batches at half-hourly intervals, 24x7x365."
+  },
+  {
+    "id": "g2-topic-q49",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "Payment systems",
+    "difficulty": "medium",
+    "question": "Which statement about RTGS is correct?",
+    "options": [
+      "It is batch net settlement with no minimum",
+      "It is real-time gross settlement; minimum remittance is INR 2 lakh",
+      "It is operated by NPCI",
+      "It is only available on weekdays"
+    ],
+    "answerIndex": 1,
+    "explanation": "RBI RTGS is 24x7x365; transaction-by-transaction settlement, minimum INR 2 lakh, no RBI-set upper ceiling."
+  },
+  {
+    "id": "g2-topic-q50",
+    "source": "guide2-topic",
+    "topic": "security-banking",
+    "subtopic": "Payment systems",
+    "difficulty": "easy",
+    "question": "Which entity operates UPI?",
+    "options": [
+      "RBI as central bank operator",
+      "NPCI",
+      "SEBI",
+      "UIDAI"
+    ],
+    "answerIndex": 1,
+    "explanation": "UPI is operated by NPCI under RBI regulation/oversight."
+  },
+  {
+    "id": "g2-m1-e1",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the word closest in meaning to \"mitigate\".",
+    "options": [
+      "Worsen",
+      "Reduce",
+      "Ignore",
+      "Postpone"
+    ],
+    "answerIndex": 1,
+    "explanation": "Mitigate means make less severe or reduce."
+  },
+  {
+    "id": "g2-m1-e2",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Antonyms",
+    "difficulty": "easy",
+    "question": "Choose the antonym of \"robust\".",
+    "options": [
+      "Resilient",
+      "Strong",
+      "Fragile",
+      "Reliable"
+    ],
+    "answerIndex": 2,
+    "explanation": "Fragile is the opposite of robust."
+  },
+  {
+    "id": "g2-m1-e3",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Subject-verb agreement",
+    "difficulty": "easy",
+    "question": "Select the grammatically correct sentence.",
+    "options": [
+      "Each of the services have an owner.",
+      "Each of the services has an owner.",
+      "Each services has an owner.",
+      "Each service have an owner."
+    ],
+    "answerIndex": 1,
+    "explanation": "Each is singular and takes has."
+  },
+  {
+    "id": "g2-m1-e4",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Prepositions",
+    "difficulty": "easy",
+    "question": "Choose the correct preposition: The release is dependent ___ approval.",
+    "options": [
+      "at",
+      "on",
+      "for",
+      "with"
+    ],
+    "answerIndex": 1,
+    "explanation": "The standard collocation is dependent on."
+  },
+  {
+    "id": "g2-m1-e5",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Verb forms",
+    "difficulty": "easy",
+    "question": "Choose the correct form: The team has ___ the migration plan.",
+    "options": [
+      "revise",
+      "revising",
+      "revised",
+      "revision"
+    ],
+    "answerIndex": 2,
+    "explanation": "Present perfect takes has + past participle."
+  },
+  {
+    "id": "g2-m1-e6",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Error spotting",
+    "difficulty": "medium",
+    "question": "Identify the error: \"Neither the API nor the database are responding.\"",
+    "options": [
+      "Neither",
+      "nor",
+      "are",
+      "responding"
+    ],
+    "answerIndex": 2,
+    "explanation": "With neither...nor, the verb generally agrees with the nearer subject; database is singular: is responding."
+  },
+  {
+    "id": "g2-m1-e7",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Connectors",
+    "difficulty": "medium",
+    "question": "Choose the best connector: The patch was urgent; ___, it underwent peer review.",
+    "options": [
+      "nevertheless",
+      "because",
+      "unless",
+      "therefore of"
+    ],
+    "answerIndex": 0,
+    "explanation": "Nevertheless signals contrast between urgency and review."
+  },
+  {
+    "id": "g2-m1-e8",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Punctuation",
+    "difficulty": "easy",
+    "question": "Choose the correctly punctuated sentence.",
+    "options": [
+      "After testing the team deployed the patch.",
+      "After testing, the team deployed the patch.",
+      "After, testing the team deployed the patch.",
+      "After testing the team, deployed the patch."
+    ],
+    "answerIndex": 1,
+    "explanation": "Introductory phrase is set off with a comma."
+  },
+  {
+    "id": "g2-m1-e9",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Word forms",
+    "difficulty": "easy",
+    "question": "Choose the correct word: The engineer gave a concise ___ of the outage.",
+    "options": [
+      "explain",
+      "explanation",
+      "explaining",
+      "explained"
+    ],
+    "answerIndex": 1,
+    "explanation": "Explanation is the noun required after concise."
+  },
+  {
+    "id": "g2-m1-e10",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Articles",
+    "difficulty": "easy",
+    "question": "Choose the correct article: It was ___ unusual production incident.",
+    "options": [
+      "a",
+      "an",
+      "the",
+      "no article"
+    ],
+    "answerIndex": 1,
+    "explanation": "Unusual begins with a vowel sound, so an."
+  },
+  {
+    "id": "g2-m1-e11",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Prepositions",
+    "difficulty": "easy",
+    "question": "Select the best completion: The service was unavailable ___ scheduled maintenance.",
+    "options": [
+      "due to",
+      "despite of",
+      "although",
+      "whereas"
+    ],
+    "answerIndex": 0,
+    "explanation": "Due to means because of."
+  },
+  {
+    "id": "g2-m1-e12",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Reported speech",
+    "difficulty": "medium",
+    "question": "Choose the correct reported speech: He said, \"I am reviewing the logs.\"",
+    "options": [
+      "He said he is reviewing the logs.",
+      "He said that he was reviewing the logs.",
+      "He said that I was reviewing logs.",
+      "He says he reviewed the logs."
+    ],
+    "answerIndex": 1,
+    "explanation": "Backshift from present continuous to past continuous in reported speech."
+  },
+  {
+    "id": "g2-m1-e13",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Spelling",
+    "difficulty": "easy",
+    "question": "Choose the correctly spelled word.",
+    "options": [
+      "Maintanance",
+      "Maintenence",
+      "Maintenance",
+      "Maintanence"
+    ],
+    "answerIndex": 2,
+    "explanation": "The correct spelling is maintenance."
+  },
+  {
+    "id": "g2-m1-e14",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "medium",
+    "question": "Choose the word closest in meaning to \"reconcile\" in a financial context.",
+    "options": [
+      "Compare and resolve differences",
+      "Delete records",
+      "Delay settlement",
+      "Encrypt a file"
+    ],
+    "answerIndex": 0,
+    "explanation": "Reconciliation compares records and investigates/clears discrepancies."
+  },
+  {
+    "id": "g2-m1-e15",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Subject-verb agreement",
+    "difficulty": "medium",
+    "question": "Choose the correct sentence.",
+    "options": [
+      "The data are consistent with the report.",
+      "The datas are consistent with report.",
+      "The data is consist with report.",
+      "The data were consist with report."
+    ],
+    "answerIndex": 0,
+    "explanation": "Data is traditionally plural in formal technical usage, though singular mass use exists; this sentence is grammatical."
+  },
+  {
+    "id": "g2-m1-e16",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Prepositions",
+    "difficulty": "easy",
+    "question": "Select the correct phrase: \"in accordance ___ the policy\".",
+    "options": [
+      "to",
+      "with",
+      "for",
+      "by"
+    ],
+    "answerIndex": 1,
+    "explanation": "The fixed phrase is in accordance with."
+  },
+  {
+    "id": "g2-m1-e17",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the best word: The committee will ___ the proposal before approval.",
+    "options": [
+      "assess",
+      "accessed",
+      "excess",
+      "assertion"
+    ],
+    "answerIndex": 0,
+    "explanation": "Assess means evaluate."
+  },
+  {
+    "id": "g2-m1-e18",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Conditionals",
+    "difficulty": "medium",
+    "question": "Choose the correctly formed conditional.",
+    "options": [
+      "If the alert had fired, we would have investigated.",
+      "If the alert fired, we would have investigated yesterday.",
+      "If the alert has fired, we would investigated.",
+      "If the alert would fire, we investigated."
+    ],
+    "answerIndex": 0,
+    "explanation": "Third conditional: if + past perfect, would have + past participle."
+  },
+  {
+    "id": "g2-m1-e19",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Parallelism",
+    "difficulty": "medium",
+    "question": "Select the sentence with parallel structure.",
+    "options": [
+      "The role requires designing, implementation and to maintain APIs.",
+      "The role requires designing, implementing and maintaining APIs.",
+      "The role requires to design, implementing and maintenance.",
+      "The role requires design, to implement and maintaining."
+    ],
+    "answerIndex": 1,
+    "explanation": "All three items use parallel -ing forms."
+  },
+  {
+    "id": "g2-m1-e20",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Antonyms",
+    "difficulty": "easy",
+    "question": "Choose the antonym of \"transparent\".",
+    "options": [
+      "Clear",
+      "Open",
+      "Opaque",
+      "Accountable"
+    ],
+    "answerIndex": 2,
+    "explanation": "Opaque is the opposite of transparent."
+  },
+  {
+    "id": "g2-m1-e21",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the correct word: The incident had a significant ___ on availability.",
+    "options": [
+      "affect",
+      "effect",
+      "effective",
+      "affection"
+    ],
+    "answerIndex": 1,
+    "explanation": "Effect is a noun meaning result/impact."
+  },
+  {
+    "id": "g2-m1-e22",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Subject-verb agreement",
+    "difficulty": "easy",
+    "question": "Choose the correct completion: Please ensure that each request ___ a unique identifier.",
+    "options": [
+      "have",
+      "has",
+      "having",
+      "are having"
+    ],
+    "answerIndex": 1,
+    "explanation": "Each request is singular; use has."
+  },
+  {
+    "id": "g2-m1-e23",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Countable nouns",
+    "difficulty": "easy",
+    "question": "Choose the correct sentence.",
+    "options": [
+      "Less errors were reported this week.",
+      "Fewer errors were reported this week.",
+      "Fewest error was reported this week.",
+      "Much errors were reported this week."
+    ],
+    "answerIndex": 1,
+    "explanation": "Fewer modifies countable plural nouns."
+  },
+  {
+    "id": "g2-m1-e24",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the best meaning of \"consecutive\".",
+    "options": [
+      "Occurring one after another",
+      "Occurring randomly",
+      "Opposite in direction",
+      "Unrelated"
+    ],
+    "answerIndex": 0,
+    "explanation": "Consecutive means following continuously in sequence."
+  },
+  {
+    "id": "g2-m1-e25",
+    "source": "guide2-mock1",
+    "topic": "english",
+    "subtopic": "Prepositions",
+    "difficulty": "easy",
+    "question": "Choose the correct completion: The team is responsible ___ monitoring service health.",
+    "options": [
+      "to",
+      "for",
+      "with",
+      "at"
+    ],
+    "answerIndex": 1,
+    "explanation": "Responsible for is the idiomatic collocation."
+  },
+  {
+    "id": "g2-m1-p1",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Java/String",
+    "difficulty": "easy",
+    "question": "Which Java type is immutable and commonly used to represent text?",
+    "options": [
+      "String",
+      "StringBuilder",
+      "StringBuffer",
+      "char[]"
+    ],
+    "answerIndex": 0,
+    "explanation": "String is immutable; the builder/buffer types are mutable."
+  },
+  {
+    "id": "g2-m1-p2",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Java collections",
+    "difficulty": "medium",
+    "question": "A HashMap key class overrides equals but not hashCode. What risk follows?",
+    "options": [
+      "Map becomes sorted",
+      "Equal keys may be placed/looked up inconsistently",
+      "Map becomes thread-safe",
+      "Null keys stop working"
+    ],
+    "answerIndex": 1,
+    "explanation": "Hash-based collections use both hashCode and equals; violating the contract can break expected lookup behaviour."
+  },
+  {
+    "id": "g2-m1-p3",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Java resources",
+    "difficulty": "easy",
+    "question": "Which Java construct automatically closes an AutoCloseable resource?",
+    "options": [
+      "synchronized",
+      "try-with-resources",
+      "volatile",
+      "static initializer"
+    ],
+    "answerIndex": 1,
+    "explanation": "Try-with-resources closes AutoCloseable resources even on exceptional exit."
+  },
+  {
+    "id": "g2-m1-p4",
+    "source": "guide2-mock1",
+    "topic": "se-arch",
+    "subtopic": "SOLID principles",
+    "difficulty": "medium",
+    "question": "What does the Liskov Substitution Principle require?",
+    "options": [
+      "Subtypes must be usable wherever their base type is expected without breaking correctness",
+      "All classes must be final",
+      "Every interface has one method",
+      "A class must inherit from exactly one class"
+    ],
+    "answerIndex": 0,
+    "explanation": "LSP is about behavioural substitutability."
+  },
+  {
+    "id": "g2-m1-p5",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Spring",
+    "difficulty": "easy",
+    "question": "Which Spring annotation is commonly used to mark a service-layer component?",
+    "options": [
+      "@Service",
+      "@Autowired",
+      "@Bean",
+      "@EnableWebSecurity"
+    ],
+    "answerIndex": 0,
+    "explanation": "@Service is a stereotype for service-layer components."
+  },
+  {
+    "id": "g2-m1-p6",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Spring Boot",
+    "difficulty": "medium",
+    "question": "In Spring Boot, auto-configuration is primarily based on:",
+    "options": [
+      "Random selection",
+      "Classpath, existing beans and configuration conditions",
+      "Database rows only",
+      "Operating system name only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Conditional configuration creates sensible defaults and backs off in many user-configured cases."
+  },
+  {
+    "id": "g2-m1-p7",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Spring",
+    "difficulty": "medium",
+    "question": "Which default scope does a Spring bean have?",
+    "options": [
+      "Prototype",
+      "Singleton per application context",
+      "Request",
+      "Session"
+    ],
+    "answerIndex": 1,
+    "explanation": "Singleton is the default bean scope within the IoC container."
+  },
+  {
+    "id": "g2-m1-p8",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Spring",
+    "difficulty": "medium",
+    "question": "What does @RestController effectively combine?",
+    "options": [
+      "@Service and @Repository",
+      "@Controller and @ResponseBody",
+      "@Component and @Transactional",
+      "@Configuration and @Bean"
+    ],
+    "answerIndex": 1,
+    "explanation": "It returns serialized response bodies by default."
+  },
+  {
+    "id": "g2-m1-p9",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "HTTP methods",
+    "difficulty": "medium",
+    "question": "Which HTTP method is not inherently idempotent?",
+    "options": [
+      "GET",
+      "PUT",
+      "DELETE",
+      "POST"
+    ],
+    "answerIndex": 3,
+    "explanation": "POST is generally not idempotent; application-level idempotency keys can make a particular operation retry-safe."
+  },
+  {
+    "id": "g2-m1-p10",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "HTTP status codes",
+    "difficulty": "easy",
+    "question": "What does HTTP 429 indicate?",
+    "options": [
+      "Not Found",
+      "Too Many Requests",
+      "Conflict",
+      "Bad Gateway"
+    ],
+    "answerIndex": 1,
+    "explanation": "429 signals rate limiting / too many requests."
+  },
+  {
+    "id": "g2-m1-p11",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "JWT/crypto",
+    "difficulty": "medium",
+    "question": "A JWT signed with HMAC is validated using:",
+    "options": [
+      "Any public key",
+      "The shared secret key",
+      "The database password",
+      "The TLS certificate serial number"
+    ],
+    "answerIndex": 1,
+    "explanation": "HMAC signatures use a shared secret; asymmetric JWT signatures use a public/private key pair."
+  },
+  {
+    "id": "g2-m1-p12",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "OAuth",
+    "difficulty": "medium",
+    "question": "OAuth 2.0 primarily defines:",
+    "options": [
+      "An authorization framework",
+      "A relational database",
+      "An encryption algorithm",
+      "A UI component model"
+    ],
+    "answerIndex": 0,
+    "explanation": "OpenID Connect adds an identity layer on top of OAuth 2.0."
+  },
+  {
+    "id": "g2-m1-p13",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Web/CORS",
+    "difficulty": "medium",
+    "question": "Which is a browser-enforced cross-origin mechanism, not an authentication control?",
+    "options": [
+      "CORS",
+      "MFA",
+      "mTLS",
+      "OAuth scope"
+    ],
+    "answerIndex": 0,
+    "explanation": "CORS determines whether browser scripts can access cross-origin responses; it does not prove user identity."
+  },
+  {
+    "id": "g2-m1-p14",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "JavaScript event loop",
+    "difficulty": "medium",
+    "question": "In JavaScript, which queue is usually drained before the next timer task?",
+    "options": [
+      "Microtask queue",
+      "Network router queue",
+      "GPU queue",
+      "Database commit queue"
+    ],
+    "answerIndex": 0,
+    "explanation": "Promise reactions run as microtasks; the event loop processes them before moving to the next task."
+  },
+  {
+    "id": "g2-m1-p15",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "TypeScript",
+    "difficulty": "medium",
+    "question": "In TypeScript, which type forces narrowing before unsafe use?",
+    "options": [
+      "any",
+      "unknown",
+      "never only",
+      "void"
+    ],
+    "answerIndex": 1,
+    "explanation": "unknown is safer than any because operations require type refinement."
+  },
+  {
+    "id": "g2-m1-p16",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "React hooks",
+    "difficulty": "easy",
+    "question": "Which React rule is correct for hooks?",
+    "options": [
+      "Call hooks conditionally when needed",
+      "Call hooks at the top level of a component/custom hook",
+      "Call hooks inside loops",
+      "Call hooks in plain event callbacks"
+    ],
+    "answerIndex": 1,
+    "explanation": "Hook call order must remain stable across renders."
+  },
+  {
+    "id": "g2-m1-p17",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "React",
+    "difficulty": "easy",
+    "question": "What does React use a list key for?",
+    "options": [
+      "Encrypting the list",
+      "Identifying items across renders",
+      "Sorting DOM nodes alphabetically",
+      "Preventing all re-renders"
+    ],
+    "answerIndex": 1,
+    "explanation": "Stable keys help reconciliation identify items when lists change."
+  },
+  {
+    "id": "g2-m1-p18",
+    "source": "guide2-mock1",
+    "topic": "backend",
+    "subtopic": "Python",
+    "difficulty": "easy",
+    "question": "In Python, `is` compares:",
+    "options": [
+      "Value equality",
+      "Object identity",
+      "String length",
+      "Numeric order"
+    ],
+    "answerIndex": 1,
+    "explanation": "Use == for equality; is for identity, often None checks."
+  },
+  {
+    "id": "g2-m1-p19",
+    "source": "guide2-mock1",
+    "topic": "dbms",
+    "subtopic": "SQL clauses",
+    "difficulty": "easy",
+    "question": "Which SQL clause is evaluated to filter rows before GROUP BY?",
+    "options": [
+      "HAVING",
+      "WHERE",
+      "ORDER BY",
+      "LIMIT only"
+    ],
+    "answerIndex": 1,
+    "explanation": "WHERE filters input rows before grouping."
+  },
+  {
+    "id": "g2-m1-p20",
+    "source": "guide2-mock1",
+    "topic": "dbms",
+    "subtopic": "SQL joins",
+    "difficulty": "easy",
+    "question": "Which join preserves every row from the left table?",
+    "options": [
+      "INNER JOIN",
+      "LEFT OUTER JOIN",
+      "CROSS JOIN only",
+      "RIGHT JOIN"
+    ],
+    "answerIndex": 1,
+    "explanation": "LEFT JOIN keeps all left rows; unmatched right attributes are NULL."
+  },
+  {
+    "id": "g2-m1-p21",
+    "source": "guide2-mock1",
+    "topic": "dbms",
+    "subtopic": "Normalization",
+    "difficulty": "medium",
+    "question": "Which normal form removes transitive dependency of non-key attributes on a key?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "4NF"
+    ],
+    "answerIndex": 2,
+    "explanation": "3NF removes transitive dependencies in the standard introductory formulation."
+  },
+  {
+    "id": "g2-m1-p22",
+    "source": "guide2-mock1",
+    "topic": "dbms",
+    "subtopic": "Concurrency anomalies",
+    "difficulty": "medium",
+    "question": "Which anomaly is a read of uncommitted data from another transaction?",
+    "options": [
+      "Dirty read",
+      "Phantom read",
+      "Lost update only",
+      "Write skew only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Dirty read observes data that may later be rolled back."
+  },
+  {
+    "id": "g2-m1-p23",
+    "source": "guide2-mock1",
+    "topic": "dbms",
+    "subtopic": "Query optimization",
+    "difficulty": "easy",
+    "question": "Which technique helps identify why a SQL query is slow?",
+    "options": [
+      "EXPLAIN / execution plan",
+      "Changing table names",
+      "Increasing UI font size",
+      "Disabling constraints permanently"
+    ],
+    "answerIndex": 0,
+    "explanation": "Query plans show chosen scans, joins and estimated costs; inspect actual execution too."
+  },
+  {
+    "id": "g2-m1-p24",
+    "source": "guide2-mock1",
+    "topic": "dbms",
+    "subtopic": "Referential integrity",
+    "difficulty": "medium",
+    "question": "Which key property is required for a foreign key relationship?",
+    "options": [
+      "It must be a text column",
+      "Referenced values must satisfy referenced key/unique constraints",
+      "It must be encrypted",
+      "It must be the only column in table"
+    ],
+    "answerIndex": 1,
+    "explanation": "Foreign-key constraints enforce referential integrity to a primary/unique referenced key."
+  },
+  {
+    "id": "g2-m1-p25",
+    "source": "guide2-mock1",
+    "topic": "se-arch",
+    "subtopic": "Testing",
+    "difficulty": "easy",
+    "question": "Which testing level is most focused on a single function or class in isolation?",
+    "options": [
+      "Unit",
+      "System",
+      "Acceptance",
+      "Disaster recovery"
+    ],
+    "answerIndex": 0,
+    "explanation": "Unit tests isolate a small unit; dependencies are often replaced with test doubles."
+  },
+  {
+    "id": "g2-m1-p26",
+    "source": "guide2-mock1",
+    "topic": "se-arch",
+    "subtopic": "Testing",
+    "difficulty": "medium",
+    "question": "A test that verifies two independently deployed services honour an agreed API schema is:",
+    "options": [
+      "Contract test",
+      "Mutation test",
+      "Usability test",
+      "Recovery test"
+    ],
+    "answerIndex": 0,
+    "explanation": "Contract tests verify provider/consumer compatibility against an agreed contract."
+  },
+  {
+    "id": "g2-m1-p27",
+    "source": "guide2-mock1",
+    "topic": "emerging",
+    "subtopic": "Deployment",
+    "difficulty": "medium",
+    "question": "Which software release approach swaps all traffic between two production environments?",
+    "options": [
+      "Blue-green",
+      "Canary only",
+      "Rolling restart only",
+      "Shadow testing only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Blue-green uses two environments and switches traffic after validation."
+  },
+  {
+    "id": "g2-m1-p28",
+    "source": "guide2-mock1",
+    "topic": "cs-core",
+    "subtopic": "Data structures",
+    "difficulty": "easy",
+    "question": "Which data structure supports LIFO order?",
+    "options": [
+      "Queue",
+      "Stack",
+      "Heap only",
+      "Graph"
+    ],
+    "answerIndex": 1,
+    "explanation": "Stack is last-in, first-out."
+  },
+  {
+    "id": "g2-m1-p29",
+    "source": "guide2-mock1",
+    "topic": "cs-core",
+    "subtopic": "Complexity",
+    "difficulty": "easy",
+    "question": "What is the average time complexity of merge sort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(n^2)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Merge sort divides and merges in O(n log n), with O(n) auxiliary memory for typical arrays."
+  },
+  {
+    "id": "g2-m1-p30",
+    "source": "guide2-mock1",
+    "topic": "cs-core",
+    "subtopic": "Graph algorithms",
+    "difficulty": "medium",
+    "question": "Which algorithm requires non-negative edge weights for its standard greedy correctness?",
+    "options": [
+      "Dijkstra",
+      "Bellman-Ford",
+      "Floyd-Warshall",
+      "DFS"
+    ],
+    "answerIndex": 0,
+    "explanation": "Dijkstra assumes non-negative edge weights; Bellman-Ford can handle negative edges."
+  },
+  {
+    "id": "g2-m1-p31",
+    "source": "guide2-mock1",
+    "topic": "cs-core",
+    "subtopic": "Operating systems",
+    "difficulty": "medium",
+    "question": "What is the purpose of a semaphore?",
+    "options": [
+      "Represent synchronization permits/resources",
+      "Resolve DNS names",
+      "Encrypt files",
+      "Sort arrays"
+    ],
+    "answerIndex": 0,
+    "explanation": "A semaphore controls access based on a count of permits."
+  },
+  {
+    "id": "g2-m1-p32",
+    "source": "guide2-mock1",
+    "topic": "cs-core",
+    "subtopic": "OS scheduling",
+    "difficulty": "easy",
+    "question": "Which scheduling method uses a time quantum?",
+    "options": [
+      "Round-robin",
+      "FCFS only",
+      "SJF only",
+      "Static linking"
+    ],
+    "answerIndex": 0,
+    "explanation": "Round-robin cycles runnable tasks for a fixed time slice."
+  },
+  {
+    "id": "g2-m1-p33",
+    "source": "guide2-mock1",
+    "topic": "cs-core",
+    "subtopic": "Networking",
+    "difficulty": "easy",
+    "question": "Which protocol is connectionless and does not provide built-in reliable ordered delivery?",
+    "options": [
+      "TCP",
+      "UDP",
+      "TLS",
+      "SSH"
+    ],
+    "answerIndex": 1,
+    "explanation": "UDP is datagram-based and leaves reliability/order to the application if needed."
+  },
+  {
+    "id": "g2-m1-p34",
+    "source": "guide2-mock1",
+    "topic": "cs-core",
+    "subtopic": "Networking",
+    "difficulty": "medium",
+    "question": "What is ARP used for in IPv4 LANs?",
+    "options": [
+      "Resolve IPv4 address to link-layer address",
+      "Resolve hostname to IP",
+      "Assign IP by lease",
+      "Encrypt packet payload"
+    ],
+    "answerIndex": 0,
+    "explanation": "ARP resolves a local IPv4 next-hop address to a MAC address."
+  },
+  {
+    "id": "g2-m1-p35",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "TLS",
+    "difficulty": "medium",
+    "question": "Which TLS property is provided by server certificate validation?",
+    "options": [
+      "Server authentication",
+      "Database normalization",
+      "Application authorization to every object",
+      "Compression only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Certificate validation authenticates the server identity as bound to a public key."
+  },
+  {
+    "id": "g2-m1-p36",
+    "source": "guide2-mock1",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "What does a Kubernetes Deployment manage?",
+    "options": [
+      "Desired state of stateless pod replicas and rollouts",
+      "Only external DNS",
+      "Persistent disks only",
+      "TLS certificates only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Deployments manage ReplicaSets and declarative rollout of pods."
+  },
+  {
+    "id": "g2-m1-p37",
+    "source": "guide2-mock1",
+    "topic": "emerging",
+    "subtopic": "Container security",
+    "difficulty": "medium",
+    "question": "Which container practice reduces runtime privilege?",
+    "options": [
+      "Run as root",
+      "Run as non-root user",
+      "Mount host root filesystem writable",
+      "Disable image scanning"
+    ],
+    "answerIndex": 1,
+    "explanation": "Non-root containers follow least privilege."
+  },
+  {
+    "id": "g2-m1-p38",
+    "source": "guide2-mock1",
+    "topic": "emerging",
+    "subtopic": "IaC",
+    "difficulty": "medium",
+    "question": "Which item is an infrastructure-as-code tool category rather than a container runtime?",
+    "options": [
+      "Declarative provisioning/configuration",
+      "Image registry",
+      "Application thread pool",
+      "Database index"
+    ],
+    "answerIndex": 0,
+    "explanation": "IaC describes and versions desired infrastructure; Terraform-like tools are examples."
+  },
+  {
+    "id": "g2-m1-p39",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "easy",
+    "question": "Which encryption mode uses the same secret key for encryption and decryption?",
+    "options": [
+      "Symmetric",
+      "Asymmetric",
+      "Hashing",
+      "Digital signature only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Symmetric algorithms such as AES use a shared secret key."
+  },
+  {
+    "id": "g2-m1-p40",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "medium",
+    "question": "Which of the following is not a cryptographic hash function?",
+    "options": [
+      "SHA-256",
+      "SHA-3",
+      "bcrypt (password hashing)",
+      "AES"
+    ],
+    "answerIndex": 3,
+    "explanation": "AES is a symmetric block cipher, not a hash function."
+  },
+  {
+    "id": "g2-m1-p41",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "OWASP API",
+    "difficulty": "medium",
+    "question": "Which API vulnerability occurs when a user can call a privileged function despite lacking the role?",
+    "options": [
+      "BFLA",
+      "BOLA",
+      "SSRF",
+      "Unrestricted resource consumption"
+    ],
+    "answerIndex": 0,
+    "explanation": "Broken Function Level Authorization concerns access to privileged operations."
+  },
+  {
+    "id": "g2-m1-p42",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "AppSec testing",
+    "difficulty": "medium",
+    "question": "What does SCA primarily inspect?",
+    "options": [
+      "Third-party components/dependencies",
+      "Live browser layout",
+      "Network cable quality",
+      "Only database indexes"
+    ],
+    "answerIndex": 0,
+    "explanation": "Software Composition Analysis inventories dependencies and identifies known vulnerabilities/licenses."
+  },
+  {
+    "id": "g2-m1-p43",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "Security principles",
+    "difficulty": "easy",
+    "question": "Which security principle recommends separating development and production privileges?",
+    "options": [
+      "Separation of duties / least privilege",
+      "Open access",
+      "Security through obscurity only",
+      "Shared root account"
+    ],
+    "answerIndex": 0,
+    "explanation": "Segregation of duties and least privilege reduce unauthorized or accidental changes."
+  },
+  {
+    "id": "g2-m1-p44",
+    "source": "guide2-mock1",
+    "topic": "se-arch",
+    "subtopic": "ITSM",
+    "difficulty": "medium",
+    "question": "Which is an example of an incident rather than a problem?",
+    "options": [
+      "Customer-facing API is currently unavailable",
+      "Root cause analysis of recurring outage",
+      "Known error record",
+      "Permanent architecture redesign proposal"
+    ],
+    "answerIndex": 0,
+    "explanation": "Incident management restores service; problem management seeks underlying cause."
+  },
+  {
+    "id": "g2-m1-p45",
+    "source": "guide2-mock1",
+    "topic": "se-arch",
+    "subtopic": "ITSM",
+    "difficulty": "medium",
+    "question": "In IT service management, a change advisory board typically:",
+    "options": [
+      "Advises on change risk and scheduling",
+      "Writes all source code",
+      "Approves every database SELECT",
+      "Replaces the CISO"
+    ],
+    "answerIndex": 0,
+    "explanation": "CAB advises/coordinates changes based on risk; exact authority is organizational."
+  },
+  {
+    "id": "g2-m1-p46",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "Payment systems",
+    "difficulty": "medium",
+    "question": "Which payment system is used for high-value real-time gross settlement with a INR 2 lakh minimum?",
+    "options": [
+      "NEFT",
+      "RTGS",
+      "NACH",
+      "RuPay"
+    ],
+    "answerIndex": 1,
+    "explanation": "RTGS minimum is INR 2 lakh; it settles each instruction gross in real time."
+  },
+  {
+    "id": "g2-m1-p47",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "Payment systems",
+    "difficulty": "easy",
+    "question": "What does NPCI operate in the retail payment ecosystem?",
+    "options": [
+      "UPI and IMPS",
+      "Only the RTGS system",
+      "Monetary policy",
+      "Government securities auctions"
+    ],
+    "answerIndex": 0,
+    "explanation": "NPCI operates UPI and IMPS among other retail payment systems."
+  },
+  {
+    "id": "g2-m1-p48",
+    "source": "guide2-mock1",
+    "topic": "security-banking",
+    "subtopic": "API authorization",
+    "difficulty": "medium",
+    "question": "A bank must verify customer and account ownership before returning data from /accounts/{id}. This is an example of:",
+    "options": [
+      "Object-level authorization",
+      "DNSSEC",
+      "Compression",
+      "Schema migration"
+    ],
+    "answerIndex": 0,
+    "explanation": "The service must authorize access for the specific object, not merely authenticate the caller."
+  },
+  {
+    "id": "g2-m1-p49",
+    "source": "guide2-mock1",
+    "topic": "emerging",
+    "subtopic": "Machine learning",
+    "difficulty": "easy",
+    "question": "Which ML method uses labelled input-output examples?",
+    "options": [
+      "Supervised learning",
+      "Unsupervised learning",
+      "Clustering only",
+      "Reinforcement learning only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Supervised learning fits models to labelled examples."
+  },
+  {
+    "id": "g2-m1-p50",
+    "source": "guide2-mock1",
+    "topic": "emerging",
+    "subtopic": "LLM security",
+    "difficulty": "medium",
+    "question": "Which LLM integration risk involves user instructions hidden in retrieved content attempting to override model instructions?",
+    "options": [
+      "Prompt injection",
+      "Index fragmentation",
+      "Deadlock",
+      "TLS downgrade only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Prompt injection can arrive directly or indirectly from untrusted retrieved material."
+  },
+  {
+    "id": "g2-m2-e1",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the word closest in meaning to \"prudent\".",
+    "options": [
+      "Careless",
+      "Cautious and wise",
+      "Hasty",
+      "Wasteful"
+    ],
+    "answerIndex": 1,
+    "explanation": "Prudent means acting with care and good judgment."
+  },
+  {
+    "id": "g2-m2-e2",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Antonyms",
+    "difficulty": "easy",
+    "question": "Choose the antonym of \"scarce\".",
+    "options": [
+      "Rare",
+      "Limited",
+      "Abundant",
+      "Insufficient"
+    ],
+    "answerIndex": 2,
+    "explanation": "Abundant means plentiful."
+  },
+  {
+    "id": "g2-m2-e3",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Subject-verb agreement",
+    "difficulty": "easy",
+    "question": "Select the grammatically correct sentence.",
+    "options": [
+      "The list of changes are ready.",
+      "The list of changes is ready.",
+      "The lists of change is ready.",
+      "A list of changes were ready."
+    ],
+    "answerIndex": 1,
+    "explanation": "The subject is list, singular."
+  },
+  {
+    "id": "g2-m2-e4",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Prepositions",
+    "difficulty": "easy",
+    "question": "Choose the correct preposition: The engineer complied ___ the security policy.",
+    "options": [
+      "to",
+      "with",
+      "for",
+      "at"
+    ],
+    "answerIndex": 1,
+    "explanation": "Comply with is the standard phrase."
+  },
+  {
+    "id": "g2-m2-e5",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Tenses",
+    "difficulty": "medium",
+    "question": "Choose the correct verb: By the time the audit began, the team ___ the evidence.",
+    "options": [
+      "collects",
+      "has collected",
+      "had collected",
+      "will collect"
+    ],
+    "answerIndex": 2,
+    "explanation": "Past perfect indicates an action completed before another past event."
+  },
+  {
+    "id": "g2-m2-e6",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Error spotting",
+    "difficulty": "easy",
+    "question": "Identify the error: \"The information are available in the dashboard.\"",
+    "options": [
+      "The",
+      "information",
+      "are",
+      "dashboard"
+    ],
+    "answerIndex": 2,
+    "explanation": "Information is an uncountable singular noun; use is."
+  },
+  {
+    "id": "g2-m2-e7",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Connectors",
+    "difficulty": "medium",
+    "question": "Choose the best connector: The system was under heavy load. ___, response times remained within target.",
+    "options": [
+      "However",
+      "Because",
+      "Similarly",
+      "Unless"
+    ],
+    "answerIndex": 0,
+    "explanation": "However introduces a contrast."
+  },
+  {
+    "id": "g2-m2-e8",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Punctuation",
+    "difficulty": "medium",
+    "question": "Choose the correctly punctuated sentence.",
+    "options": [
+      "The engineer said \"The issue is resolved\".",
+      "The engineer said, \"The issue is resolved.\"",
+      "The engineer, said \"The issue is resolved.\"",
+      "The engineer said \"The issue, is resolved.\""
+    ],
+    "answerIndex": 1,
+    "explanation": "Use comma before a direct quotation; full stop inside closing quotation mark in standard US/Indian business style."
+  },
+  {
+    "id": "g2-m2-e9",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Word forms",
+    "difficulty": "easy",
+    "question": "Choose the correct noun: The board requested a formal ___ of technology risk.",
+    "options": [
+      "assess",
+      "assessment",
+      "assessing",
+      "assessed"
+    ],
+    "answerIndex": 1,
+    "explanation": "Assessment is the noun."
+  },
+  {
+    "id": "g2-m2-e10",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Articles",
+    "difficulty": "medium",
+    "question": "Choose the correct article: The team adopted ___ European security standard.",
+    "options": [
+      "a",
+      "an",
+      "the only",
+      "no article"
+    ],
+    "answerIndex": 0,
+    "explanation": "European begins with a /y/ consonant sound, so a."
+  },
+  {
+    "id": "g2-m2-e11",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Prepositions/conjunctions",
+    "difficulty": "medium",
+    "question": "Choose the correct phrase: ___ the delay, the release was completed safely.",
+    "options": [
+      "Despite",
+      "Despite of",
+      "Although",
+      "Because"
+    ],
+    "answerIndex": 0,
+    "explanation": "Despite is followed by a noun phrase without of."
+  },
+  {
+    "id": "g2-m2-e12",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Reported speech",
+    "difficulty": "medium",
+    "question": "Choose the correct reported speech: She said, \"We have completed the test.\"",
+    "options": [
+      "She said they have completed the test.",
+      "She said that they had completed the test.",
+      "She said that we completed test.",
+      "She says they had complete the test."
+    ],
+    "answerIndex": 1,
+    "explanation": "Present perfect generally backshifts to past perfect in reported speech."
+  },
+  {
+    "id": "g2-m2-e13",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Spelling",
+    "difficulty": "easy",
+    "question": "Choose the correctly spelled word.",
+    "options": [
+      "Occurence",
+      "Occurrence",
+      "Ocurrence",
+      "Occurrance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Occurrence has double c and double r."
+  },
+  {
+    "id": "g2-m2-e14",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "In a project context, \"defer\" most nearly means:",
+    "options": [
+      "Bring forward",
+      "Postpone",
+      "Cancel permanently",
+      "Approve"
+    ],
+    "answerIndex": 1,
+    "explanation": "Defer means postpone to a later time."
+  },
+  {
+    "id": "g2-m2-e15",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Subject-verb agreement",
+    "difficulty": "medium",
+    "question": "Choose the grammatically correct sentence.",
+    "options": [
+      "A number of requests has failed.",
+      "A number of requests have failed.",
+      "The number of requests have failed.",
+      "A number requests has failed."
+    ],
+    "answerIndex": 1,
+    "explanation": "A number of + plural noun generally takes a plural verb."
+  },
+  {
+    "id": "g2-m2-e16",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Prepositions",
+    "difficulty": "easy",
+    "question": "Choose the correct phrase: \"The solution is consistent ___ the architecture.\"",
+    "options": [
+      "to",
+      "with",
+      "at",
+      "on"
+    ],
+    "answerIndex": 1,
+    "explanation": "Consistent with is the correct collocation."
+  },
+  {
+    "id": "g2-m2-e17",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the best word: The control is designed to ___ unauthorized access.",
+    "options": [
+      "prevent",
+      "prescribe",
+      "proceed",
+      "pretend"
+    ],
+    "answerIndex": 0,
+    "explanation": "Prevent means stop something from occurring."
+  },
+  {
+    "id": "g2-m2-e18",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Conditionals",
+    "difficulty": "medium",
+    "question": "Choose the correct conditional.",
+    "options": [
+      "If the backup is valid, recovery will be faster.",
+      "If the backup was valid, recovery will faster.",
+      "If the backup will be valid, recovery is faster yesterday.",
+      "If the backup has valid, recovery would be faster."
+    ],
+    "answerIndex": 0,
+    "explanation": "First conditional: if + present, will + base verb."
+  },
+  {
+    "id": "g2-m2-e19",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Parallelism",
+    "difficulty": "medium",
+    "question": "Select the sentence with parallel structure.",
+    "options": [
+      "Monitoring, to alert and responding are required.",
+      "Monitoring, alerting and responding are required.",
+      "Monitor, alerting and to respond are required.",
+      "Monitoring, alerts and to responding are required."
+    ],
+    "answerIndex": 1,
+    "explanation": "Parallel gerunds keep the list structure consistent."
+  },
+  {
+    "id": "g2-m2-e20",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Antonyms",
+    "difficulty": "easy",
+    "question": "Choose the antonym of \"mandatory\".",
+    "options": [
+      "Compulsory",
+      "Required",
+      "Optional",
+      "Binding"
+    ],
+    "answerIndex": 2,
+    "explanation": "Optional is the opposite of mandatory."
+  },
+  {
+    "id": "g2-m2-e21",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "medium",
+    "question": "Choose the correct word: The new process will ___ operational risk.",
+    "options": [
+      "lessen",
+      "lesson",
+      "lessening",
+      "least"
+    ],
+    "answerIndex": 0,
+    "explanation": "Lessen is the verb meaning reduce."
+  },
+  {
+    "id": "g2-m2-e22",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Subject-verb agreement",
+    "difficulty": "medium",
+    "question": "Choose the correct completion: Neither the manager nor the developers ___ available.",
+    "options": [
+      "is",
+      "was",
+      "are",
+      "has"
+    ],
+    "answerIndex": 2,
+    "explanation": "The verb agrees with the nearer plural subject developers."
+  },
+  {
+    "id": "g2-m2-e23",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Countable nouns",
+    "difficulty": "medium",
+    "question": "Choose the correct sentence.",
+    "options": [
+      "There are fewer downtime incidents.",
+      "There is fewer downtime incidents.",
+      "There are less downtime incidents.",
+      "There is few downtime incident."
+    ],
+    "answerIndex": 0,
+    "explanation": "Incidents are countable plural; fewer is appropriate."
+  },
+  {
+    "id": "g2-m2-e24",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest meaning of \"robustness\".",
+    "options": [
+      "Reliability and strength under stress",
+      "Speed alone",
+      "Complexity",
+      "Cost reduction"
+    ],
+    "answerIndex": 0,
+    "explanation": "Robustness is the ability to operate reliably under varied or adverse conditions."
+  },
+  {
+    "id": "g2-m2-e25",
+    "source": "guide2-mock2",
+    "topic": "english",
+    "subtopic": "Prepositions",
+    "difficulty": "easy",
+    "question": "Choose the correct completion: The report was submitted ___ the deadline.",
+    "options": [
+      "in advance of",
+      "in advance from",
+      "prior than",
+      "before to"
+    ],
+    "answerIndex": 0,
+    "explanation": "In advance of means before the deadline."
+  },
+  {
+    "id": "g2-m2-p1",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "Java/JVM",
+    "difficulty": "easy",
+    "question": "What is Java bytecode executed by?",
+    "options": [
+      "JVM",
+      "JDK compiler only",
+      "Database engine",
+      "Browser DOM"
+    ],
+    "answerIndex": 0,
+    "explanation": "The JVM loads/verifies/executes bytecode; JDK includes development tooling."
+  },
+  {
+    "id": "g2-m2-p2",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "Java semantics",
+    "difficulty": "medium",
+    "question": "What is true of Java pass-by-value when passing an object reference?",
+    "options": [
+      "The object is copied deeply",
+      "The reference value is copied",
+      "Java changes to pass-by-reference",
+      "The caller reference is always reassigned"
+    ],
+    "answerIndex": 1,
+    "explanation": "A copy of the reference is passed; both references may point at the same object, but reassigning the parameter does not reassign caller variable."
+  },
+  {
+    "id": "g2-m2-p3",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "Java collections",
+    "difficulty": "medium",
+    "question": "Which collection preserves insertion order and disallows duplicate elements?",
+    "options": [
+      "HashSet",
+      "LinkedHashSet",
+      "TreeMap",
+      "ArrayDeque"
+    ],
+    "answerIndex": 1,
+    "explanation": "LinkedHashSet maintains insertion encounter order and uniqueness."
+  },
+  {
+    "id": "g2-m2-p4",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "Java/String",
+    "difficulty": "easy",
+    "question": "Which Java class is designed for a mutable character sequence without synchronized methods?",
+    "options": [
+      "String",
+      "StringBuilder",
+      "Integer",
+      "Character"
+    ],
+    "answerIndex": 1,
+    "explanation": "StringBuilder is mutable and unsynchronized; use StringBuffer if synchronized operations are specifically required."
+  },
+  {
+    "id": "g2-m2-p5",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "Spring",
+    "difficulty": "easy",
+    "question": "What is the main role of the Spring IoC container?",
+    "options": [
+      "Compile Java code",
+      "Instantiate, configure and manage beans",
+      "Encrypt API payloads",
+      "Schedule database backups only"
+    ],
+    "answerIndex": 1,
+    "explanation": "The container manages bean lifecycle and dependency injection."
+  },
+  {
+    "id": "g2-m2-p6",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "Spring transactions",
+    "difficulty": "hard",
+    "question": "Which transaction propagation mode starts a new transaction and suspends an existing one when present?",
+    "options": [
+      "REQUIRED",
+      "REQUIRES_NEW",
+      "SUPPORTS",
+      "MANDATORY"
+    ],
+    "answerIndex": 1,
+    "explanation": "REQUIRES_NEW uses an independent transaction and suspends the current one."
+  },
+  {
+    "id": "g2-m2-p7",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "REST/DTO",
+    "difficulty": "medium",
+    "question": "What is the purpose of a DTO in a REST API?",
+    "options": [
+      "Expose all persistence entities directly",
+      "Shape data crossing an application/API boundary",
+      "Replace TLS",
+      "Store API keys"
+    ],
+    "answerIndex": 1,
+    "explanation": "DTO controls the exposed data contract and decouples transport from persistence model."
+  },
+  {
+    "id": "g2-m2-p8",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "HTTP status codes",
+    "difficulty": "medium",
+    "question": "What does HTTP 412 mean?",
+    "options": [
+      "Precondition Failed",
+      "Created",
+      "Unauthorized",
+      "Too Many Requests"
+    ],
+    "answerIndex": 0,
+    "explanation": "412 is returned when request preconditions are false."
+  },
+  {
+    "id": "g2-m2-p9",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "HTTP headers",
+    "difficulty": "easy",
+    "question": "Which HTTP header can carry a bearer access token?",
+    "options": [
+      "Authorization",
+      "Accept-Language",
+      "If-Modified-Since",
+      "Content-Length"
+    ],
+    "answerIndex": 0,
+    "explanation": "Common syntax: Authorization: Bearer <token>; protect tokens in transit and storage."
+  },
+  {
+    "id": "g2-m2-p10",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "API versioning",
+    "difficulty": "medium",
+    "question": "What is the principal reason to use an API versioning/deprecation policy?",
+    "options": [
+      "Make all clients update instantly",
+      "Manage compatibility as contracts evolve",
+      "Avoid authentication",
+      "Prevent database deadlocks"
+    ],
+    "answerIndex": 1,
+    "explanation": "Versioning/deprecation communicates breaking changes and supports safe consumer migration."
+  },
+  {
+    "id": "g2-m2-p11",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "CSRF",
+    "difficulty": "medium",
+    "question": "Which technique helps protect a cookie-based session from CSRF?",
+    "options": [
+      "Only CORS wildcard",
+      "Anti-CSRF token and appropriate SameSite/origin controls",
+      "Store password in URL",
+      "Disable HTTPS"
+    ],
+    "answerIndex": 1,
+    "explanation": "CSRF mitigations include anti-CSRF tokens, SameSite and origin validation, depending on app design."
+  },
+  {
+    "id": "g2-m2-p12",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "JavaScript",
+    "difficulty": "medium",
+    "question": "Which JavaScript operator returns the right operand when the left is null or undefined, but not for 0 or empty string?",
+    "options": [
+      "||",
+      "??",
+      "===",
+      "&&"
+    ],
+    "answerIndex": 1,
+    "explanation": "Nullish coalescing only checks null/undefined."
+  },
+  {
+    "id": "g2-m2-p13",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "JavaScript/Promises",
+    "difficulty": "medium",
+    "question": "What does Promise.all do if one input promise rejects?",
+    "options": [
+      "Always waits forever",
+      "Rejects as soon as an input rejects",
+      "Converts all errors to null",
+      "Runs only the last promise"
+    ],
+    "answerIndex": 1,
+    "explanation": "Promise.all rejects on first rejection; all inputs are already initiated according to how supplied."
+  },
+  {
+    "id": "g2-m2-p14",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "TypeScript",
+    "difficulty": "medium",
+    "question": "Which TypeScript feature narrows a union based on a shared literal property?",
+    "options": [
+      "Discriminated union",
+      "Prototype chain",
+      "Decorator only",
+      "Tuple spread"
+    ],
+    "answerIndex": 0,
+    "explanation": "A discriminant field (e.g. kind) supports type narrowing."
+  },
+  {
+    "id": "g2-m2-p15",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "React performance",
+    "difficulty": "medium",
+    "question": "What can cause an unnecessary React re-render when passed as a prop?",
+    "options": [
+      "Stable primitive value",
+      "New object/function identity on every render",
+      "Immutable constant",
+      "Memoized callback"
+    ],
+    "answerIndex": 1,
+    "explanation": "New reference identity may trigger child updates depending on memoization and comparison."
+  },
+  {
+    "id": "g2-m2-p16",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "React hooks",
+    "difficulty": "medium",
+    "question": "Which React hook lets you store a mutable value that persists across renders WITHOUT triggering a re-render when it is updated?",
+    "options": [
+      "useRef",
+      "useState",
+      "useEffect",
+      "useMemo"
+    ],
+    "answerIndex": 0,
+    "explanation": "useRef returns a mutable object whose .current property persists across renders and can be updated without causing a re-render. useState would trigger a re-render on every update."
+  },
+  {
+    "id": "g2-m2-p17",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "Python",
+    "difficulty": "easy",
+    "question": "What does Python generator yield provide?",
+    "options": [
+      "Eagerly builds a complete list",
+      "Produces values lazily during iteration",
+      "Compiles code to Java bytecode",
+      "Guarantees multiprocessing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Generators compute/yield values on demand, helping memory for streams."
+  },
+  {
+    "id": "g2-m2-p18",
+    "source": "guide2-mock2",
+    "topic": "backend",
+    "subtopic": "Python",
+    "difficulty": "easy",
+    "question": "Which Python collection stores unique hashable elements?",
+    "options": [
+      "list",
+      "tuple",
+      "set",
+      "str"
+    ],
+    "answerIndex": 2,
+    "explanation": "A set stores unique hashable elements; it is not positional like list/tuple."
+  },
+  {
+    "id": "g2-m2-p19",
+    "source": "guide2-mock2",
+    "topic": "dbms",
+    "subtopic": "SQL joins",
+    "difficulty": "medium",
+    "question": "A SQL query returns duplicate rows from a one-to-many join. What should the developer first verify?",
+    "options": [
+      "Whether join cardinality is intended",
+      "Whether SELECT is uppercase",
+      "Whether DB uses TCP",
+      "Whether table has a primary key named ID only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Duplicates may be correct because one parent matches multiple child rows; confirm cardinality before adding DISTINCT."
+  },
+  {
+    "id": "g2-m2-p20",
+    "source": "guide2-mock2",
+    "topic": "dbms",
+    "subtopic": "SQL window functions",
+    "difficulty": "medium",
+    "question": "Which SQL expression returns the previous row value within an ordered partition?",
+    "options": [
+      "LEAD()",
+      "LAG()",
+      "COUNT(*)",
+      "COALESCE()"
+    ],
+    "answerIndex": 1,
+    "explanation": "LAG accesses a prior row in a window; LEAD accesses a following row."
+  },
+  {
+    "id": "g2-m2-p21",
+    "source": "guide2-mock2",
+    "topic": "dbms",
+    "subtopic": "Indexing",
+    "difficulty": "medium",
+    "question": "What is the purpose of a composite index on (customer_id, created_at)?",
+    "options": [
+      "Optimize all possible column combinations equally",
+      "Support access paths beginning with customer_id and possibly ranges/order on created_at",
+      "Encrypt both fields",
+      "Guarantee no duplicates"
+    ],
+    "answerIndex": 1,
+    "explanation": "B-tree composite index ordering generally follows its leftmost prefix; actual utility depends on workload and optimizer."
+  },
+  {
+    "id": "g2-m2-p22",
+    "source": "guide2-mock2",
+    "topic": "dbms",
+    "subtopic": "Backup/recovery",
+    "difficulty": "medium",
+    "question": "Which database technique enables recovery to a specific time using transaction logs?",
+    "options": [
+      "Point-in-time recovery",
+      "Denormalization",
+      "Read replica only",
+      "Index rebuild"
+    ],
+    "answerIndex": 0,
+    "explanation": "Base backup plus archived transaction logs enables PITR in supporting DBMS."
+  },
+  {
+    "id": "g2-m2-p23",
+    "source": "guide2-mock2",
+    "topic": "dbms",
+    "subtopic": "Concurrency anomalies",
+    "difficulty": "medium",
+    "question": "Which anomaly is prevented by stronger transaction isolation when repeated predicate queries see newly inserted matching rows?",
+    "options": [
+      "Phantom read",
+      "Syntax error",
+      "Index scan",
+      "Dirty schema"
+    ],
+    "answerIndex": 0,
+    "explanation": "A phantom is a changed set of rows satisfying a predicate on re-execution."
+  },
+  {
+    "id": "g2-m2-p24",
+    "source": "guide2-mock2",
+    "topic": "dbms",
+    "subtopic": "Concurrency control",
+    "difficulty": "medium",
+    "question": "What does optimistic concurrency typically use to detect conflicting updates?",
+    "options": [
+      "Version number/ETag compare",
+      "Exclusive lock for entire user session",
+      "DNS lookup",
+      "No validation"
+    ],
+    "answerIndex": 0,
+    "explanation": "A version column or ETag allows conditional update; mismatch signals conflict."
+  },
+  {
+    "id": "g2-m2-p25",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Threat modeling",
+    "difficulty": "medium",
+    "question": "What is the aim of a threat model?",
+    "options": [
+      "List UI colours",
+      "Identify assets, trust boundaries, threats and mitigations",
+      "Increase thread count",
+      "Replace penetration testing completely"
+    ],
+    "answerIndex": 1,
+    "explanation": "Threat modeling identifies what can go wrong and prioritizes controls early in design."
+  },
+  {
+    "id": "g2-m2-p26",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "OWASP API",
+    "difficulty": "hard",
+    "question": "Which security design choice best reduces mass-assignment risk in an API?",
+    "options": [
+      "Bind every incoming property directly to persistence entity",
+      "Use allow-listed request DTO fields and authorization per property",
+      "Accept arbitrary JSON fields",
+      "Disable validation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Explicit DTOs and property allow-lists prevent unauthorized client-supplied fields from being changed."
+  },
+  {
+    "id": "g2-m2-p27",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Availability controls",
+    "difficulty": "medium",
+    "question": "Which measure protects availability against resource exhaustion?",
+    "options": [
+      "Unbounded payload sizes",
+      "Rate limits, quotas, timeouts and bounded concurrency",
+      "Verbose stack traces",
+      "Disable backpressure"
+    ],
+    "answerIndex": 1,
+    "explanation": "Resource limits control abuse and protect capacity."
+  },
+  {
+    "id": "g2-m2-p28",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "AppSec testing",
+    "difficulty": "medium",
+    "question": "Which is the main difference between SAST and DAST?",
+    "options": [
+      "SAST analyzes code without execution; DAST tests running app",
+      "SAST is for network cabling",
+      "DAST requires no running service",
+      "They are identical"
+    ],
+    "answerIndex": 0,
+    "explanation": "SAST is static analysis; DAST interacts with a running application."
+  },
+  {
+    "id": "g2-m2-p29",
+    "source": "guide2-mock2",
+    "topic": "se-arch",
+    "subtopic": "Architecture",
+    "difficulty": "medium",
+    "question": "Which architecture style organizes adapters around domain/application ports?",
+    "options": [
+      "Hexagonal architecture",
+      "Big ball of mud",
+      "Two-tier only",
+      "Peer-to-peer only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Ports-and-adapters isolates domain logic from infrastructure concerns."
+  },
+  {
+    "id": "g2-m2-p30",
+    "source": "guide2-mock2",
+    "topic": "se-arch",
+    "subtopic": "Design patterns",
+    "difficulty": "medium",
+    "question": "Which pattern separates an abstraction from varying algorithms?",
+    "options": [
+      "Strategy",
+      "Singleton",
+      "Builder",
+      "Proxy only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Strategy encapsulates interchangeable algorithms behind a common interface."
+  },
+  {
+    "id": "g2-m2-p31",
+    "source": "guide2-mock2",
+    "topic": "se-arch",
+    "subtopic": "Distributed patterns",
+    "difficulty": "hard",
+    "question": "Which pattern can ensure a database change and event publication are coordinated without a distributed two-phase commit?",
+    "options": [
+      "Transactional outbox",
+      "Random sleep",
+      "Client-side cache only",
+      "DNS round robin"
+    ],
+    "answerIndex": 0,
+    "explanation": "Write business data and outbox record in one local DB transaction; a relay publishes the event."
+  },
+  {
+    "id": "g2-m2-p32",
+    "source": "guide2-mock2",
+    "topic": "se-arch",
+    "subtopic": "Observability",
+    "difficulty": "medium",
+    "question": "Which monitoring signal is best for measuring end-to-end path through multiple services?",
+    "options": [
+      "Distributed trace",
+      "CPU temperature only",
+      "Source-control tag",
+      "UI screenshot"
+    ],
+    "answerIndex": 0,
+    "explanation": "Traces connect spans across services and show latency/failure path."
+  },
+  {
+    "id": "g2-m2-p33",
+    "source": "guide2-mock2",
+    "topic": "se-arch",
+    "subtopic": "SRE/SLI",
+    "difficulty": "medium",
+    "question": "Which metric is typically a service-level indicator (SLI)?",
+    "options": [
+      "Percentage of requests under 300 ms",
+      "Contract wording",
+      "Target only",
+      "Penalty clause"
+    ],
+    "answerIndex": 0,
+    "explanation": "An SLI is a measured service characteristic; SLO sets target and SLA is an agreement."
+  },
+  {
+    "id": "g2-m2-p34",
+    "source": "guide2-mock2",
+    "topic": "cs-core",
+    "subtopic": "Operating systems",
+    "difficulty": "medium",
+    "question": "Which OS concept allows multiple processes to have isolated virtual address spaces?",
+    "options": [
+      "Virtual memory",
+      "Round robin",
+      "ARP",
+      "DNS caching"
+    ],
+    "answerIndex": 0,
+    "explanation": "Virtual memory maps process virtual addresses to physical pages and provides isolation."
+  },
+  {
+    "id": "g2-m2-p35",
+    "source": "guide2-mock2",
+    "topic": "cs-core",
+    "subtopic": "OS concurrency",
+    "difficulty": "medium",
+    "question": "Which mechanism prevents a thread from entering a critical section while another holds the same lock?",
+    "options": [
+      "Mutual exclusion lock",
+      "Page cache",
+      "DNS TTL",
+      "Round-robin router"
+    ],
+    "answerIndex": 0,
+    "explanation": "A mutex/lock enforces exclusive access to protected shared state."
+  },
+  {
+    "id": "g2-m2-p36",
+    "source": "guide2-mock2",
+    "topic": "cs-core",
+    "subtopic": "Networking",
+    "difficulty": "easy",
+    "question": "What is the function of DHCP?",
+    "options": [
+      "Dynamic IP configuration leasing",
+      "Name resolution only",
+      "Message authentication",
+      "Packet encryption"
+    ],
+    "answerIndex": 0,
+    "explanation": "DHCP provides IP address and associated network configuration dynamically."
+  },
+  {
+    "id": "g2-m2-p37",
+    "source": "guide2-mock2",
+    "topic": "cs-core",
+    "subtopic": "Networking",
+    "difficulty": "easy",
+    "question": "Which protocol is commonly used for secure remote shell access?",
+    "options": [
+      "Telnet",
+      "SSH",
+      "FTP",
+      "TFTP"
+    ],
+    "answerIndex": 1,
+    "explanation": "SSH provides encrypted remote login/command execution; Telnet is plaintext by default."
+  },
+  {
+    "id": "g2-m2-p38",
+    "source": "guide2-mock2",
+    "topic": "emerging",
+    "subtopic": "Cloud shared responsibility",
+    "difficulty": "medium",
+    "question": "Which cloud responsibility remains with the customer even when using SaaS?",
+    "options": [
+      "Every physical disk replacement",
+      "User identity, access and data governance",
+      "Hypervisor patching in all cases",
+      "Provider facility guards"
+    ],
+    "answerIndex": 1,
+    "explanation": "Exact split varies, but customer IAM, data classification and configuration remain important."
+  },
+  {
+    "id": "g2-m2-p39",
+    "source": "guide2-mock2",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "Which Kubernetes object stores non-confidential configuration data?",
+    "options": [
+      "ConfigMap",
+      "Secret only",
+      "PersistentVolume",
+      "ServiceAccount token"
+    ],
+    "answerIndex": 0,
+    "explanation": "ConfigMap stores non-secret key-value configuration; sensitive data needs secure Secret handling."
+  },
+  {
+    "id": "g2-m2-p40",
+    "source": "guide2-mock2",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "What is the role of a Kubernetes Service?",
+    "options": [
+      "Provide a stable network endpoint for a set of pods",
+      "Build a Docker image",
+      "Manage source branches",
+      "Store relational tables"
+    ],
+    "answerIndex": 0,
+    "explanation": "Service abstracts changing pod endpoints behind stable service discovery."
+  },
+  {
+    "id": "g2-m2-p41",
+    "source": "guide2-mock2",
+    "topic": "emerging",
+    "subtopic": "Supply chain security",
+    "difficulty": "medium",
+    "question": "Which control is especially useful for ensuring an image has not been tampered with after build?",
+    "options": [
+      "Image signing and provenance verification",
+      "Tag as latest only",
+      "Disable registry authentication",
+      "Build on production host manually"
+    ],
+    "answerIndex": 0,
+    "explanation": "Signing and verified provenance establish integrity/origin of artifacts."
+  },
+  {
+    "id": "g2-m2-p42",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "easy",
+    "question": "Which key type should be shared to allow others to verify a digital signature?",
+    "options": [
+      "Signer private key",
+      "Signer public key",
+      "Database root password",
+      "Symmetric session key only"
+    ],
+    "answerIndex": 1,
+    "explanation": "The public key verifies; the private key remains secret."
+  },
+  {
+    "id": "g2-m2-p43",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "medium",
+    "question": "Which property is provided by a cryptographic hash but not by encryption alone?",
+    "options": [
+      "Fixed-size digest for integrity comparison",
+      "Confidentiality",
+      "Reversible plaintext recovery",
+      "Identity certificate issuance"
+    ],
+    "answerIndex": 0,
+    "explanation": "A hash yields a digest; encryption provides confidentiality and may also provide integrity only with authenticated modes."
+  },
+  {
+    "id": "g2-m2-p44",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Secrets management",
+    "difficulty": "medium",
+    "question": "Which practice helps prevent secret leakage through application logs?",
+    "options": [
+      "Log full Authorization headers",
+      "Redact/tokenize sensitive fields and restrict log access",
+      "Store passwords in debug logs",
+      "Use verbose production traces by default"
+    ],
+    "answerIndex": 1,
+    "explanation": "Logs are data stores and must avoid credentials/payment secrets while preserving safe audit context."
+  },
+  {
+    "id": "g2-m2-p45",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "BCP/DR",
+    "difficulty": "medium",
+    "question": "What does an RTO of 4 hours specify?",
+    "options": [
+      "Maximum acceptable data loss is 4 hours",
+      "Target time to restore service is within 4 hours",
+      "Service availability must be 4%",
+      "A backup runs every 4 hours"
+    ],
+    "answerIndex": 1,
+    "explanation": "RTO is recovery time objective, distinct from RPO."
+  },
+  {
+    "id": "g2-m2-p46",
+    "source": "guide2-mock2",
+    "topic": "se-arch",
+    "subtopic": "ITSM",
+    "difficulty": "medium",
+    "question": "What is a core purpose of a CMDB?",
+    "options": [
+      "Track configuration items and relationships",
+      "Generate cryptographic keys",
+      "Execute SQL queries",
+      "Manage customer passwords"
+    ],
+    "answerIndex": 0,
+    "explanation": "CMDB records CIs and relationships for impact/change/incident management."
+  },
+  {
+    "id": "g2-m2-p47",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Payment systems",
+    "difficulty": "medium",
+    "question": "Which payment rail settles gross transaction-by-transaction?",
+    "options": [
+      "NEFT",
+      "RTGS",
+      "NACH",
+      "Batch ACH only"
+    ],
+    "answerIndex": 1,
+    "explanation": "RTGS is gross real-time settlement; NEFT uses half-hourly batches."
+  },
+  {
+    "id": "g2-m2-p48",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Payment systems",
+    "difficulty": "easy",
+    "question": "Which payment rail is a retail instant payment platform operated by NPCI?",
+    "options": [
+      "UPI",
+      "RTGS",
+      "NEFT",
+      "Treasury bills"
+    ],
+    "answerIndex": 0,
+    "explanation": "UPI is an NPCI-operated instant retail payments platform."
+  },
+  {
+    "id": "g2-m2-p49",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Banking controls",
+    "difficulty": "medium",
+    "question": "Which banking control detects a mismatch between bank internal records and payment network settlement report?",
+    "options": [
+      "Reconciliation",
+      "Compilation",
+      "Load balancing",
+      "Index vacuuming"
+    ],
+    "answerIndex": 0,
+    "explanation": "Reconciliation compares independent records and routes exceptions for investigation."
+  },
+  {
+    "id": "g2-m2-p50",
+    "source": "guide2-mock2",
+    "topic": "security-banking",
+    "subtopic": "Payment systems",
+    "difficulty": "hard",
+    "question": "Why should payment transaction status support an explicit pending/unknown state after timeout?",
+    "options": [
+      "Because timeout proves failure",
+      "Because the request may have been processed even if response was lost",
+      "Because HTTP 504 reverses money automatically",
+      "Because payment networks never retry"
+    ],
+    "answerIndex": 1,
+    "explanation": "Client timeout is not proof the payment did not execute; status enquiry and reconciliation prevent duplicate debit."
+  }
+]

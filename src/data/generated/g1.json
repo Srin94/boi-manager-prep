@@ -1,0 +1,2850 @@
+[
+  {
+    "id": "g1-ch3-q1",
+    "source": "guide1-chapter",
+    "topic": "backend",
+    "subtopic": "JavaScript",
+    "difficulty": "medium",
+    "question": "What is the output of the JavaScript expression: parseInt(\"10.5\") + parseInt(\"5.7\") + \"2\" ?",
+    "options": [
+      "18.2",
+      "\"152\"",
+      "\"16.22\"",
+      "NaN"
+    ],
+    "answerIndex": 1,
+    "explanation": "parseInt(\"10.5\") returns 10 and parseInt(\"5.7\") returns 5. 10 + 5 = 15, then 15 + \"2\" coerces 15 to a string, yielding \"152\"."
+  },
+  {
+    "id": "g1-ch3-q2",
+    "source": "guide1-chapter",
+    "topic": "backend",
+    "subtopic": "JavaScript",
+    "difficulty": "easy",
+    "question": "In JavaScript, what does typeof null evaluate to?",
+    "options": [
+      "\"null\"",
+      "\"undefined\"",
+      "\"object\"",
+      "\"boolean\""
+    ],
+    "answerIndex": 2,
+    "explanation": "Due to a historical representation bug in JavaScript, typeof null returns \"object\"."
+  },
+  {
+    "id": "g1-ch3-q3",
+    "source": "guide1-chapter",
+    "topic": "backend",
+    "subtopic": "Java",
+    "difficulty": "medium",
+    "question": "Which Java exception is thrown when an application tries to load a class dynamically at runtime via Class.forName() and no definition is found?",
+    "options": [
+      "NoClassDefFoundError",
+      "ClassNotFoundException",
+      "IllegalAccessException",
+      "InstantiationException"
+    ],
+    "answerIndex": 1,
+    "explanation": "ClassNotFoundException is a checked exception thrown during dynamic class loading."
+  },
+  {
+    "id": "g1-ch3-q4",
+    "source": "guide1-chapter",
+    "topic": "backend",
+    "subtopic": "React",
+    "difficulty": "easy",
+    "question": "In React, which Hook stores a mutable value across renders WITHOUT triggering a component re-render when updated?",
+    "options": [
+      "useState",
+      "useEffect",
+      "useRef",
+      "useReducer"
+    ],
+    "answerIndex": 2,
+    "explanation": "Updating ref.current mutates the ref object directly without scheduling a React re-render."
+  },
+  {
+    "id": "g1-ch3-q5",
+    "source": "guide1-chapter",
+    "topic": "backend",
+    "subtopic": "REST APIs",
+    "difficulty": "medium",
+    "question": "A client sends a valid JWT token, but lacks the ADMIN role required for DELETE /api/v1/users/42. Which HTTP status code should the API return?",
+    "options": [
+      "401 Unauthorized",
+      "403 Forbidden",
+      "405 Method Not Allowed",
+      "409 Conflict"
+    ],
+    "answerIndex": 1,
+    "explanation": "401 means missing/invalid authentication; 403 means authenticated identity lacks authorization/permission."
+  },
+  {
+    "id": "g1-ch3-q6",
+    "source": "guide1-chapter",
+    "topic": "backend",
+    "subtopic": "Spring Boot",
+    "difficulty": "medium",
+    "question": "In Spring Boot, what is the default rollback behavior of @Transactional when a checked IOException is thrown?",
+    "options": [
+      "Automatically rolls back",
+      "Commits unless rollbackFor is configured",
+      "Throws BeanCreationException",
+      "Retries 3 times"
+    ],
+    "answerIndex": 1,
+    "explanation": "Spring @Transactional rolls back by default only on unchecked RuntimeException and Error."
+  },
+  {
+    "id": "g1-ch4-q1",
+    "source": "guide1-chapter",
+    "topic": "dbms",
+    "subtopic": "SQL",
+    "difficulty": "easy",
+    "question": "Which of the following is NOT a DDL (Data Definition Language) command in SQL?",
+    "options": [
+      "CREATE",
+      "ALTER",
+      "TRUNCATE",
+      "DELETE"
+    ],
+    "answerIndex": 3,
+    "explanation": "DELETE is a DML command that removes rows selectively and can be rolled back; CREATE, ALTER, and TRUNCATE are DDL."
+  },
+  {
+    "id": "g1-ch4-q2",
+    "source": "guide1-chapter",
+    "topic": "dbms",
+    "subtopic": "ACID",
+    "difficulty": "medium",
+    "question": "During an online transfer, money is debited from the sender account but fails to credit the receiver account due to a server crash. Which ACID property is violated if the debit is not rolled back?",
+    "options": [
+      "Atomicity",
+      "Isolation",
+      "Durability",
+      "Consistency"
+    ],
+    "answerIndex": 0,
+    "explanation": "Atomicity guarantees all-or-nothing execution of a transaction."
+  },
+  {
+    "id": "g1-ch4-q3",
+    "source": "guide1-chapter",
+    "topic": "dbms",
+    "subtopic": "Normalization",
+    "difficulty": "medium",
+    "question": "A relation is in Boyce-Codd Normal Form (BCNF) if and only if for every non-trivial functional dependency X -> Y:",
+    "options": [
+      "Y is a non-prime attribute",
+      "X is a superkey (or candidate key)",
+      "There are no composite keys",
+      "X is a foreign key"
+    ],
+    "answerIndex": 1,
+    "explanation": "BCNF strictly requires every determinant X in a non-trivial dependency to be a superkey."
+  },
+  {
+    "id": "g1-ch4-q4",
+    "source": "guide1-chapter",
+    "topic": "dbms",
+    "subtopic": "Transactions",
+    "difficulty": "medium",
+    "question": "Which transaction anomaly occurs when Transaction T1 reads a row modified by Transaction T2 that has NOT yet committed and later rolls back?",
+    "options": [
+      "Phantom Read",
+      "Non-Repeatable Read",
+      "Dirty Read",
+      "Lost Update"
+    ],
+    "answerIndex": 2,
+    "explanation": "A Dirty Read occurs when reading uncommitted data from another concurrent transaction."
+  },
+  {
+    "id": "g1-ch4-q5",
+    "source": "guide1-chapter",
+    "topic": "dbms",
+    "subtopic": "Data Warehousing",
+    "difficulty": "medium",
+    "question": "In a Data Warehouse, how does a Star Schema differ from a Snowflake Schema?",
+    "options": [
+      "Star Schema normalizes dimension tables into sub-dimensions",
+      "Star Schema keeps dimension tables denormalized for faster query joins",
+      "Snowflake Schema has no fact table",
+      "Star Schema is used only for OLTP"
+    ],
+    "answerIndex": 1,
+    "explanation": "Star Schema uses denormalized dimensions (fewer joins, faster OLAP reads); Snowflake normalizes dimensions to save space."
+  },
+  {
+    "id": "g1-ch5-q1",
+    "source": "guide1-chapter",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which port number is used by Remote Desktop Protocol (RDP) by default?",
+    "options": [
+      "22",
+      "443",
+      "3389",
+      "8080"
+    ],
+    "answerIndex": 2,
+    "explanation": "RDP listens on TCP/UDP port 3389 by default."
+  },
+  {
+    "id": "g1-ch5-q2",
+    "source": "guide1-chapter",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which field in an IPv4 packet header prevents packets from circulating indefinitely in a routing loop?",
+    "options": [
+      "Sequence Number",
+      "TTL (Time To Live)",
+      "Window Size",
+      "Checksum"
+    ],
+    "answerIndex": 1,
+    "explanation": "Each router decrements TTL by 1 and drops the packet when TTL reaches 0."
+  },
+  {
+    "id": "g1-ch5-q3",
+    "source": "guide1-chapter",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "medium",
+    "question": "Which sorting algorithm does NOT rely on element-to-element comparisons?",
+    "options": [
+      "Merge Sort",
+      "Quick Sort",
+      "Radix Sort",
+      "Heap Sort"
+    ],
+    "answerIndex": 2,
+    "explanation": "Radix, Counting, and Bucket Sort are non-comparison linear-time sorts."
+  },
+  {
+    "id": "g1-ch5-q4",
+    "source": "guide1-chapter",
+    "topic": "cs-core",
+    "subtopic": "Subnetting",
+    "difficulty": "medium",
+    "question": "How many usable host IP addresses are available in a 192.168.10.0/27 IPv4 subnet?",
+    "options": [
+      "32",
+      "30",
+      "62",
+      "14"
+    ],
+    "answerIndex": 1,
+    "explanation": "Host bits h = 32 - 27 = 5. Usable hosts = 2^5 - 2 = 30."
+  },
+  {
+    "id": "g1-ch5-q5",
+    "source": "guide1-chapter",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "medium",
+    "question": "External fragmentation is primarily associated with which memory allocation scheme?",
+    "options": [
+      "Paging",
+      "Contiguous Memory Allocation",
+      "Demand Paging",
+      "Cache Mapping"
+    ],
+    "answerIndex": 1,
+    "explanation": "Variable-size contiguous allocation leaves unusable gaps between allocated blocks."
+  },
+  {
+    "id": "g1-ch6-q1",
+    "source": "guide1-chapter",
+    "topic": "se-arch",
+    "subtopic": "ITIL",
+    "difficulty": "easy",
+    "question": "In ITIL, what is the primary difference between Incident Management and Problem Management?",
+    "options": [
+      "Incident Management handles only hardware; Problem Management handles software",
+      "Incident Management restores service quickly; Problem Management finds and removes the root cause",
+      "Problem Management is only for security breaches",
+      "They are identical terms"
+    ],
+    "answerIndex": 1,
+    "explanation": "Incident Management focuses on rapid restoration (even via workaround), whereas Problem Management performs RCA to prevent recurrence."
+  },
+  {
+    "id": "g1-ch6-q2",
+    "source": "guide1-chapter",
+    "topic": "se-arch",
+    "subtopic": "SDLC",
+    "difficulty": "easy",
+    "question": "Which SDLC model explicitly incorporates dedicated Risk Analysis in every cycle?",
+    "options": [
+      "Waterfall Model",
+      "Spiral Model",
+      "Big Bang Model",
+      "Rapid Throwaway Prototyping"
+    ],
+    "answerIndex": 1,
+    "explanation": "Barry Boehm's Spiral Model combines iterative development with systematic risk analysis in each loop."
+  },
+  {
+    "id": "g1-ch6-q3",
+    "source": "guide1-chapter",
+    "topic": "se-arch",
+    "subtopic": "Design Patterns",
+    "difficulty": "medium",
+    "question": "Which GoF design pattern is best suited for integrating a legacy Core Banking XML library whose method signatures do not match your new Spring Boot service interface?",
+    "options": [
+      "Singleton",
+      "Adapter",
+      "Flyweight",
+      "Memento"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Adapter pattern translates an existing incompatible interface into the interface expected by clients."
+  },
+  {
+    "id": "g1-ch7-q1",
+    "source": "guide1-chapter",
+    "topic": "emerging",
+    "subtopic": "RAG",
+    "difficulty": "medium",
+    "question": "What is the primary purpose of Retrieval-Augmented Generation (RAG) in an enterprise banking chatbot?",
+    "options": [
+      "To retrain the base LLM weights daily on customer chats",
+      "To retrieve up-to-date grounded context from external documents/vector DBs and inject it into the LLM prompt",
+      "To compress neural network weights to 4-bit integers",
+      "To replace HTTPS with WebSockets"
+    ],
+    "answerIndex": 1,
+    "explanation": "RAG grounds LLM responses in external verified knowledge bases (via embeddings and vector search) to reduce hallucinations without expensive fine-tuning."
+  },
+  {
+    "id": "g1-ch7-q2",
+    "source": "guide1-chapter",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "In Kubernetes, which Control Plane component serves as the consistent distributed key-value store holding all cluster state?",
+    "options": [
+      "kube-proxy",
+      "kubelet",
+      "etcd",
+      "CoreDNS"
+    ],
+    "answerIndex": 2,
+    "explanation": "etcd is Kubernetes' backing store for all cluster configuration and state data."
+  },
+  {
+    "id": "g1-ch7-q3",
+    "source": "guide1-chapter",
+    "topic": "emerging",
+    "subtopic": "Cloud",
+    "difficulty": "easy",
+    "question": "Google Firebase is best classified under which cloud service model?",
+    "options": [
+      "IaaS",
+      "DBaaS / BaaS",
+      "Bare-Metal Hosting",
+      "Network-as-a-Service"
+    ],
+    "answerIndex": 1,
+    "explanation": "Firebase provides managed real-time/NoSQL database and backend services (DBaaS/BaaS)."
+  },
+  {
+    "id": "g1-ch7-q4",
+    "source": "guide1-chapter",
+    "topic": "emerging",
+    "subtopic": "DevSecOps",
+    "difficulty": "medium",
+    "question": "In a DevSecOps CI/CD pipeline, which security test analyzes source code WITHOUT executing the application?",
+    "options": [
+      "DAST",
+      "SAST",
+      "Penetration Testing",
+      "Fuzzing"
+    ],
+    "answerIndex": 1,
+    "explanation": "SAST (Static Application Security Testing) inspects source/bytecode statically; DAST tests the running application."
+  },
+  {
+    "id": "g1-ch8-q1",
+    "source": "guide1-chapter",
+    "topic": "security-banking",
+    "subtopic": "BCP/DR",
+    "difficulty": "easy",
+    "question": "Which ISO standard specifically governs Business Continuity Management Systems (BCMS)?",
+    "options": [
+      "ISO 9001",
+      "ISO 22301",
+      "ISO 14001",
+      "ISO 8583"
+    ],
+    "answerIndex": 1,
+    "explanation": "ISO 22301 specifies requirements for Business Continuity Management."
+  },
+  {
+    "id": "g1-ch8-q2",
+    "source": "guide1-chapter",
+    "topic": "security-banking",
+    "subtopic": "BCP/DR",
+    "difficulty": "easy",
+    "question": "What does RPO (Recovery Point Objective) measure in a Disaster Recovery Plan?",
+    "options": [
+      "Maximum acceptable service downtime",
+      "Maximum acceptable amount of data loss measured in time",
+      "Cost of cloud failover",
+      "Number of concurrent users supported"
+    ],
+    "answerIndex": 1,
+    "explanation": "RPO defines maximum tolerable data loss; RTO defines maximum tolerable downtime."
+  },
+  {
+    "id": "g1-ch8-q3",
+    "source": "guide1-chapter",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "medium",
+    "question": "Which standard defines the format of public-key digital certificates used in TLS/HTTPS?",
+    "options": [
+      "X.509",
+      "RFC 1918",
+      "IEEE 802.11",
+      "OAuth 2.0"
+    ],
+    "answerIndex": 0,
+    "explanation": "X.509 is the ITU-T standard for PKI digital certificates."
+  },
+  {
+    "id": "g1-ch8-q4",
+    "source": "guide1-chapter",
+    "topic": "security-banking",
+    "subtopic": "UPI/NEFT",
+    "difficulty": "medium",
+    "question": "What is the minimum transaction amount for an RTGS transfer in India, and which body operates RTGS?",
+    "options": [
+      "₹1 lakh; NPCI",
+      "₹2 lakh; RBI",
+      "₹5 lakh; RBI",
+      "No minimum; NPCI"
+    ],
+    "answerIndex": 1,
+    "explanation": "RTGS is operated by the RBI, runs 24x7, and has a ₹2,00,000 minimum with no upper ceiling."
+  },
+  {
+    "id": "g1-ch8-q5",
+    "source": "guide1-chapter",
+    "topic": "security-banking",
+    "subtopic": "RBI",
+    "difficulty": "medium",
+    "question": "From which date did the RBI Master Direction on IT Governance, Risk, Controls and Assurance Practices take effect?",
+    "options": [
+      "1 January 2020",
+      "1 April 2024",
+      "1 August 2026",
+      "2 June 2016"
+    ],
+    "answerIndex": 1,
+    "explanation": "Issued on 7 November 2023, the RBI IT Governance Master Direction came into effect on 1 April 2024."
+  },
+  {
+    "id": "g1-m1-q1",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the segment with a grammatical error: 'The lead architect, along with two backend engineers, (A) / are reviewing the microservice logs (B) / to isolate the latency spike (C) / before the release window. (D)'",
+    "options": [
+      "The lead architect, along with two backend engineers,",
+      "are reviewing the microservice logs",
+      "to isolate the latency spike",
+      "before the release window."
+    ],
+    "answerIndex": 1,
+    "explanation": "'Along with' joins a parenthetical phrase; the singular subject 'lead architect' requires 'is reviewing'."
+  },
+  {
+    "id": "g1-m1-q2",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'Hardly had the database migration completed (A) / than the payment gateway (B) / began reporting timeout errors (C) / across all regional nodes. (D)'",
+    "options": [
+      "Hardly had the database migration completed",
+      "than the payment gateway",
+      "began reporting timeout errors",
+      "across all regional nodes."
+    ],
+    "answerIndex": 1,
+    "explanation": "'Hardly' correlates with 'when', not 'than'."
+  },
+  {
+    "id": "g1-m1-q3",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'Neither the primary firewall nor the backup intrusion sensors (A) / was configured to alert (B) / the security operations center (C) / during the overnight drill. (D)'",
+    "options": [
+      "Neither the primary firewall nor the backup intrusion sensors",
+      "was configured to alert",
+      "the security operations center",
+      "during the overnight drill."
+    ],
+    "answerIndex": 1,
+    "explanation": "With 'neither...nor', the verb agrees with the nearer plural subject 'sensors' ('were configured')."
+  },
+  {
+    "id": "g1-m1-q4",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'The new core banking platform comprises of (A) / twelve independent modules (B) / designed to process retail loans (C) / with minimal manual intervention. (D)'",
+    "options": [
+      "The new core banking platform comprises of",
+      "twelve independent modules",
+      "designed to process retail loans",
+      "with minimal manual intervention."
+    ],
+    "answerIndex": 0,
+    "explanation": "In active voice, 'comprise' does not take 'of' ('comprises twelve independent modules')."
+  },
+  {
+    "id": "g1-m1-q5",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'If the development team had enabled automated schema validation earlier, (A) / the malformed JSON payload (B) / would not corrupt (C) / the downstream analytics table. (D)'",
+    "options": [
+      "If the development team had enabled automated schema validation earlier,",
+      "the malformed JSON payload",
+      "would not corrupt",
+      "the downstream analytics table."
+    ],
+    "answerIndex": 2,
+    "explanation": "Third conditional requires 'would not have corrupted'."
+  },
+  {
+    "id": "g1-m1-q6",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'To comply with RBI guidelines, the bank must ______ its disaster recovery site every quarter.'",
+    "options": [
+      "validate",
+      "vacillate",
+      "vilify",
+      "vitiate"
+    ],
+    "answerIndex": 0,
+    "explanation": "'Validate' means to verify/test compliance; the other options mean waver, defame, and spoil."
+  },
+  {
+    "id": "g1-m1-q7",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'The caching layer significantly ______ read latency on the account balance endpoint.'",
+    "options": [
+      "exacerbated",
+      "mitigated",
+      "proliferated",
+      "instigates"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Mitigated' means reduced the severity of latency."
+  },
+  {
+    "id": "g1-m1-q8",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'Because the legacy vendor contract was expiring, management accelerated the ______ to an in-house engineering team.'",
+    "options": [
+      "transition",
+      "transgression",
+      "transcendence",
+      "transaction"
+    ],
+    "answerIndex": 0,
+    "explanation": "'Transition' accurately describes moving from vendor support to an in-house team."
+  },
+  {
+    "id": "g1-m1-q9",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'Strict role-based access control ensures that sensitive customer records remain ______ to unauthorized staff.'",
+    "options": [
+      "accessible",
+      "impervious",
+      "inaccessible",
+      "indelible"
+    ],
+    "answerIndex": 2,
+    "explanation": "'Inaccessible' fits 'to unauthorized staff'."
+  },
+  {
+    "id": "g1-m1-q10",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'The post-incident review focused on systemic root causes rather than ______ individual developers.'",
+    "options": [
+      "exonerating",
+      "scapegoating",
+      "endorsing",
+      "empowering"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Scapegoating' means unfairly blaming individuals instead of fixing systemic causes."
+  },
+  {
+    "id": "g1-m1-q11",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest synonym for 'RESILIENT' in the context of banking infrastructure:",
+    "options": [
+      "Fragile",
+      "Fault-tolerant",
+      "Redundant",
+      "Obsolete"
+    ],
+    "answerIndex": 1,
+    "explanation": "Resilient systems recover rapidly from faults (fault-tolerant)."
+  },
+  {
+    "id": "g1-m1-q12",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest antonym for 'TRANSIENT' (as in transient network error):",
+    "options": [
+      "Fleeting",
+      "Ephemeral",
+      "Persistent",
+      "Intermittent"
+    ],
+    "answerIndex": 2,
+    "explanation": "Transient means temporary; its antonym is persistent."
+  },
+  {
+    "id": "g1-m1-q13",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest synonym for 'OBFUSCATE':",
+    "options": [
+      "Clarify",
+      "Obscure",
+      "Accelerate",
+      "Authenticate"
+    ],
+    "answerIndex": 1,
+    "explanation": "Obfuscate means to make unclear or obscure."
+  },
+  {
+    "id": "g1-m1-q14",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest antonym for 'STRINGENT' (as in stringent audit controls):",
+    "options": [
+      "Rigorous",
+      "Lenient",
+      "Mandatory",
+      "Comprehensive"
+    ],
+    "answerIndex": 1,
+    "explanation": "Stringent means strict; lenient is the opposite."
+  },
+  {
+    "id": "g1-m1-q15",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Phrase Replacement",
+    "difficulty": "easy",
+    "question": "Choose the best replacement for the bracketed phrase: 'The team decided to [put off] the database upgrade until Sunday midnight.'",
+    "options": [
+      "cancel",
+      "postpone",
+      "accelerate",
+      "automate"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Put off' means postpone."
+  },
+  {
+    "id": "g1-m1-q16",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Para-Jumbles",
+    "difficulty": "easy",
+    "question": "Arrange sentences P, Q, R, S into a coherent paragraph: (P) Consequently, banks adopt Retrieval-Augmented Generation to ground answers in verified policy documents. (Q) Large Language Models can generate fluent customer responses at scale. (R) However, without external grounding, they may hallucinate outdated interest rates. (S) This architecture separates reasoning capability from rapidly changing domain facts.",
+    "options": [
+      "Q-R-P-S",
+      "P-Q-R-S",
+      "R-Q-P-S",
+      "Q-P-S-R"
+    ],
+    "answerIndex": 0,
+    "explanation": "Q introduces LLMs; R states the limitation ('However'); P gives the solution ('Consequently'); S explains 'This architecture'."
+  },
+  {
+    "id": "g1-m1-q17",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Para-Jumbles",
+    "difficulty": "easy",
+    "question": "Arrange sentences P, Q, R, S: (P) First, the API gateway authenticates the incoming OAuth token. (Q) Every mobile banking request traverses multiple security layers. (R) Finally, the core ledger commits the debit and credit atomically. (S) Next, the fraud engine scores the transaction for anomalies.",
+    "options": [
+      "P-Q-S-R",
+      "Q-P-S-R",
+      "Q-S-P-R",
+      "S-P-Q-R"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q is the topic sentence; P ('First'), S ('Next'), R ('Finally') form the exact sequence."
+  },
+  {
+    "id": "g1-m1-q18",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Spelling",
+    "difficulty": "easy",
+    "question": "Choose the correctly spelled word:",
+    "options": [
+      "Accomodate",
+      "Acommodate",
+      "Accommodate",
+      "Acomodate"
+    ],
+    "answerIndex": 2,
+    "explanation": "Accommodate has double 'c' and double 'm'."
+  },
+  {
+    "id": "g1-m1-q19",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Spelling",
+    "difficulty": "easy",
+    "question": "Choose the correctly spelled word:",
+    "options": [
+      "Supercede",
+      "Supersede",
+      "Superceed",
+      "Suppersede"
+    ],
+    "answerIndex": 1,
+    "explanation": "Supersede ends in '-sede'."
+  },
+  {
+    "id": "g1-m1-q20",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Idioms",
+    "difficulty": "easy",
+    "question": "Choose the correct idiom meaning: 'The sudden regulatory audit caught the legacy vendor off guard.'",
+    "options": [
+      "Completely unprepared",
+      "Under heavy security",
+      "Ahead of schedule",
+      "Working overtime"
+    ],
+    "answerIndex": 0,
+    "explanation": "'Caught off guard' means taken by surprise / unprepared."
+  },
+  {
+    "id": "g1-m1-q21",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Public sector banks are rapidly transitioning from monolithic vendor-managed applications to cloud-native microservices maintained by in-house teams. While monoliths simplified initial deployment, scaling a single payment module required replicating the entire codebase. Microservices enable independent scaling and faster release cycles, but introduce operational overhead such as distributed tracing, service discovery, and eventual consistency.' Why did scaling a single module prove inefficient in monolithic banking apps?",
+    "options": [
+      "It required replicating the entire codebase",
+      "It prohibited the use of SQL databases",
+      "It eliminated security firewalls",
+      "It prevented customer logins"
+    ],
+    "answerIndex": 0,
+    "explanation": "Directly stated in sentence 2 of the passage."
+  },
+  {
+    "id": "g1-m1-q22",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Public sector banks are rapidly transitioning from monolithic vendor-managed applications to cloud-native microservices maintained by in-house teams. While monoliths simplified initial deployment, scaling a single payment module required replicating the entire codebase. Microservices enable independent scaling and faster release cycles, but introduce operational overhead such as distributed tracing, service discovery, and eventual consistency.' Which challenge is explicitly introduced by migrating to microservices?",
+    "options": [
+      "Slower release cycles",
+      "Distributed tracing and eventual consistency",
+      "Inability to use cloud platforms",
+      "Higher licensing fees for monoliths"
+    ],
+    "answerIndex": 1,
+    "explanation": "Directly stated in sentence 3 of the passage."
+  },
+  {
+    "id": "g1-m1-q23",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Public sector banks are rapidly transitioning from monolithic vendor-managed applications to cloud-native microservices maintained by in-house teams. While monoliths simplified initial deployment, scaling a single payment module required replicating the entire codebase. Microservices enable independent scaling and faster release cycles, but introduce operational overhead such as distributed tracing, service discovery, and eventual consistency.' What strategic shift are public sector banks making?",
+    "options": [
+      "Outsourcing all IT to external vendors",
+      "Moving toward in-house cloud-native microservices",
+      "Retiring digital payment platforms",
+      "Replacing APIs with manual branch ledgers"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sentence 1 highlights moving from vendor-managed monoliths to in-house cloud-native microservices."
+  },
+  {
+    "id": "g1-m1-q24",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Public sector banks are rapidly transitioning from monolithic vendor-managed applications to cloud-native microservices maintained by in-house teams. While monoliths simplified initial deployment, scaling a single payment module required replicating the entire codebase. Microservices enable independent scaling and faster release cycles, but introduce operational overhead such as distributed tracing, service discovery, and eventual consistency.' In the passage, the word 'overhead' most nearly means:",
+    "options": [
+      "Physical ceiling",
+      "Additional operational complexity/cost",
+      "Financial profit",
+      "Hardware warranty"
+    ],
+    "answerIndex": 1,
+    "explanation": "Operational overhead refers to extra management complexity and cost."
+  },
+  {
+    "id": "g1-m1-q25",
+    "source": "guide1-mock1",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Public sector banks are rapidly transitioning from monolithic vendor-managed applications to cloud-native microservices maintained by in-house teams. While monoliths simplified initial deployment, scaling a single payment module required replicating the entire codebase. Microservices enable independent scaling and faster release cycles, but introduce operational overhead such as distributed tracing, service discovery, and eventual consistency.' What is the tone of the passage?",
+    "options": [
+      "Sarcastic",
+      "Balanced and analytical",
+      "Alarmist",
+      "Promotional"
+    ],
+    "answerIndex": 1,
+    "explanation": "The passage objectively weighs benefits of microservices against their operational trade-offs."
+  },
+  {
+    "id": "g1-m1-q26",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "JavaScript",
+    "difficulty": "medium",
+    "question": "In JavaScript, what is logged by: console.log(1); setTimeout(() => console.log(2), 0); Promise.resolve().then(() => console.log(3)); console.log(4);?",
+    "options": [
+      "1, 2, 3, 4",
+      "1, 4, 2, 3",
+      "1, 4, 3, 2",
+      "1, 3, 4, 2"
+    ],
+    "answerIndex": 2,
+    "explanation": "Synchronous logs (1, 4) run first, then the Microtask Queue (Promise -> 3), then the Macrotask Queue (setTimeout -> 2)."
+  },
+  {
+    "id": "g1-m1-q27",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "React",
+    "difficulty": "medium",
+    "question": "In React, why should you avoid using array indices as key props in a list whose items can be reordered or deleted?",
+    "options": [
+      "React throws a syntax error",
+      "It breaks reconciliation and can associate state with the wrong item",
+      "Keys must always be UUID strings",
+      "Array indices cannot be passed to child components"
+    ],
+    "answerIndex": 1,
+    "explanation": "Changing item order shifts indices, causing React to reuse DOM/component state on the wrong list element."
+  },
+  {
+    "id": "g1-m1-q28",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "TypeScript",
+    "difficulty": "medium",
+    "question": "In TypeScript, what is the key safety advantage of unknown over any?",
+    "options": [
+      "unknown is faster at runtime",
+      "unknown requires type narrowing before accessing properties or calling methods",
+      "unknown only accepts primitive numbers",
+      "any cannot be assigned to variables"
+    ],
+    "answerIndex": 1,
+    "explanation": "unknown forces explicit type checks before use, whereas any bypasses the type checker."
+  },
+  {
+    "id": "g1-m1-q29",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "Java",
+    "difficulty": "medium",
+    "question": "In Java 8+, what happens when a HashMap bucket exceeds 8 colliding entries (and table capacity is at least 64)?",
+    "options": [
+      "It throws HashCollisionException",
+      "The bucket converts from a linked list to a balanced Red-Black Tree",
+      "The map stops accepting new keys",
+      "It switches to linear probing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Treeification improves worst-case bucket lookup from O(n) to O(log n)."
+  },
+  {
+    "id": "g1-m1-q30",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "Spring Boot",
+    "difficulty": "easy",
+    "question": "Which Spring Boot annotation combines @Configuration, @EnableAutoConfiguration, and @ComponentScan?",
+    "options": [
+      "@RestController",
+      "@SpringBootApplication",
+      "@EnableWebMvc",
+      "@Component"
+    ],
+    "answerIndex": 1,
+    "explanation": "@SpringBootApplication is a convenience meta-annotation combining those three annotations."
+  },
+  {
+    "id": "g1-m1-q31",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "Python",
+    "difficulty": "medium",
+    "question": "In Python, why is def add_item(val, items=[]): items.append(val); return items considered a bug?",
+    "options": [
+      "Lists cannot be passed as arguments",
+      "The default list object is created once at function definition and mutated across calls",
+      "Python forbids modifying lists inside functions",
+      "It triggers a GIL deadlock"
+    ],
+    "answerIndex": 1,
+    "explanation": "Mutable default arguments persist across invocations; use items=None instead."
+  },
+  {
+    "id": "g1-m1-q32",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "REST APIs",
+    "difficulty": "medium",
+    "question": "Which pair of HTTP methods is BOTH safe and idempotent according to RFC 9110?",
+    "options": [
+      "POST and PUT",
+      "GET and HEAD",
+      "DELETE and PATCH",
+      "PUT and DELETE"
+    ],
+    "answerIndex": 1,
+    "explanation": "GET and HEAD do not modify server state (safe) and are idempotent; PUT/DELETE are idempotent but not safe."
+  },
+  {
+    "id": "g1-m1-q33",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "REST APIs",
+    "difficulty": "medium",
+    "question": "A payment microservice receives duplicate retry requests from a flaky mobile network. Which pattern prevents double-debiting a customer on POST /transfers?",
+    "options": [
+      "HTTP Basic Auth",
+      "Client-generated Idempotency-Key persisted with the transaction",
+      "Increasing TCP window size",
+      "Disabling HTTPS"
+    ],
+    "answerIndex": 1,
+    "explanation": "Storing an Idempotency-Key lets the server return the original result on retries without re-executing the debit."
+  },
+  {
+    "id": "g1-m1-q34",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "Microservices",
+    "difficulty": "medium",
+    "question": "In a microservices architecture, what is the primary role of the Saga pattern?",
+    "options": [
+      "Encrypting REST payloads",
+      "Managing distributed transactions via local transactions and compensating actions",
+      "Load-balancing static HTML files",
+      "Replacing relational databases with Redis"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sagas maintain eventual consistency across services without holding distributed 2PC locks."
+  },
+  {
+    "id": "g1-m1-q35",
+    "source": "guide1-mock1",
+    "topic": "backend",
+    "subtopic": "HTTP",
+    "difficulty": "easy",
+    "question": "Which HTTP status code indicates that a gateway or reverse proxy received an invalid response from an upstream server?",
+    "options": [
+      "500 Internal Server Error",
+      "502 Bad Gateway",
+      "503 Service Unavailable",
+      "504 Gateway Timeout"
+    ],
+    "answerIndex": 1,
+    "explanation": "502 Bad Gateway signals an invalid upstream response; 504 signals an upstream timeout."
+  },
+  {
+    "id": "g1-m1-q36",
+    "source": "guide1-mock1",
+    "topic": "dbms",
+    "subtopic": "Normalization",
+    "difficulty": "hard",
+    "question": "A relation R(A, B, C, D) has candidate key (A, B) and functional dependency B -> C. Which is the highest normal form R currently satisfies?",
+    "options": [
+      "1NF only",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answerIndex": 0,
+    "explanation": "C depends on part of the composite candidate key (B), which is a partial dependency violating 2NF."
+  },
+  {
+    "id": "g1-m1-q37",
+    "source": "guide1-mock1",
+    "topic": "dbms",
+    "subtopic": "Transactions",
+    "difficulty": "medium",
+    "question": "Which SQL isolation level prevents Dirty Reads and Non-Repeatable Reads, while still theoretically permitting Phantom Reads in the SQL-92 standard?",
+    "options": [
+      "READ UNCOMMITTED",
+      "READ COMMITTED",
+      "REPEATABLE READ",
+      "SERIALIZABLE"
+    ],
+    "answerIndex": 2,
+    "explanation": "REPEATABLE READ prevents dirty and non-repeatable reads; SERIALIZABLE also prevents phantoms."
+  },
+  {
+    "id": "g1-m1-q38",
+    "source": "guide1-mock1",
+    "topic": "dbms",
+    "subtopic": "Indexing",
+    "difficulty": "medium",
+    "question": "A table has a composite B-Tree index on (branch_id, txn_date, amount). Which WHERE clause can LEAST effectively use this index?",
+    "options": [
+      "WHERE branch_id = 101",
+      "WHERE branch_id = 101 AND txn_date = '2026-10-01'",
+      "WHERE amount > 50000",
+      "WHERE branch_id = 101 AND txn_date > '2026-10-01'"
+    ],
+    "answerIndex": 2,
+    "explanation": "Filtering only on the trailing column amount violates the Leftmost Prefix Rule."
+  },
+  {
+    "id": "g1-m1-q39",
+    "source": "guide1-mock1",
+    "topic": "dbms",
+    "subtopic": "Indexing",
+    "difficulty": "easy",
+    "question": "How many Clustered Indexes can exist on a single relational database table?",
+    "options": [
+      "Zero only",
+      "At most one",
+      "Up to 16",
+      "Unlimited"
+    ],
+    "answerIndex": 1,
+    "explanation": "A clustered index dictates the physical storage order of table rows, so only one can exist per table."
+  },
+  {
+    "id": "g1-m1-q40",
+    "source": "guide1-mock1",
+    "topic": "dbms",
+    "subtopic": "SQL",
+    "difficulty": "easy",
+    "question": "Which SQL command is a DDL statement that removes all rows from a table without logging individual row deletions and cannot be filtered with WHERE?",
+    "options": [
+      "DELETE",
+      "TRUNCATE",
+      "DROP",
+      "REVOKE"
+    ],
+    "answerIndex": 1,
+    "explanation": "TRUNCATE is DDL, fast, deallocates data pages, and takes no WHERE clause."
+  },
+  {
+    "id": "g1-m1-q41",
+    "source": "guide1-mock1",
+    "topic": "dbms",
+    "subtopic": "Data Warehousing",
+    "difficulty": "medium",
+    "question": "In Data Warehousing, which statement accurately describes OLAP systems?",
+    "options": [
+      "Optimized for high-frequency single-row inserts and updates",
+      "Optimized for complex historical aggregations and multi-dimensional queries",
+      "Always strictly normalized to BCNF",
+      "Used exclusively for ATM PIN verification"
+    ],
+    "answerIndex": 1,
+    "explanation": "OLAP handles analytical aggregations over historical data, typically using Star/Snowflake schemas."
+  },
+  {
+    "id": "g1-m1-q42",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "easy",
+    "question": "What is the worst-case time complexity of searching for a key in a balanced AVL Tree with n nodes?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answerIndex": 1,
+    "explanation": "AVL trees maintain height balance, guaranteeing O(log n) search, insert, and delete."
+  },
+  {
+    "id": "g1-m1-q43",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "easy",
+    "question": "Which graph traversal algorithm guarantees finding the shortest path (minimum edge count) in an unweighted graph?",
+    "options": [
+      "Depth-First Search (DFS)",
+      "Breadth-First Search (BFS)",
+      "Kruskal's Algorithm",
+      "Topological Sort"
+    ],
+    "answerIndex": 1,
+    "explanation": "BFS explores vertices level by level, guaranteeing minimum hops in unweighted graphs."
+  },
+  {
+    "id": "g1-m1-q44",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "medium",
+    "question": "What is the space complexity of tail-recursive Quick Sort in the best/average case (optimizing the smaller partition first)?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Recursing on the smaller partition bounds call-stack depth to O(log n)."
+  },
+  {
+    "id": "g1-m1-q45",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "easy",
+    "question": "Which traversal of a Binary Search Tree (BST) outputs all keys in non-decreasing sorted order?",
+    "options": [
+      "Preorder",
+      "Inorder",
+      "Postorder",
+      "Level-order"
+    ],
+    "answerIndex": 1,
+    "explanation": "Inorder (Left -> Root -> Right) visits BST nodes in sorted order."
+  },
+  {
+    "id": "g1-m1-q46",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "medium",
+    "question": "Three processes arrive at time 0 with burst times 6ms, 2ms, and 4ms. Using non-preemptive Shortest Job First (SJF), what is the average Waiting Time?",
+    "options": [
+      "2.67 ms",
+      "4.00 ms",
+      "6.00 ms",
+      "3.33 ms"
+    ],
+    "answerIndex": 0,
+    "explanation": "Execution order: P2(2ms, WT=0), P3(4ms, WT=2), P1(6ms, WT=6). Average WT = (0+2+6)/3 = 2.67 ms."
+  },
+  {
+    "id": "g1-m1-q47",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "medium",
+    "question": "Which of the following is NOT one of the four Coffman necessary conditions for Deadlock?",
+    "options": [
+      "Mutual Exclusion",
+      "Hold and Wait",
+      "Preemption Allowed",
+      "Circular Wait"
+    ],
+    "answerIndex": 2,
+    "explanation": "Deadlock requires NO Preemption (along with Mutual Exclusion, Hold & Wait, Circular Wait)."
+  },
+  {
+    "id": "g1-m1-q48",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "easy",
+    "question": "In virtual memory management, what condition occurs when a system spends more time servicing page faults than executing instructions?",
+    "options": [
+      "Spooling",
+      "Thrashing",
+      "Compaction",
+      "Caching"
+    ],
+    "answerIndex": 1,
+    "explanation": "Thrashing happens when working sets exceed physical RAM frames, causing constant paging."
+  },
+  {
+    "id": "g1-m1-q49",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "easy",
+    "question": "Which Linux command prints the absolute path of the current working directory?",
+    "options": [
+      "cd",
+      "ls -la",
+      "pwd",
+      "whoami"
+    ],
+    "answerIndex": 2,
+    "explanation": "pwd stands for 'print working directory'."
+  },
+  {
+    "id": "g1-m1-q50",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "OSI Model",
+    "difficulty": "easy",
+    "question": "At which OSI layer does a standard network Router operate?",
+    "options": [
+      "Layer 1 (Physical)",
+      "Layer 2 (Data Link)",
+      "Layer 3 (Network)",
+      "Layer 4 (Transport)"
+    ],
+    "answerIndex": 2,
+    "explanation": "Routers forward packets using Layer 3 IP addresses."
+  },
+  {
+    "id": "g1-m1-q51",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which protocol maps a known IPv4 address to its corresponding Layer 2 MAC address on a local LAN?",
+    "options": [
+      "DNS",
+      "ARP",
+      "ICMP",
+      "DHCP"
+    ],
+    "answerIndex": 1,
+    "explanation": "Address Resolution Protocol (ARP) resolves IPv4 to MAC addresses."
+  },
+  {
+    "id": "g1-m1-q52",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Subnetting",
+    "difficulty": "medium",
+    "question": "How many usable host addresses are in a 10.20.30.0/26 subnet?",
+    "options": [
+      "64",
+      "62",
+      "30",
+      "126"
+    ],
+    "answerIndex": 1,
+    "explanation": "Host bits = 32 - 26 = 6; usable hosts = 2^6 - 2 = 62."
+  },
+  {
+    "id": "g1-m1-q53",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which statement correctly contrasts SMTP and IMAP?",
+    "options": [
+      "SMTP retrieves mail; IMAP sends mail",
+      "SMTP sends/relays mail; IMAP retrieves and synchronizes mail across devices",
+      "Both run on UDP port 53",
+      "IMAP deletes mail immediately upon download by default"
+    ],
+    "answerIndex": 1,
+    "explanation": "SMTP pushes/relays email; IMAP keeps folders synced on the mail server."
+  },
+  {
+    "id": "g1-m1-q54",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which lightweight publish-subscribe protocol is widely used for IoT telemetry transfer?",
+    "options": [
+      "FTP",
+      "MQTT",
+      "Telnet",
+      "SNMP"
+    ],
+    "answerIndex": 1,
+    "explanation": "MQTT (port 1883) is the standard lightweight pub/sub protocol for IoT."
+  },
+  {
+    "id": "g1-m1-q55",
+    "source": "guide1-mock1",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Why does IPv6 largely eliminate the need for Network Address Translation (NAT)?",
+    "options": [
+      "IPv6 uses 128-bit addresses providing an enormous globally unique address space",
+      "IPv6 removes IP headers",
+      "IPv6 only runs on private LANs",
+      "IPv6 uses MAC addresses instead of IPs"
+    ],
+    "answerIndex": 0,
+    "explanation": "128-bit addressing (~3.4x10^38 addresses) allows globally routable addresses without NAT."
+  },
+  {
+    "id": "g1-m1-q56",
+    "source": "guide1-mock1",
+    "topic": "se-arch",
+    "subtopic": "Software Engineering",
+    "difficulty": "easy",
+    "question": "In Software Engineering, what combination represents the ideal modular design?",
+    "options": [
+      "Low Cohesion, High Coupling",
+      "High Cohesion, Low Coupling",
+      "High Cohesion, High Coupling",
+      "Low Cohesion, Low Coupling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Modules should be internally focused (high cohesion) and minimally dependent on others (low coupling)."
+  },
+  {
+    "id": "g1-m1-q57",
+    "source": "guide1-mock1",
+    "topic": "se-arch",
+    "subtopic": "Testing",
+    "difficulty": "easy",
+    "question": "Which testing technique verifies that recent code changes have not broken previously working functionality?",
+    "options": [
+      "Unit Testing",
+      "Regression Testing",
+      "Alpha Testing",
+      "Load Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Regression testing re-runs existing test suites to catch unintended side effects."
+  },
+  {
+    "id": "g1-m1-q58",
+    "source": "guide1-mock1",
+    "topic": "se-arch",
+    "subtopic": "Design Patterns",
+    "difficulty": "medium",
+    "question": "In SOLID design principles, what does the 'L' (Liskov Substitution Principle) state?",
+    "options": [
+      "Classes should be open for modification",
+      "Subtypes must be substitutable for their base types without altering program correctness",
+      "Modules should depend on concrete implementations",
+      "Interfaces should have as many methods as possible"
+    ],
+    "answerIndex": 1,
+    "explanation": "LSP ensures derived classes honor the behavioral contract of their base class."
+  },
+  {
+    "id": "g1-m1-q59",
+    "source": "guide1-mock1",
+    "topic": "se-arch",
+    "subtopic": "ITIL",
+    "difficulty": "easy",
+    "question": "In ITIL, which record stores known underlying causes of recurring incidents along with documented workarounds?",
+    "options": [
+      "Service Catalog",
+      "Known Error Database (KEDB)",
+      "Asset Depreciation Ledger",
+      "Access Control List"
+    ],
+    "answerIndex": 1,
+    "explanation": "Problem Management maintains the KEDB to speed up future incident resolution."
+  },
+  {
+    "id": "g1-m1-q60",
+    "source": "guide1-mock1",
+    "topic": "emerging",
+    "subtopic": "Docker",
+    "difficulty": "medium",
+    "question": "Which Docker instruction defines the fixed main executable of a container that is NOT easily overridden by arguments passed to docker run?",
+    "options": [
+      "ENV",
+      "CMD",
+      "ENTRYPOINT",
+      "WORKDIR"
+    ],
+    "answerIndex": 2,
+    "explanation": "ENTRYPOINT sets the fixed command; arguments passed to docker run are appended to it (overriding CMD)."
+  },
+  {
+    "id": "g1-m1-q61",
+    "source": "guide1-mock1",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "In Kubernetes, which object exposes an HTTP/HTTPS Layer 7 route (host/path rules + TLS termination) to internal Services?",
+    "options": [
+      "ConfigMap",
+      "Ingress",
+      "DaemonSet",
+      "PersistentVolume"
+    ],
+    "answerIndex": 1,
+    "explanation": "Ingress manages external HTTP/HTTPS L7 routing into cluster Services."
+  },
+  {
+    "id": "g1-m1-q62",
+    "source": "guide1-mock1",
+    "topic": "emerging",
+    "subtopic": "DevSecOps",
+    "difficulty": "medium",
+    "question": "Which security testing tool scans third-party open-source libraries (e.g., pom.xml, package.json) for known CVEs?",
+    "options": [
+      "SCA (Software Composition Analysis)",
+      "DAST",
+      "WAF",
+      "Load Balancer"
+    ],
+    "answerIndex": 0,
+    "explanation": "SCA identifies vulnerable open-source dependencies in your supply chain."
+  },
+  {
+    "id": "g1-m1-q63",
+    "source": "guide1-mock1",
+    "topic": "emerging",
+    "subtopic": "AI/ML",
+    "difficulty": "medium",
+    "question": "A banking fraud model flags 100 transactions as fraud: 80 are true fraud (TP) and 20 are legitimate (FP). It misses 20 actual frauds (FN). What is the model's Recall?",
+    "options": [
+      "0.75",
+      "0.80",
+      "0.90",
+      "0.50"
+    ],
+    "answerIndex": 1,
+    "explanation": "Recall = TP / (TP + FN) = 80 / (80 + 20) = 0.80 (80%)."
+  },
+  {
+    "id": "g1-m1-q64",
+    "source": "guide1-mock1",
+    "topic": "emerging",
+    "subtopic": "AI/ML",
+    "difficulty": "medium",
+    "question": "Which technique reduces overfitting in neural networks by randomly deactivating a fraction of neurons during training?",
+    "options": [
+      "Gradient Explosion",
+      "Dropout",
+      "One-Hot Encoding",
+      "Tokenization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Dropout prevents co-adaptation of neurons, acting as regularization against overfitting."
+  },
+  {
+    "id": "g1-m1-q65",
+    "source": "guide1-mock1",
+    "topic": "emerging",
+    "subtopic": "RAG",
+    "difficulty": "medium",
+    "question": "In a RAG pipeline, what is the role of an Embedding Model?",
+    "options": [
+      "Rendering HTML charts",
+      "Converting text chunks and queries into dense numeric vectors for semantic similarity search",
+      "Encrypting database passwords",
+      "Compiling Python to C++"
+    ],
+    "answerIndex": 1,
+    "explanation": "Embeddings capture semantic meaning as vectors so the Vector DB can retrieve relevant passages."
+  },
+  {
+    "id": "g1-m1-q66",
+    "source": "guide1-mock1",
+    "topic": "emerging",
+    "subtopic": "GenAI",
+    "difficulty": "easy",
+    "question": "Setting the temperature parameter of an LLM API to 0.0 produces what behavior?",
+    "options": [
+      "Maximum creativity and randomness",
+      "Highly deterministic, repeatable, factual outputs",
+      "Faster token billing",
+      "Disabling the system prompt"
+    ],
+    "answerIndex": 1,
+    "explanation": "Low/zero temperature selects the highest-probability tokens greedily, minimizing randomness."
+  },
+  {
+    "id": "g1-m1-q67",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "medium",
+    "question": "In asymmetric cryptography, how does a sender create a Digital Signature to guarantee authentication and non-repudiation?",
+    "options": [
+      "Encrypts the message hash with the sender's Private Key",
+      "Encrypts the message hash with the receiver's Public Key",
+      "Compresses the file with ZIP",
+      "Hashes the file with MD5 only"
+    ],
+    "answerIndex": 0,
+    "explanation": "Signing with the sender's private key lets anyone verify origin using the sender's public key."
+  },
+  {
+    "id": "g1-m1-q68",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "OWASP",
+    "difficulty": "easy",
+    "question": "Which defensive measure is the primary protection against SQL Injection (SQLi)?",
+    "options": [
+      "Base64 encoding inputs",
+      "Parameterized Queries / Prepared Statements",
+      "Hiding error pages only",
+      "Using HTTP GET instead of POST"
+    ],
+    "answerIndex": 1,
+    "explanation": "Parameterized queries separate SQL syntax from user-supplied data so input cannot alter query logic."
+  },
+  {
+    "id": "g1-m1-q69",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "OWASP",
+    "difficulty": "medium",
+    "question": "Which OWASP attack tricks an authenticated user's browser into sending an unintended state-changing request to a banking site where they hold an active session cookie?",
+    "options": [
+      "SQL Injection",
+      "CSRF (Cross-Site Request Forgery)",
+      "DNS Poisoning",
+      "ARP Spoofing"
+    ],
+    "answerIndex": 1,
+    "explanation": "CSRF exploits ambient session cookies; mitigated with Anti-CSRF tokens and SameSite cookies."
+  },
+  {
+    "id": "g1-m1-q70",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "UPI/NEFT",
+    "difficulty": "easy",
+    "question": "Which Indian payment system settles transactions in 48 half-hourly batches 24x7 and is operated by the RBI?",
+    "options": [
+      "IMPS",
+      "NEFT",
+      "RTGS",
+      "UPI"
+    ],
+    "answerIndex": 1,
+    "explanation": "NEFT runs 24x7x365 in 48 half-hourly batches and is owned/operated by RBI."
+  },
+  {
+    "id": "g1-m1-q71",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "UPI/NEFT",
+    "difficulty": "easy",
+    "question": "What is the per-transaction limit on IMPS across standard digital channels as set by NPCI/RBI?",
+    "options": [
+      "₹1 lakh",
+      "₹2 lakh",
+      "₹5 lakh",
+      "No upper limit"
+    ],
+    "answerIndex": 2,
+    "explanation": "IMPS supports instant 24x7 transfers up to ₹5 lakh per transaction."
+  },
+  {
+    "id": "g1-m1-q72",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "Payment Systems",
+    "difficulty": "easy",
+    "question": "How many characters are in an Indian IFSC code, and what is always the 5th character?",
+    "options": [
+      "9 characters; '1'",
+      "11 characters; '0' (zero)",
+      "12 characters; 'A'",
+      "16 characters; '0'"
+    ],
+    "answerIndex": 1,
+    "explanation": "IFSC has 11 characters: 4-letter bank code + '0' (reserved) + 6-character branch code."
+  },
+  {
+    "id": "g1-m1-q73",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "BCP/DR",
+    "difficulty": "easy",
+    "question": "Which Disaster Recovery site provides the lowest RTO (near-instant failover) with fully provisioned live infrastructure and real-time data replication?",
+    "options": [
+      "Cold Site",
+      "Warm Site",
+      "Hot Site",
+      "Offsite Tape Vault"
+    ],
+    "answerIndex": 2,
+    "explanation": "Hot sites maintain live mirrored infrastructure for minimal downtime (lowest RTO)."
+  },
+  {
+    "id": "g1-m1-q74",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "RBI",
+    "difficulty": "medium",
+    "question": "Under the RBI Master Direction on IT Governance (effective 1 April 2024), which Board-level committee oversees IT strategy, architecture, and cyber risk?",
+    "options": [
+      "Audit Committee only",
+      "IT Strategy Committee (ITSC)",
+      "Credit Sanction Committee",
+      "HR Compensation Committee"
+    ],
+    "answerIndex": 1,
+    "explanation": "RBI mandates a Board-level IT Strategy Committee (ITSC) for regulated entities."
+  },
+  {
+    "id": "g1-m1-q75",
+    "source": "guide1-mock1",
+    "topic": "security-banking",
+    "subtopic": "Payment Systems",
+    "difficulty": "medium",
+    "question": "Which international financial messaging standard uses structured XML/data models and is adopted by modern RTGS and SWIFT cross-border payments?",
+    "options": [
+      "ISO 8583",
+      "ISO 20022",
+      "ISO 9001",
+      "POSIX"
+    ],
+    "answerIndex": 1,
+    "explanation": "ISO 20022 is the modern global XML-based financial messaging standard replacing legacy MT formats."
+  },
+  {
+    "id": "g1-m2-q1",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'No sooner did the deployment pipeline finish (A) / when the monitoring dashboard (B) / flagged elevated memory usage (C) / in the authentication pod. (D)'",
+    "options": [
+      "No sooner did the deployment pipeline finish",
+      "when the monitoring dashboard",
+      "flagged elevated memory usage",
+      "in the authentication pod."
+    ],
+    "answerIndex": 1,
+    "explanation": "'No sooner' correlates with 'than', not 'when'."
+  },
+  {
+    "id": "g1-m2-q2",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'Each of the eighteen shortlisted candidates (A) / have submitted their verified (B) / work experience certificates (C) / prior to the technical interview. (D)'",
+    "options": [
+      "Each of the eighteen shortlisted candidates",
+      "have submitted their verified",
+      "work experience certificates",
+      "prior to the technical interview."
+    ],
+    "answerIndex": 1,
+    "explanation": "'Each' is singular and takes the singular verb 'has submitted'."
+  },
+  {
+    "id": "g1-m2-q3",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'The Chief Information Security Officer insisted (A) / that every production API endpoint (B) / must be encrypted (C) / with TLS 1.3 or higher. (D)'",
+    "options": [
+      "The Chief Information Security Officer insisted",
+      "that every production API endpoint",
+      "must be encrypted",
+      "with TLS 1.3 or higher."
+    ],
+    "answerIndex": 2,
+    "explanation": "Subjunctive mood after 'insisted that' uses bare infinitive 'be encrypted' (or removes redundant 'must')."
+  },
+  {
+    "id": "g1-m2-q4",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'Between the four cloud providers evaluated, (A) / the architecture board selected (B) / the one offering native (C) / Indian data-residency regions. (D)'",
+    "options": [
+      "Between the four cloud providers evaluated,",
+      "the architecture board selected",
+      "the one offering native",
+      "Indian data-residency regions."
+    ],
+    "answerIndex": 0,
+    "explanation": "Use 'Among' for more than two entities ('Among the four cloud providers')."
+  },
+  {
+    "id": "g1-m2-q5",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Error Spotting",
+    "difficulty": "easy",
+    "question": "Identify the grammatical error: 'Despite of the tight seven-day deadline, (A) / the engineering squad delivered (B) / a thoroughly tested patch (C) / for the UPI reconciliation job. (D)'",
+    "options": [
+      "Despite of the tight seven-day deadline,",
+      "the engineering squad delivered",
+      "a thoroughly tested patch",
+      "for the UPI reconciliation job."
+    ],
+    "answerIndex": 0,
+    "explanation": "'Despite' is never followed by 'of' (use 'Despite the tight...' or 'In spite of')."
+  },
+  {
+    "id": "g1-m2-q6",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'Automated regression suites help teams deploy faster without ______ production stability.'",
+    "options": [
+      "bolstering",
+      "jeopardizing",
+      "validating",
+      "streamlining"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Jeopardizing' means putting stability at risk."
+  },
+  {
+    "id": "g1-m2-q7",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'The regulator issued a ______ directive requiring all banks to report severe cyber incidents within six hours.'",
+    "options": [
+      "discretionary",
+      "mandatory",
+      "tentative",
+      "ambiguous"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Mandatory' fits a binding regulatory requirement."
+  },
+  {
+    "id": "g1-m2-q8",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'Clear API documentation reduces friction and ______ onboarding for new full-stack engineers.'",
+    "options": [
+      "impedes",
+      "expedites",
+      "obscures",
+      "deters"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Expedites' means speeds up."
+  },
+  {
+    "id": "g1-m2-q9",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'The load balancer distributes incoming traffic evenly to prevent any single server from becoming a ______.'",
+    "options": [
+      "catalyst",
+      "bottleneck",
+      "benchmark",
+      "blueprint"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Bottleneck' refers to a point of congestion."
+  },
+  {
+    "id": "g1-m2-q10",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Fill in the blank: 'Although the prototype performed well locally, its throughput ______ sharply under concurrent load.'",
+    "options": [
+      "surged",
+      "degraded",
+      "stabilized",
+      "thrived"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Although' signals contrast: throughput degraded under load."
+  },
+  {
+    "id": "g1-m2-q11",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest synonym for 'REDUNDANCY' in Disaster Recovery:",
+    "options": [
+      "Duplication for failover",
+      "Data deletion",
+      "Cost reduction",
+      "Single point of failure"
+    ],
+    "answerIndex": 0,
+    "explanation": "In DR/IT, redundancy means duplicate backup components for failover."
+  },
+  {
+    "id": "g1-m2-q12",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest antonym for 'MONOLITHIC':",
+    "options": [
+      "Unified",
+      "Modular",
+      "Massive",
+      "Rigid"
+    ],
+    "answerIndex": 1,
+    "explanation": "Modular (composed of independent parts) is the antonym of monolithic."
+  },
+  {
+    "id": "g1-m2-q13",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest synonym for 'UBIQUITOUS':",
+    "options": [
+      "Rare",
+      "Omnipresent",
+      "Hidden",
+      "Outdated"
+    ],
+    "answerIndex": 1,
+    "explanation": "Ubiquitous means present everywhere."
+  },
+  {
+    "id": "g1-m2-q14",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Vocabulary",
+    "difficulty": "easy",
+    "question": "Choose the closest antonym for 'CONCISE':",
+    "options": [
+      "Brief",
+      "Verbose",
+      "Exact",
+      "Crisp"
+    ],
+    "answerIndex": 1,
+    "explanation": "Verbose (wordy) is the opposite of concise."
+  },
+  {
+    "id": "g1-m2-q15",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Phrase Replacement",
+    "difficulty": "easy",
+    "question": "Choose the best replacement for the bracketed phrase: 'The auditor asked the team to [iron out] the discrepancies in the access logs.'",
+    "options": [
+      "ignore",
+      "resolve",
+      "amplify",
+      "conceal"
+    ],
+    "answerIndex": 1,
+    "explanation": "'Iron out' means to resolve minor problems or discrepancies."
+  },
+  {
+    "id": "g1-m2-q16",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Para-Jumbles",
+    "difficulty": "easy",
+    "question": "Arrange P, Q, R, S: (P) As a result, unauthorized actors cannot read intercepted packets. (Q) Transport Layer Security protects data moving between a browser and a bank server. (R) It achieves this by negotiating a symmetric session key during the initial handshake. (S) Without such encryption, credentials sent over public Wi-Fi would be exposed.",
+    "options": [
+      "Q-R-P-S",
+      "S-Q-R-P",
+      "Q-S-R-P",
+      "R-Q-P-S"
+    ],
+    "answerIndex": 0,
+    "explanation": "Q introduces TLS; R explains how ('It achieves this'); P states the result; S reinforces why it matters."
+  },
+  {
+    "id": "g1-m2-q17",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Para-Jumbles",
+    "difficulty": "easy",
+    "question": "Arrange P, Q, R, S: (P) Zero-trust architecture rejects this assumption completely. (Q) Traditional perimeter firewalls assumed every device inside the corporate LAN was trustworthy. (R) Instead, every request must be authenticated and authorized regardless of network location. (S) This approach dramatically limits lateral movement during a breach.",
+    "options": [
+      "P-Q-R-S",
+      "Q-P-R-S",
+      "Q-R-P-S",
+      "R-S-Q-P"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q sets the old model; P contrasts ('this assumption'); R explains 'Instead'; S gives the benefit."
+  },
+  {
+    "id": "g1-m2-q18",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Spelling",
+    "difficulty": "easy",
+    "question": "Choose the correctly spelled word:",
+    "options": [
+      "Occurence",
+      "Occurrence",
+      "Ocurrence",
+      "Occurrance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Occurrence has double 'c' and double 'r'."
+  },
+  {
+    "id": "g1-m2-q19",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Spelling",
+    "difficulty": "easy",
+    "question": "Choose the correctly spelled word:",
+    "options": [
+      "Maintenance",
+      "Maintainance",
+      "Maintenence",
+      "Maintanance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Maintenance is spelled with '-ten-'."
+  },
+  {
+    "id": "g1-m2-q20",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Idioms",
+    "difficulty": "easy",
+    "question": "Choose the correct idiom meaning: 'After three failed patches, the team went back to the drawing board.'",
+    "options": [
+      "Started planning again from scratch",
+      "Purchased new whiteboards",
+      "Hired graphic designers",
+      "Closed the project permanently"
+    ],
+    "answerIndex": 0,
+    "explanation": "'Back to the drawing board' means starting over to design a fresh solution."
+  },
+  {
+    "id": "g1-m2-q21",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Real-time retail payments in India have grown exponentially through UPI and IMPS, forcing banks to re-architect legacy batch-oriented core systems. Historically, end-of-day batch windows allowed databases to run heavy reconciliation jobs offline. Today, 24x7 availability leaves no downtime window, requiring active-active clustering, asynchronous event streaming, and automated observability to maintain sub-second response times.' Why can banks no longer rely on traditional end-of-day downtime windows?",
+    "options": [
+      "Customers prefer branch visits",
+      "24x7 real-time payment availability eliminates offline maintenance windows",
+      "Batch jobs are prohibited by law",
+      "SQL databases no longer support indexing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Directly stated in sentence 3 of the passage."
+  },
+  {
+    "id": "g1-m2-q22",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Real-time retail payments in India have grown exponentially through UPI and IMPS, forcing banks to re-architect legacy batch-oriented core systems. Historically, end-of-day batch windows allowed databases to run heavy reconciliation jobs offline. Today, 24x7 availability leaves no downtime window, requiring active-active clustering, asynchronous event streaming, and automated observability to maintain sub-second response times.' Which architectural approach is cited to sustain sub-second response times?",
+    "options": [
+      "Single-node vertical scaling only",
+      "Active-active clustering and asynchronous event streaming",
+      "Manual reconciliation spreadsheets",
+      "Disabling observability logs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Directly listed in sentence 3 of the passage."
+  },
+  {
+    "id": "g1-m2-q23",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Real-time retail payments in India have grown exponentially through UPI and IMPS, forcing banks to re-architect legacy batch-oriented core systems. Historically, end-of-day batch windows allowed databases to run heavy reconciliation jobs offline. Today, 24x7 availability leaves no downtime window, requiring active-active clustering, asynchronous event streaming, and automated observability to maintain sub-second response times.' What drove banks to re-architect legacy batch-oriented core systems?",
+    "options": [
+      "Decline in mobile usage",
+      "Exponential growth in real-time retail payments like UPI and IMPS",
+      "Shortage of branch staff",
+      "End of NEFT services"
+    ],
+    "answerIndex": 1,
+    "explanation": "Stated in sentence 1 of the passage."
+  },
+  {
+    "id": "g1-m2-q24",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Real-time retail payments in India have grown exponentially through UPI and IMPS, forcing banks to re-architect legacy batch-oriented core systems. Historically, end-of-day batch windows allowed databases to run heavy reconciliation jobs offline. Today, 24x7 availability leaves no downtime window, requiring active-active clustering, asynchronous event streaming, and automated observability to maintain sub-second response times.' In the passage, 'observability' most closely refers to:",
+    "options": [
+      "Physical CCTV cameras",
+      "Automated monitoring of system health, logs, metrics, and traces",
+      "Public advertising",
+      "Customer branch surveys"
+    ],
+    "answerIndex": 1,
+    "explanation": "In IT/SRE, observability means inferring internal system state from logs, metrics, and traces."
+  },
+  {
+    "id": "g1-m2-q25",
+    "source": "guide1-mock2",
+    "topic": "english",
+    "subtopic": "Reading Comprehension",
+    "difficulty": "easy",
+    "question": "Read the passage: 'Real-time retail payments in India have grown exponentially through UPI and IMPS, forcing banks to re-architect legacy batch-oriented core systems. Historically, end-of-day batch windows allowed databases to run heavy reconciliation jobs offline. Today, 24x7 availability leaves no downtime window, requiring active-active clustering, asynchronous event streaming, and automated observability to maintain sub-second response times.' What is the best title for this passage?",
+    "options": [
+      "The History of Paper Cheques",
+      "Re-Architecting Banking Systems for 24x7 Real-Time Payments",
+      "Why Batch Processing Replaced UPI",
+      "Reducing Cloud Storage Costs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Captures the central theme accurately."
+  },
+  {
+    "id": "g1-m2-q26",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "JavaScript",
+    "difficulty": "hard",
+    "question": "In JavaScript, what is the output of console.log([] == ![])?",
+    "options": [
+      "false",
+      "true",
+      "TypeError",
+      "undefined"
+    ],
+    "answerIndex": 1,
+    "explanation": "![] evaluates to false (0); [] coerces to '' (0); 0 == 0 is true. Classic JS loose-equality trap."
+  },
+  {
+    "id": "g1-m2-q27",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "React",
+    "difficulty": "medium",
+    "question": "In React, what happens if you call useEffect(() => { fetchData(); }) WITHOUT providing a dependency array?",
+    "options": [
+      "It runs only once on mount",
+      "It runs after every single render",
+      "It never executes",
+      "It causes a compile error"
+    ],
+    "answerIndex": 1,
+    "explanation": "Omitting the dependency array causes the effect to re-run after every render."
+  },
+  {
+    "id": "g1-m2-q28",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "TypeScript",
+    "difficulty": "easy",
+    "question": "In TypeScript, which utility type makes all properties of interface User optional?",
+    "options": [
+      "Readonly",
+      "Partial",
+      "Pick",
+      "Record"
+    ],
+    "answerIndex": 1,
+    "explanation": "Partial transforms all properties of T into optional properties."
+  },
+  {
+    "id": "g1-m2-q29",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "Java",
+    "difficulty": "medium",
+    "question": "In Java, which statement about String, StringBuilder, and StringBuffer is TRUE?",
+    "options": [
+      "String is mutable; StringBuilder is immutable",
+      "String is immutable; StringBuilder is mutable and non-synchronized; StringBuffer is mutable and thread-safe",
+      "StringBuilder is thread-safe; StringBuffer is not",
+      "All three are immutable"
+    ],
+    "answerIndex": 1,
+    "explanation": "StringBuffer synchronizes its methods (thread-safe), whereas StringBuilder is faster for single-threaded mutation."
+  },
+  {
+    "id": "g1-m2-q30",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "Spring Boot",
+    "difficulty": "medium",
+    "question": "In Spring Framework, why is Constructor Injection generally preferred over Field Injection (@Autowired on private fields)?",
+    "options": [
+      "Field injection does not work with Spring Boot",
+      "Constructor injection allows final immutable fields, makes dependencies explicit, and simplifies unit testing without reflection",
+      "Constructor injection creates prototype beans automatically",
+      "Field injection disables HTTP endpoints"
+    ],
+    "answerIndex": 1,
+    "explanation": "Constructor injection ensures required dependencies at instantiation and clean unit tests."
+  },
+  {
+    "id": "g1-m2-q31",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "Python",
+    "difficulty": "easy",
+    "question": "In Python, which keyword turns a regular function into a lazy generator that yields values one at a time?",
+    "options": [
+      "return",
+      "yield",
+      "async",
+      "lambda"
+    ],
+    "answerIndex": 1,
+    "explanation": "yield suspends function state and produces items lazily with O(1) memory."
+  },
+  {
+    "id": "g1-m2-q32",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "REST APIs",
+    "difficulty": "easy",
+    "question": "Which API architecture uses a single endpoint and lets clients specify the exact fields they need, preventing over-fetching?",
+    "options": [
+      "SOAP",
+      "GraphQL",
+      "XML-RPC",
+      "FTP"
+    ],
+    "answerIndex": 1,
+    "explanation": "GraphQL queries request exact data shapes from a single schema-backed endpoint."
+  },
+  {
+    "id": "g1-m2-q33",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "Microservices",
+    "difficulty": "medium",
+    "question": "In a Circuit Breaker pattern, what happens when the circuit transitions to the HALF-OPEN state?",
+    "options": [
+      "All traffic is permanently blocked",
+      "A limited number of trial requests are allowed through to test whether the downstream service has recovered",
+      "The database is restarted automatically",
+      "All requests bypass authentication"
+    ],
+    "answerIndex": 1,
+    "explanation": "Half-Open probes downstream health; success closes the circuit, failure trips it back to Open."
+  },
+  {
+    "id": "g1-m2-q34",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "REST APIs",
+    "difficulty": "easy",
+    "question": "Which three dot-separated Base64URL-encoded sections make up a standard JSON Web Token (JWT)?",
+    "options": [
+      "Issuer.Subject.Expiry",
+      "Header.Payload.Signature",
+      "Public.Private.Salt",
+      "Schema.Body.Checksum"
+    ],
+    "answerIndex": 1,
+    "explanation": "A compact JWS/JWT has the structure Header.Payload.Signature."
+  },
+  {
+    "id": "g1-m2-q35",
+    "source": "guide1-mock2",
+    "topic": "backend",
+    "subtopic": "HTTP",
+    "difficulty": "easy",
+    "question": "Which HTTP status code is returned when a client exceeds an API Gateway's rate limit?",
+    "options": [
+      "403 Forbidden",
+      "408 Request Timeout",
+      "429 Too Many Requests",
+      "503 Service Unavailable"
+    ],
+    "answerIndex": 2,
+    "explanation": "429 Too Many Requests explicitly signals rate-limiting / throttling."
+  },
+  {
+    "id": "g1-m2-q36",
+    "source": "guide1-mock2",
+    "topic": "dbms",
+    "subtopic": "SQL",
+    "difficulty": "easy",
+    "question": "Which SQL clause filters grouped aggregate results AFTER GROUP BY has been evaluated?",
+    "options": [
+      "WHERE",
+      "HAVING",
+      "ORDER BY",
+      "DISTINCT"
+    ],
+    "answerIndex": 1,
+    "explanation": "WHERE filters individual rows before grouping; HAVING filters aggregated groups."
+  },
+  {
+    "id": "g1-m2-q37",
+    "source": "guide1-mock2",
+    "topic": "dbms",
+    "subtopic": "Indexing",
+    "difficulty": "medium",
+    "question": "In PostgreSQL/MySQL, what is a 'Covering Index' (Index-Only Scan)?",
+    "options": [
+      "An index that encrypts the entire table",
+      "An index that includes all columns needed by a query so the DB does not need to fetch table heap pages",
+      "An index applied only to NULL values",
+      "A backup copy of the primary key"
+    ],
+    "answerIndex": 1,
+    "explanation": "A covering index satisfies the query entirely from index entries, avoiding costly table lookups."
+  },
+  {
+    "id": "g1-m2-q38",
+    "source": "guide1-mock2",
+    "topic": "dbms",
+    "subtopic": "Performance Tuning",
+    "difficulty": "medium",
+    "question": "Which SQL query problem occurs when an ORM executes 1 query to fetch N parent records followed by N separate queries to fetch each parent's child records?",
+    "options": [
+      "Cartesian Explosion",
+      "N+1 Query Problem",
+      "Dirty Write",
+      "Deadlock"
+    ],
+    "answerIndex": 1,
+    "explanation": "The N+1 problem degrades performance severely; solved via JOIN FETCH or batching."
+  },
+  {
+    "id": "g1-m2-q39",
+    "source": "guide1-mock2",
+    "topic": "dbms",
+    "subtopic": "ACID",
+    "difficulty": "medium",
+    "question": "In ACID transactions, how do relational databases typically ensure Durability after a sudden power failure?",
+    "options": [
+      "Storing all tables only in RAM",
+      "Write-Ahead Logging (WAL / Redo Log) flushed to non-volatile storage before confirming commit",
+      "Running TRUNCATE on startup",
+      "Disabling foreign keys"
+    ],
+    "answerIndex": 1,
+    "explanation": "WAL guarantees committed changes can be replayed during crash recovery."
+  },
+  {
+    "id": "g1-m2-q40",
+    "source": "guide1-mock2",
+    "topic": "dbms",
+    "subtopic": "Data Warehousing",
+    "difficulty": "medium",
+    "question": "In Data Warehousing, what is the key difference between ETL and ELT?",
+    "options": [
+      "ETL transforms data BEFORE loading into the warehouse; ELT loads raw data first and transforms inside the cloud warehouse",
+      "ELT cannot process SQL",
+      "ETL is only for NoSQL",
+      "There is no difference"
+    ],
+    "answerIndex": 0,
+    "explanation": "Modern cloud warehouses (Snowflake/BigQuery) favor ELT to leverage massive in-warehouse compute."
+  },
+  {
+    "id": "g1-m2-q41",
+    "source": "guide1-mock2",
+    "topic": "dbms",
+    "subtopic": "SQL",
+    "difficulty": "easy",
+    "question": "Which database constraint ensures that every non-null foreign key value matches an existing primary key in the referenced parent table?",
+    "options": [
+      "Entity Integrity",
+      "Referential Integrity",
+      "Domain Integrity",
+      "View Integrity"
+    ],
+    "answerIndex": 1,
+    "explanation": "Referential integrity prevents orphan child records via foreign key enforcement."
+  },
+  {
+    "id": "g1-m2-q42",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "easy",
+    "question": "What is the average-case time complexity of lookup, insertion, and deletion in a well-sized Hash Table?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answerIndex": 0,
+    "explanation": "With a good hash function and load factor, Hash Table operations average O(1)."
+  },
+  {
+    "id": "g1-m2-q43",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "medium",
+    "question": "Which shortest-path algorithm can handle graphs with NEGATIVE edge weights and detect negative-weight cycles?",
+    "options": [
+      "Dijkstra's Algorithm",
+      "Bellman-Ford Algorithm",
+      "Prim's Algorithm",
+      "Binary Search"
+    ],
+    "answerIndex": 1,
+    "explanation": "Bellman-Ford relaxes all edges V-1 times and detects negative cycles; Dijkstra fails on negative weights."
+  },
+  {
+    "id": "g1-m2-q44",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "easy",
+    "question": "Which data structure is best suited for implementing a Priority Queue with O(log n) insertion and extract-min?",
+    "options": [
+      "Singly Linked List",
+      "Binary Heap",
+      "Stack",
+      "Unsorted Array"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Binary Min-Heap supports O(1) peek and O(log n) insert/extract-min."
+  },
+  {
+    "id": "g1-m2-q45",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "DSA",
+    "difficulty": "easy",
+    "question": "What is the worst-case time complexity of Merge Sort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Merge Sort always divides in half and merges in linear time, guaranteeing O(n log n) worst-case."
+  },
+  {
+    "id": "g1-m2-q46",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "medium",
+    "question": "Which OS component translates Virtual Addresses to Physical Addresses using the Page Table and TLB?",
+    "options": [
+      "ALU",
+      "MMU (Memory Management Unit)",
+      "DMA Controller",
+      "BIOS"
+    ],
+    "answerIndex": 1,
+    "explanation": "The hardware MMU performs virtual-to-physical address translation accelerated by the TLB."
+  },
+  {
+    "id": "g1-m2-q47",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "easy",
+    "question": "In OS scheduling, which algorithm prevents starvation of low-priority processes by gradually increasing their priority over time?",
+    "options": [
+      "Thrashing",
+      "Aging",
+      "Swapping",
+      "Spooling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Aging increments priority of waiting processes so they eventually execute."
+  },
+  {
+    "id": "g1-m2-q48",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "medium",
+    "question": "Which IPC / synchronization primitive allows up to N concurrent threads to access a finite pool of N resources?",
+    "options": [
+      "Binary Mutex",
+      "Counting Semaphore",
+      "Spinlock",
+      "Pipe"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Counting Semaphore initialized to N controls access to N identical resource slots."
+  },
+  {
+    "id": "g1-m2-q49",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Operating Systems",
+    "difficulty": "medium",
+    "question": "What does the Linux command chmod 640 config.yaml set?",
+    "options": [
+      "Owner rw-, Group r--, Others ---",
+      "Owner rwx, Group r-x, Others r--",
+      "Everyone read/write",
+      "Owner r--, Group rw-, Others ---"
+    ],
+    "answerIndex": 0,
+    "explanation": "6 = 4+2 (rw-), 4 = r--, 0 = ---."
+  },
+  {
+    "id": "g1-m2-q50",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "During a TCP 3-way handshake, what is the exact sequence of flags exchanged between Client and Server?",
+    "options": [
+      "ACK -> SYN -> FIN",
+      "SYN -> SYN-ACK -> ACK",
+      "SYN -> ACK -> RST",
+      "FIN -> ACK -> SYN"
+    ],
+    "answerIndex": 1,
+    "explanation": "Client sends SYN, Server replies SYN-ACK, Client completes with ACK."
+  },
+  {
+    "id": "g1-m2-q51",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which protocol operates at TCP port 22 to provide encrypted remote terminal access and file transfer?",
+    "options": [
+      "Telnet",
+      "SSH",
+      "FTP",
+      "SNMP"
+    ],
+    "answerIndex": 1,
+    "explanation": "SSH (Secure Shell) uses port 22, replacing unencrypted Telnet (port 23)."
+  },
+  {
+    "id": "g1-m2-q52",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which DNS record type maps a domain name directly to an IPv6 address?",
+    "options": [
+      "A Record",
+      "AAAA Record",
+      "MX Record",
+      "CNAME Record"
+    ],
+    "answerIndex": 1,
+    "explanation": "A maps to IPv4 (32-bit); AAAA maps to IPv6 (128-bit); MX maps mail exchangers."
+  },
+  {
+    "id": "g1-m2-q53",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "What is the primary difference between TCP and UDP?",
+    "options": [
+      "UDP guarantees ordered delivery; TCP does not",
+      "TCP is connection-oriented with reliability/congestion control; UDP is connectionless with minimal overhead",
+      "TCP is Layer 3; UDP is Layer 2",
+      "UDP is used for HTTPS"
+    ],
+    "answerIndex": 1,
+    "explanation": "TCP provides reliability, ordering, and flow/congestion control; UDP prioritizes low latency."
+  },
+  {
+    "id": "g1-m2-q54",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which RFC 1918 IPv4 address block is reserved for private internal networks?",
+    "options": [
+      "8.8.8.0/24",
+      "172.16.0.0/12",
+      "192.0.2.0/24",
+      "224.0.0.0/4"
+    ],
+    "answerIndex": 1,
+    "explanation": "Private IPv4 ranges are 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16."
+  },
+  {
+    "id": "g1-m2-q55",
+    "source": "guide1-mock2",
+    "topic": "cs-core",
+    "subtopic": "Computer Networks",
+    "difficulty": "easy",
+    "question": "Which network device breaks up Collision Domains per port while forwarding Layer 2 Ethernet frames based on MAC addresses?",
+    "options": [
+      "Repeater",
+      "Hub",
+      "Switch",
+      "Modem"
+    ],
+    "answerIndex": 2,
+    "explanation": "Layer 2 Switches learn MAC addresses per port and isolate collision domains."
+  },
+  {
+    "id": "g1-m2-q56",
+    "source": "guide1-mock2",
+    "topic": "se-arch",
+    "subtopic": "SDLC",
+    "difficulty": "easy",
+    "question": "In Agile Scrum, who is strictly responsible for maximizing product value and prioritizing the Product Backlog?",
+    "options": [
+      "Scrum Master",
+      "Product Owner",
+      "Database Administrator",
+      "QA Lead"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Product Owner owns and prioritizes the Product Backlog; the Scrum Master facilitates the process."
+  },
+  {
+    "id": "g1-m2-q57",
+    "source": "guide1-mock2",
+    "topic": "se-arch",
+    "subtopic": "Testing",
+    "difficulty": "easy",
+    "question": "Which black-box testing technique specifically targets edge values just below, at, and just above valid input limits?",
+    "options": [
+      "Statement Coverage",
+      "Boundary Value Analysis (BVA)",
+      "Mutation Testing",
+      "Static Analysis"
+    ],
+    "answerIndex": 1,
+    "explanation": "BVA tests boundary edges where off-by-one defects most frequently occur."
+  },
+  {
+    "id": "g1-m2-q58",
+    "source": "guide1-mock2",
+    "topic": "se-arch",
+    "subtopic": "Design Patterns",
+    "difficulty": "medium",
+    "question": "Which GoF design pattern lets an object change its algorithm dynamically at runtime by encapsulating interchangeable behaviors?",
+    "options": [
+      "Singleton",
+      "Strategy",
+      "Prototype",
+      "Facade"
+    ],
+    "answerIndex": 1,
+    "explanation": "Strategy encapsulates a family of algorithms and makes them interchangeable at runtime."
+  },
+  {
+    "id": "g1-m2-q59",
+    "source": "guide1-mock2",
+    "topic": "se-arch",
+    "subtopic": "ITIL",
+    "difficulty": "medium",
+    "question": "In ITIL, what is the difference between an SLA and an OLA?",
+    "options": [
+      "SLA is an agreement with external customers/business; OLA is an internal agreement between IT support teams",
+      "OLA is legally binding with vendors",
+      "SLA applies only to hardware",
+      "They are identical"
+    ],
+    "answerIndex": 0,
+    "explanation": "SLA faces the customer/business; OLA coordinates internal IT groups; UC covers external vendors."
+  },
+  {
+    "id": "g1-m2-q60",
+    "source": "guide1-mock2",
+    "topic": "emerging",
+    "subtopic": "Cloud",
+    "difficulty": "medium",
+    "question": "What distinguishes a Type 1 (Bare-Metal) Hypervisor from a Type 2 (Hosted) Hypervisor?",
+    "options": [
+      "Type 1 runs directly on physical hardware; Type 2 runs on top of a host operating system",
+      "Type 1 only runs containers",
+      "Type 2 is faster for production data centers",
+      "Type 1 requires Windows OS"
+    ],
+    "answerIndex": 0,
+    "explanation": "Bare-metal hypervisors (ESXi, KVM) run directly on hardware with lower overhead."
+  },
+  {
+    "id": "g1-m2-q61",
+    "source": "guide1-mock2",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "easy",
+    "question": "In Kubernetes, what is the smallest deployable computing unit that can be created and managed?",
+    "options": [
+      "Cluster",
+      "Node",
+      "Pod",
+      "Namespace"
+    ],
+    "answerIndex": 2,
+    "explanation": "A Pod wraps one or more tightly coupled containers sharing network/storage."
+  },
+  {
+    "id": "g1-m2-q62",
+    "source": "guide1-mock2",
+    "topic": "emerging",
+    "subtopic": "Kubernetes",
+    "difficulty": "medium",
+    "question": "In Kubernetes, how should sensitive credentials like database passwords be stored rather than in plain ConfigMaps?",
+    "options": [
+      "Dockerfiles",
+      "Kubernetes Secrets (with encryption at rest / external vault)",
+      "Ingress Annotations",
+      "Public Git Repositories"
+    ],
+    "answerIndex": 1,
+    "explanation": "Kubernetes Secrets (ideally backed by KMS/Vault) separate sensitive data from plain ConfigMaps."
+  },
+  {
+    "id": "g1-m2-q63",
+    "source": "guide1-mock2",
+    "topic": "emerging",
+    "subtopic": "AI/ML",
+    "difficulty": "medium",
+    "question": "In Machine Learning, if a model achieves 99% accuracy on training data but only 62% accuracy on unseen test data, it is suffering from:",
+    "options": [
+      "Underfitting (High Bias)",
+      "Overfitting (High Variance)",
+      "Data Normalization",
+      "Feature Scaling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Memorizing training noise without generalizing to unseen data is Overfitting."
+  },
+  {
+    "id": "g1-m2-q64",
+    "source": "guide1-mock2",
+    "topic": "emerging",
+    "subtopic": "AI/ML",
+    "difficulty": "easy",
+    "question": "In TensorFlow, what is the fundamental multi-dimensional data structure passed between operations in a computation graph?",
+    "options": [
+      "DataFrame",
+      "Tensor",
+      "B-Tree",
+      "Socket"
+    ],
+    "answerIndex": 1,
+    "explanation": "Tensors are multi-dimensional arrays (scalars, vectors, matrices, higher-rank arrays) in TensorFlow."
+  },
+  {
+    "id": "g1-m2-q65",
+    "source": "guide1-mock2",
+    "topic": "emerging",
+    "subtopic": "GenAI",
+    "difficulty": "easy",
+    "question": "Which Prompt Engineering technique guides an LLM to solve complex multi-step logic by explicitly instructing it to show intermediate reasoning steps?",
+    "options": [
+      "Zero-shot truncation",
+      "Chain-of-Thought (CoT) Prompting",
+      "Token Pruning",
+      "Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Chain-of-Thought prompting improves reasoning accuracy on multi-step problems."
+  },
+  {
+    "id": "g1-m2-q66",
+    "source": "guide1-mock2",
+    "topic": "emerging",
+    "subtopic": "LangChain",
+    "difficulty": "medium",
+    "question": "In LangChain, what component dynamically decides which external tools or APIs an LLM should invoke to answer a user request?",
+    "options": [
+      "Text Splitter",
+      "Agent",
+      "Embedding Cache",
+      "Tokenizer"
+    ],
+    "answerIndex": 1,
+    "explanation": "Agents use an LLM as a reasoning engine to select and execute tools iteratively."
+  },
+  {
+    "id": "g1-m2-q67",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "easy",
+    "question": "Which cryptographic algorithm is a SYMMETRIC block cipher widely recommended for encrypting banking data at rest?",
+    "options": [
+      "RSA-2048",
+      "AES-256",
+      "SHA-256",
+      "Diffie-Hellman"
+    ],
+    "answerIndex": 1,
+    "explanation": "AES-256 is a symmetric cipher; RSA/DH are asymmetric; SHA-256 is a one-way hash."
+  },
+  {
+    "id": "g1-m2-q68",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "Cryptography",
+    "difficulty": "easy",
+    "question": "How does a Hash function (like SHA-256) differ from Encryption (like AES)?",
+    "options": [
+      "Hashing is one-way (irreversible); Encryption is two-way (reversible with a key)",
+      "Hashing requires a public key",
+      "Encryption always produces a fixed 256-bit output",
+      "Hashing is slower than RSA"
+    ],
+    "answerIndex": 0,
+    "explanation": "Cryptographic hashes cannot be decrypted back to original plaintext; they verify integrity."
+  },
+  {
+    "id": "g1-m2-q69",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "Cybersecurity",
+    "difficulty": "easy",
+    "question": "Which security appliance inspects Layer 7 HTTP/HTTPS traffic specifically to block SQLi, XSS, and malicious API payloads?",
+    "options": [
+      "Layer 2 Switch",
+      "WAF (Web Application Firewall)",
+      "DHCP Relay",
+      "NAT Gateway"
+    ],
+    "answerIndex": 1,
+    "explanation": "WAF operates at the Application Layer (L7) to filter web/API exploits."
+  },
+  {
+    "id": "g1-m2-q70",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "UPI/NEFT",
+    "difficulty": "easy",
+    "question": "In India, who owns and operates UPI and IMPS?",
+    "options": [
+      "Reserve Bank of India (RBI)",
+      "National Payments Corporation of India (NPCI)",
+      "SEBI",
+      "State Bank of India"
+    ],
+    "answerIndex": 1,
+    "explanation": "NPCI operates UPI, IMPS, RuPay, and AePS; RBI operates NEFT and RTGS."
+  },
+  {
+    "id": "g1-m2-q71",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "UPI/NEFT",
+    "difficulty": "medium",
+    "question": "Since which date has RTGS been available 24x7x365 in India?",
+    "options": [
+      "16 December 2019",
+      "14 December 2020",
+      "1 April 2024",
+      "1 January 2018"
+    ],
+    "answerIndex": 1,
+    "explanation": "NEFT went 24x7 on 16 Dec 2019; RTGS went 24x7 on 14 Dec 2020."
+  },
+  {
+    "id": "g1-m2-q72",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "UPI/NEFT",
+    "difficulty": "medium",
+    "question": "What is the general per-transaction limit for standard Person-to-Person (P2P) UPI transfers in India?",
+    "options": [
+      "₹50,000",
+      "₹1,00,000",
+      "₹2,00,000",
+      "₹10,00,000"
+    ],
+    "answerIndex": 1,
+    "explanation": "Standard UPI P2P limit is ₹1 lakh per transaction (higher up to ₹5 lakh for select verified categories like tax/capital markets)."
+  },
+  {
+    "id": "g1-m2-q73",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "BCP/DR",
+    "difficulty": "easy",
+    "question": "In Disaster Recovery planning, what does RTO (Recovery Time Objective) define?",
+    "options": [
+      "Maximum tolerable age of backup data",
+      "Maximum tolerable downtime to restore a business service after a disruption",
+      "Total storage capacity of the DR site",
+      "Annual IT audit budget"
+    ],
+    "answerIndex": 1,
+    "explanation": "RTO is the target maximum downtime; RPO is the target maximum data loss."
+  },
+  {
+    "id": "g1-m2-q74",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "Standards",
+    "difficulty": "medium",
+    "question": "Which ISO standard specifies requirements for establishing and maintaining an Information Security Management System (ISMS)?",
+    "options": [
+      "ISO 22301",
+      "ISO/IEC 27001",
+      "ISO 8583",
+      "ISO 31000"
+    ],
+    "answerIndex": 1,
+    "explanation": "ISO/IEC 27001 governs ISMS; ISO 22301 governs Business Continuity (BCMS)."
+  },
+  {
+    "id": "g1-m2-q75",
+    "source": "guide1-mock2",
+    "topic": "security-banking",
+    "subtopic": "Payment Systems",
+    "difficulty": "medium",
+    "question": "In a payment card network, which messaging standard defines the binary/bitmap packet structure for ATM and POS card authorizations?",
+    "options": [
+      "ISO 8583",
+      "SMTP",
+      "OAuth 2.0",
+      "GraphQL"
+    ],
+    "answerIndex": 0,
+    "explanation": "ISO 8583 is the classic card-originated financial transaction messaging standard."
+  }
+]
